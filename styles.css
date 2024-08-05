@@ -1,0 +1,261 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #E0E0E0;
+}
+
+.parallax {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(30, 30, 45, 0.8); /* Dark overlay */
+    background-image: url('img/abbasid.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing:border-box;
+    background-blend-mode: overlay;
+}
+
+.header-content {
+    z-index: 1; /* Places content above the image */
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    font-family: 'Scheherazade', serif;
+    color: #FFD700;
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+.header-content p {
+    font-size: 1.3em;
+    color: #E0E0E0;
+    margin-bottom: 30px;
+}
+
+#avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#duoavatar, #duobanner, #tiktokcap {
+    width: 100px;
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap into multiple lines */
+    gap: 15px; /* Adds space between items */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    text-align: center; /* Center aligns text within each list item */
+}
+
+nav ul li a {
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #E0E0E0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+}
+
+nav ul li a:hover {
+    color: #FCBF47;
+    background-color: rgba(255, 255, 255, 0.2); /* Adds subtle background on hover */
+}
+
+main {
+    background-image: url('img/star.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #1E1E2D;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 40px 20px;
+    background-color: #1E1E2D;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    text-align: center;
+    background-color: rgba(30, 30, 45, 0.8);
+    border: solid 8px #FCBF47;
+    border-radius: 18px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1000px; /* Sets a maximum width for larger screens */
+    box-sizing: border-box; /* Includes padding and border in total width */
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #FCBF47;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Scheherazade', serif;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #FCBF47;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #E0E0E0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FCBF47;
+    border-radius: 5px;
+    background-color: #2E2E3D;
+    color: #E0E0E0;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FCBF47;
+    color: #1E1E2D;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #E0E0E0;
+    color: #1E1E2D;
+}
+
+.donation-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #FCBF47;
+    color: #1E1E2D;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.donation-button:hover {
+    background-color: #E0E0E0;
+    color: #1E1E2D;
+}
+
+#signature {
+    margin-top: 20px;
+    width: 10%;
+    height: 10%;
+}
+
+footer {
+    background-color: #2E2E3D;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 3px solid #FCBF47;
+    display: flex;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Adds vertical spacing between nav items */
+    }
+
+    section {
+        width: 90%; /* Increase width for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    section h2 {
+        font-size: 1.8em; /* Reduce font size for headers */
+    }
+
+    section p {
+        font-size: 1em; /* Adjust text size for better readability */
+    }
+
+    .donation-button {
+        font-size: 1.1em; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 1em; /* Reduce nav link font size for extra small screens */
+    }
+}
