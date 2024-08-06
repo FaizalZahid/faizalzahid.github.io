@@ -150,6 +150,13 @@ ul li a:hover {
     color: #E0E0E0;
 }
 
+#duolingo ul li a, #social ul li a {
+    border: dashed 1px white;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+}
+
 form {
     max-width: 600px;
     margin: 0 auto;
