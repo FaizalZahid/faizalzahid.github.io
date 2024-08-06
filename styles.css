@@ -12,7 +12,7 @@ body {
     align-items: center;
     text-align: center;
     background: rgba(30, 30, 45, 0.8); /* Dark overlay */
-    background-image: url('img/abbasid.jpg');
+    background-image: url('img/abbasid.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -39,13 +39,13 @@ body {
     margin-bottom: 30px;
 }
 
-#avatar {
+#avatar, #duobanner, #socials {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-#duoavatar, #duobanner, #tiktokcap {
+#duoavatar {
     width: 100px;
     height: 100px;
 }
@@ -83,7 +83,7 @@ nav ul li a:hover {
 }
 
 main {
-    background-image: url('img/star.jpg');
+    background-image: url('img/scholars-library.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
