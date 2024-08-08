@@ -5,13 +5,13 @@ body {
 
 .parallax {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(30, 30, 45, 0.8); /* Dark overlay */
+    background: rgba(30, 30, 45, 0.8);
     background-image: url('img/abbasid.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ body {
 }
 
 .header-content {
-    z-index: 1; /* Places content above the image */
+    z-index: 1;
     padding: 0 20px;
 }
 
@@ -56,14 +56,14 @@ nav ul {
     margin: 10px 0 0 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allows items to wrap into multiple lines */
-    gap: 15px; /* Adds space between items */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline;
     margin: 0 15px;
-    text-align: center; /* Center aligns text within each list item */
+    text-align: center;
 }
 
 nav ul li a {
@@ -74,12 +74,12 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 nav ul li a:hover {
     color: #FCBF47;
-    background-color: rgba(255, 255, 255, 0.2); /* Adds subtle background on hover */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 main {
@@ -109,8 +109,8 @@ section {
     padding: 20px;
     margin: 20px auto;
     width: 80%;
-    max-width: 1000px; /* Sets a maximum width for larger screens */
-    box-sizing: border-box; /* Includes padding and border in total width */
+    max-width: 1000px;
+    box-sizing: border-box;
 }
 
 section h2 {
@@ -147,7 +147,7 @@ ul li a {
 }
 
 ul li a:hover {
-    color: #E0E0E0;
+    color: rgba(30, 30, 45);
 }
 
 #duolingo ul li a, #social ul li a {
@@ -191,7 +191,7 @@ form button:hover {
     color: #1E1E2D;
 }
 
-.donation-button {
+/* .donation-button {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
@@ -207,7 +207,7 @@ form button:hover {
 .donation-button:hover {
     background-color: #E0E0E0;
     color: #1E1E2D;
-}
+} */
 
 #signature {
     margin-top: 20px;
@@ -233,14 +233,13 @@ footer p {
     font-size: 1em;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em; /* Adjust font size for smaller screens */
+        font-size: 2em;
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
+        flex-direction: column;
     }
 
     nav ul li {
@@ -270,4 +269,19 @@ footer p {
     nav ul li a {
         font-size: 1em; /* Reduce nav link font size for extra small screens */
     }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.hover-change-bg:hover {
+    background-color: #E0B700;
+}
+
+.shake-animation {
+    animation: shake 2s ease-in-out infinite alternate;
+    animation-delay: 2s;
 }
