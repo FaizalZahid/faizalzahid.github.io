@@ -29,7 +29,7 @@ body {
 .header-content h1 {
     font-family: 'Scheherazade', serif;
     color: #FFD700;
-    font-size: 3em;
+    font-size: 4em;
     margin: 0 0 10px 0;
 }
 
@@ -93,6 +93,8 @@ main {
     overflow-x: hidden;
     padding: 40px 20px;
     background-color: #1E1E2D;
+    background-blend-mode: overlay;
+}
 }
 
 .container {
@@ -104,7 +106,7 @@ main {
 section {
     text-align: center;
     background-color: rgba(30, 30, 45, 0.8);
-    border: solid 8px #FCBF47;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 18px;
     padding: 20px;
     margin: 20px auto;
@@ -191,7 +193,7 @@ form button:hover {
     color: #1E1E2D;
 }
 
-/* .donation-button {
+/*.donation-button {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
@@ -207,7 +209,7 @@ form button:hover {
 .donation-button:hover {
     background-color: #E0E0E0;
     color: #1E1E2D;
-} */
+}*/
 
 #signature {
     margin-top: 20px;
@@ -235,11 +237,11 @@ footer p {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2em; /* Adjust font size for smaller screens */
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack navigation items vertically */
     }
 
     nav ul li {
@@ -259,15 +261,15 @@ footer p {
         font-size: 1em; /* Adjust text size for better readability */
     }
 
-    .donation-button {
-        font-size: 1.1em; /* Adjust button font size */
-        padding: 8px 16px; /* Adjust padding */
-    }
+    /*.donation-button {
+        font-size: 1.1em;
+        padding: 8px 16px;
+    }*/
 }
 
 @media (max-width: 480px) {
     nav ul li a {
-        font-size: 1em; /* Reduce nav link font size for extra small screens */
+        font-size: 1em;
     }
 }
 
