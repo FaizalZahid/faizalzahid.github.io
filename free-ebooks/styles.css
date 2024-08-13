@@ -1,0 +1,289 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #E0E0E0;
+}
+
+.parallax {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(30, 30, 45, 0.8);
+    background-image: url('../img/abbasid.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing:border-box;
+    background-blend-mode: overlay;
+}
+
+.header-content {
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    font-family: 'Scheherazade', serif;
+    color: #FFD700;
+    font-size: 4em;
+    margin: 0 0 10px 0;
+}
+
+.header-content p {
+    font-size: 1.3em;
+    color: #E0E0E0;
+    margin-bottom: 30px;
+}
+
+#languages-img, #economy-img, #geography-img, #politics-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#programming-img {
+    width: 100px;
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    text-align: center;
+}
+
+nav ul li a {
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #E0E0E0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:hover {
+    color: #FCBF47;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main {
+    background-image: url('../img/scholars-library.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #1E1E2D;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 40px 20px;
+    background-color: #1E1E2D;
+    background-blend-mode: overlay;
+}
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    text-align: center;
+    background-color: rgba(30, 30, 45, 0.8);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1000px;
+    box-sizing: border-box;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #FCBF47;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Scheherazade', serif;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #FCBF47;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: rgba(30, 30, 45);
+}
+
+#programming ul li a, #languages ul li a, #economy ul li a, #geography ul li a, #politics ul li a {
+    border: dashed 1px white;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FCBF47;
+    border-radius: 5px;
+    background-color: #2E2E3D;
+    color: #E0E0E0;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FCBF47;
+    color: #1E1E2D;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #E0E0E0;
+    color: #1E1E2D;
+}
+
+/*.donation-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #FCBF47;
+    color: #1E1E2D;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.donation-button:hover {
+    background-color: #E0E0E0;
+    color: #1E1E2D;
+}*/
+
+#signature {
+    margin-top: 20px;
+    width: 20%;
+    height: 20%;
+}
+
+#classroom {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    background-color: #2E2E3D;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 3px solid #FCBF47;
+    display: flex;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Adds vertical spacing between nav items */
+    }
+
+    section {
+        width: 90%; /* Increase width for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    section h2 {
+        font-size: 1.8em; /* Reduce font size for headers */
+    }
+
+    section p {
+        font-size: 1em; /* Adjust text size for better readability */
+    }
+
+    /*.donation-button {
+        font-size: 1.1em;
+        padding: 8px 16px;
+    }*/
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 1em;
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.hover-change-bg:hover {
+    background-color: #E0B700;
+}
+
+.shake-animation {
+    animation: shake 2s ease-in-out infinite alternate;
+    animation-delay: 2s;
+}
