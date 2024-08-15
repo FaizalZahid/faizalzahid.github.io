@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     links.forEach((link) => {
         const href = link.getAttribute("href");
-        if (href && href.startswith('#')) {
+        if (href && href.startsWith('#')) {
             link.addEventListener("click", function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute("href").substring(1);
