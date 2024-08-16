@@ -39,7 +39,7 @@ body {
     margin-bottom: 30px;
 }
 
-#psychology-img, #languages-img, #economy-img, #geography-img, #politics-img {
+#psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -152,7 +152,7 @@ ul li a:hover {
     color: rgba(30, 30, 45);
 }
 
-#programming ul li a, #psychology ul li a, #languages ul li a, #economy ul li a, #geography ul li a, #politics ul li a {
+#programming ul li a, #psychology ul li a, #philosophy ul li a, #languages ul li a, #economy ul li a, #geography ul li a, #politics ul li a, #geopolitics ul li a {
     border: dashed 1px white;
     border-radius: 5px;
     padding: 10px;
