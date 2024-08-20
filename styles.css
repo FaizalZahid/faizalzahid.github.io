@@ -126,6 +126,7 @@ nav ul li a:hover:after {
 }
 
 #opposite-color {
+    position: relative;
     border-radius: 5px;
     padding: 5px 20px;
     color: rgb(0, 0, 0);
