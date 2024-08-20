@@ -331,6 +331,10 @@ footer p {
         width: auto;
         height: auto;
     }
+
+    #opposite-color:hover {
+        font-size: 2.1em;
+    }
 }
 
 @keyframes shake {
