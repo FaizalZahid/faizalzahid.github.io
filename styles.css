@@ -319,6 +319,10 @@ footer p {
     nav ul li a {
         font-size: 1em;
     }
+    
+    #opposite-color {
+        font-size: 1em;
+    }
 }
 
 @keyframes shake {
