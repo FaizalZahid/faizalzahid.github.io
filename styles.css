@@ -21,20 +21,44 @@ body {
     background-blend-mode: overlay;
 }
 
+#about, #duolingo, #social, #faizalingo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color-burn;
+}
+
+#about {
+    background-image: url('img/aboutme.png');
+}
+
+#duolingo {
+    background-image: url('img/classroom.png');
+}
+
+#social {
+    background-image: url('img/socmed.png');
+}
+
+#faizalingo {
+    background-image: url('img/faizalingo.jpeg');
+}
+
 .header-content {
     z-index: 1;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .header-content h1 {
-    font-family: 'Scheherazade', serif;
+    font-family: 'Poppins', serif;
     color: #FFD700;
     font-size: 3em;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
 }
 
 .header-content p {
-    font-size: 1.3em;
+    font-size: 1.5em;
     color: #E0E0E0;
     margin-bottom: 30px;
 }
@@ -67,19 +91,61 @@ nav ul li {
 }
 
 nav ul li a {
-    border: solid 1px white;
+    position: relative;
     border-radius: 5px;
-    padding: 5px 10px;
-    color: #E0E0E0;
+    padding: 5px 20px;
+    color: #FCBF47;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0);
+    font-size: 3em;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+}
+
+nav ul li a:after {
+    content: '⇊';
+    position: absolute;
+    opacity: 0;  
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, bottom 0.5s;
 }
 
 nav ul li a:hover {
     color: #FCBF47;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(30, 30, 45, 0.5);
+    padding-top: 1px;
+    padding-bottom: 9px;
+}
+
+nav ul li a:hover:after {
+    opacity: 1;
+    bottom: -50px;
+}
+
+#opposite-color {
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: rgb(0, 0, 0);
+    background-color: #FCBF47;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 3em;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+}
+
+#opposite-color:after {
+    content: '';
+}
+
+#opposite-color:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(250, 226, 177, 0.5);
+    padding: 10px 25px;
+    font-size: 3.1em;
 }
 
 main {
@@ -95,23 +161,27 @@ main {
     background-color: #1E1E2D;
     background-blend-mode: overlay;
 }
-}
 
 .container {
+    justify-content: center;
+    align-items: center;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 section {
+    height: 100vh;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 18px;
     padding: 2em;
     margin: 20px auto;
-    width: 80%;
     max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section h2 {
@@ -119,11 +189,12 @@ section h2 {
     color: #FCBF47;
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Scheherazade', serif;
+    font-family: 'Poppins', serif;
 }
 
 section p {
-    font-size: 1.1em;
+    font-size: 1.3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
     text-align: center;
     max-width: 800px;
@@ -143,7 +214,7 @@ ul li {
 ul li a {
     color: #FCBF47;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     transition: color 0.3s;
 }
 
@@ -152,10 +223,14 @@ ul li a:hover {
 }
 
 #duolingo ul li a, #social ul li a {
-    border: dashed 1px white;
     border-radius: 5px;
     padding: 10px;
     display: block;
+}
+
+#duolingo nav ul li a, #social nav ul li a {
+    border: none;
+    padding: 5px 20px;
 }
 
 form {
@@ -192,33 +267,10 @@ form button:hover {
     color: #1E1E2D;
 }
 
-/*.donation-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #FCBF47;
-    color: #1E1E2D;
-    font-size: 1.2em;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-}
-
-.donation-button:hover {
-    background-color: #E0E0E0;
-    color: #1E1E2D;
-}*/
-
 #signature {
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     width: 20%;
     height: 20%;
-}
-
-#classroom {
-    width: 100%;
-    height: 100%;
 }
 
 footer {
@@ -236,34 +288,30 @@ footer p {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em; /* Adjust font size for smaller screens */
+        font-size: 2em;
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
+        flex-direction: column;
     }
 
     nav ul li {
-        margin: 5px 0; /* Adds vertical spacing between nav items */
+        margin: 5px 0;
     }
 
     section {
-        width: 90%; /* Increase width for smaller screens */
-        padding: 15px; /* Adjust padding */
+        width: 90%;
+        padding: 15px;
     }
 
     section h2 {
-        font-size: 1.8em; /* Reduce font size for headers */
+        font-size: 1.8em;
     }
 
     section p {
-        font-size: 1em; /* Adjust text size for better readability */
+        font-size: 1em;
     }
 
-    /*.donation-button {
-        font-size: 1.1em;
-        padding: 8px 16px;
-    }*/
 }
 
 @media (max-width: 480px) {
@@ -276,6 +324,11 @@ footer p {
     0%, 100% { transform: translateX(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
     20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.hover-change-bg {
+    background-color: rgb(30, 30, 45);
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
 }
 
 .hover-change-bg:hover {
