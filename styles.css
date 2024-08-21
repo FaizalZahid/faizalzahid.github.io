@@ -5,8 +5,7 @@ body {
 
 .parallax {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,16 +161,8 @@ main {
     background-blend-mode: overlay;
 }
 
-.container {
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 section {
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
@@ -199,6 +190,41 @@ section p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container-item {
+    max-height: 20vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.img-border {
+    border: solid 1px #FCBF47;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.description {
+    font-style: italic;
+    font-size: 1em;
 }
 
 ul {
@@ -329,6 +355,13 @@ footer p {
 
     #opposite-color:hover {
         font-size: 1.6em;
+    }
+
+    .img-container-item {
+    max-height: 10vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     }
 }
 
