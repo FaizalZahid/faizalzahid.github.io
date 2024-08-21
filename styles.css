@@ -42,7 +42,7 @@ body {
 }
 
 #faizalingo {
-    background-image: url('img/faizalingo.jpeg');
+    background-image: url('img/faizalingo.png');
 }
 
 .header-content {
@@ -99,7 +99,7 @@ nav ul li a {
     font-weight: bold;
     transition: color 0.3s;
     background-color: rgba(0, 0, 0);
-    font-size: 2.8em;
+    font-size: 3em;
     box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
 }
 
@@ -126,7 +126,6 @@ nav ul li a:hover:after {
 }
 
 #opposite-color {
-    position: relative;
     border-radius: 5px;
     padding: 5px 20px;
     color: rgb(0, 0, 0);
@@ -134,7 +133,7 @@ nav ul li a:hover:after {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-    font-size: 2.8em;
+    font-size: 3em;
     box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
 }
 
@@ -146,7 +145,7 @@ nav ul li a:hover:after {
     color: rgb(0, 0, 0);
     background-color: rgba(250, 226, 177, 0.5);
     padding: 10px 25px;
-    font-size: 2.9em;
+    font-size: 3.1em;
 }
 
 main {
@@ -288,10 +287,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
     nav ul {
         flex-direction: column;
     }
