@@ -12,7 +12,7 @@ body {
     align-items: center;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
-    background-image: url('../img/abbasid.png');
+    background-image: url('img/abbasid.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,31 +21,55 @@ body {
     background-blend-mode: overlay;
 }
 
+#about, #duolingo, #social, #faizalingo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color-burn;
+}
+
+#about {
+    background-image: url('img/aboutme.png');
+}
+
+#duolingo {
+    background-image: url('img/classroom.png');
+}
+
+#social {
+    background-image: url('img/socmed.png');
+}
+
+#faizalingo {
+    background-image: url('img/faizalingo.png');
+}
+
 .header-content {
     z-index: 1;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .header-content h1 {
     font-family: 'Poppins', serif;
     color: #FFD700;
-    font-size: 4em;
-    margin: 0 0 10px 0;
+    font-size: 3em;
+    margin: 0 0 5px 0;
 }
 
 .header-content p {
-    font-size: 1.3em;
+    font-size: 1.5em;
     color: #E0E0E0;
     margin-bottom: 30px;
 }
 
-#psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img, #islam-img, #astro-img, #health-img {
+#avatar, #duobanner, #socials {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-#programming-img {
+#duoavatar {
     width: 100px;
     height: 100px;
 }
@@ -67,6 +91,7 @@ nav ul li {
 }
 
 nav ul li a {
+    position: relative;
     border-radius: 5px;
     padding: 5px 20px;
     color: #FCBF47;
@@ -74,17 +99,57 @@ nav ul li a {
     font-weight: bold;
     transition: color 0.3s;
     background-color: rgba(0, 0, 0);
-    font-size: 2em;
+    font-size: 3em;
     box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+}
+
+nav ul li a:after {
+    content: '⇊';
+    position: absolute;
+    opacity: 0;  
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, bottom 0.5s;
 }
 
 nav ul li a:hover {
     color: #FCBF47;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(30, 30, 45, 0.5);
+    padding-top: 1px;
+    padding-bottom: 9px;
+}
+
+nav ul li a:hover:after {
+    opacity: 1;
+    bottom: -50px;
+}
+
+#opposite-color {
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: rgb(0, 0, 0);
+    background-color: #FCBF47;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 3em;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+}
+
+#opposite-color:after {
+    content: '';
+}
+
+#opposite-color:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(250, 226, 177, 0.5);
+    padding: 10px 25px;
+    font-size: 3.1em;
 }
 
 main {
-    background-image: url('../img/scholars-library.png');
+    background-image: url('img/scholars-library.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -96,23 +161,27 @@ main {
     background-color: #1E1E2D;
     background-blend-mode: overlay;
 }
-}
 
 .container {
+    justify-content: center;
+    align-items: center;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 section {
+    height: 100vh;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 18px;
     padding: 2em;
     margin: 20px auto;
-    width: 80%;
     max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section h2 {
@@ -121,11 +190,11 @@ section h2 {
     text-align: center;
     margin-bottom: 20px;
     font-family: 'Poppins', serif;
-    word-wrap: break-word;
 }
 
 section p {
-    font-size: 1.1em;
+    font-size: 1.3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
     text-align: center;
     max-width: 800px;
@@ -145,20 +214,23 @@ ul li {
 ul li a {
     color: #FCBF47;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     transition: color 0.3s;
-    word-wrap: break-word;
 }
 
 ul li a:hover {
     color: rgba(30, 30, 45);
 }
 
-#programming ul li a, #psychology ul li a, #philosophy ul li a, #languages ul li a, #economy ul li a, #geography ul li a, #politics ul li a, #geopolitics ul li a, #islam ul li a, #astro ul li a, #health ul li a {
-    border: dashed 1px white;
+#duolingo ul li a, #social ul li a {
     border-radius: 5px;
     padding: 10px;
     display: block;
+}
+
+#duolingo nav ul li a, #social nav ul li a {
+    border: none;
+    padding: 5px 20px;
 }
 
 form {
@@ -196,14 +268,9 @@ form button:hover {
 }
 
 #signature {
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     width: 20%;
     height: 20%;
-}
-
-#classroom {
-    width: 100%;
-    height: 100%;
 }
 
 footer {
@@ -220,16 +287,12 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .header-content h1 {
-        font-size: 2em;
+    nav ul {
+        flex-direction: column;
     }
 
     nav ul li {
         margin: 5px 0;
-    }
-
-    nav ul li a {
-        font-size: 1.5em;
     }
 
     section {
@@ -244,15 +307,28 @@ footer p {
     section p {
         font-size: 1em;
     }
+
 }
 
 @media (max-width: 480px) {
-    .header-content h1 {
+    nav ul li a {
+        font-size: 1.5em;
+    }
+    
+    #opposite-color {
         font-size: 1.5em;
     }
 
-    nav ul li a {
-        font-size: 1em;
+    #signature {
+        margin: 10px 0 0 0;
+        max-width: 70%;
+        max-height: 70%;
+        width: auto;
+        height: auto;
+    }
+
+    #opposite-color:hover {
+        font-size: 1.6em;
     }
 }
 
@@ -260,6 +336,11 @@ footer p {
     0%, 100% { transform: translateX(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
     20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.hover-change-bg {
+    background-color: rgb(30, 30, 45);
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
 }
 
 .hover-change-bg:hover {
