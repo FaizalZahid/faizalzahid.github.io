@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("play").addEventListener("click", function() {
+        var audio = document.getElementById("myAudio");
+        audio.play();
+    });
     const links = document.querySelectorAll("nav ul li a");
     const sections = document.querySelectorAll("main section");
 
