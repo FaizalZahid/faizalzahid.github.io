@@ -27,8 +27,9 @@ header h1 {
 }
 
 header img {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: 3em;
+    margin-left: 20px;
 }
 
 header p {
