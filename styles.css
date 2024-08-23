@@ -200,6 +200,35 @@ section p {
     margin: 0 auto;
 }
 
+.blog-preview {
+    border: dashed 1px #FCBF47;
+    border-radius: 0 20px 0 20px;
+    padding: 0 10px 10px 10px;
+    margin-bottom: 30px;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+.blog-preview h3 {
+    color: #FCBF47;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-preview p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.blog-preview a {
+    color: #FCBF47;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-preview a:hover {
+    text-decoration: underline;
+}
+
 .img-container {
     display: flex;
     flex-direction: row;
