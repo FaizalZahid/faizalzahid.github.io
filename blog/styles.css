@@ -19,10 +19,16 @@ header {
 }
 
 header h1 {
+    display: inline;
     font-family: 'Poppins', serif;
     font-size: 3em;
     font-weight: bold;
     color: #FFD700;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
 }
 
 header p {
