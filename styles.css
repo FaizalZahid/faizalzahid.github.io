@@ -68,7 +68,7 @@ body {
     border-radius: 50%;
 }
 
-#duoavatar {
+#duoavatar, #blog-img {
     width: 100px;
     height: 100px;
 }
