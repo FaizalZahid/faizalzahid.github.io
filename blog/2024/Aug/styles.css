@@ -95,6 +95,10 @@ section .entry-content img {
     max-width: 100%;
 }
 
+section .entry-content iframe {
+    max-width: 100%;
+}
+
 footer {
     background-color: #2E2E3D;
     padding: 20px 0;
