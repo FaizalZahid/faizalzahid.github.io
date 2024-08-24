@@ -39,7 +39,7 @@ body {
     margin-bottom: 30px;
 }
 
-#psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img, #islam-img, #astro-img, #health-img, #animals-img, #history-img, #plants-img, #food-img, #law-img, #music-img, #engineering-img, #filmmaking-img, #oceanography-img {
+#psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img, #islam-img, #astro-img, #health-img, #animals-img, #history-img, #plants-img, #food-img, #law-img, #music-img, #engineering-img, #filmmaking-img, #oceanography-img, #design-img, #education-img, #mathematics-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -154,7 +154,7 @@ ul li a:hover {
     color: rgba(30, 30, 45);
 }
 
-#programming ul li a, #psychology ul li a, #philosophy ul li a, #languages ul li a, #economy ul li a, #geography ul li a, #politics ul li a, #geopolitics ul li a, #islam ul li a, #astro ul li a, #health ul li a, #animals ul li a, #history ul li a, #plants ul li a, #food ul li a, #law ul li a, #music ul li a, #engineering ul li a, #filmmaking ul li a, #oceanography ul li a {
+#programming ul li a, #psychology ul li a, #philosophy ul li a, #languages ul li a, #economy ul li a, #geography ul li a, #politics ul li a, #geopolitics ul li a, #islam ul li a, #astro ul li a, #health ul li a, #animals ul li a, #history ul li a, #plants ul li a, #food ul li a, #law ul li a, #music ul li a, #engineering ul li a, #filmmaking ul li a, #oceanography ul li a, #design ul li a, #education ul li a, #mathematics ul li a {
     border: dashed 1px white;
     border-radius: 5px;
     padding: 10px;
