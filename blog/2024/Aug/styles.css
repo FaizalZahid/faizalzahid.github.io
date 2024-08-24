@@ -19,10 +19,17 @@ header {
 }
 
 header h1 {
+    display: inline;
     font-family: 'Poppins', serif;
     font-size: 3em;
     font-weight: bold;
     color: #FFD700;
+}
+
+header img {
+    width: auto;
+    height: 3em;
+    margin-left: 20px;
 }
 
 header a {
@@ -81,8 +88,11 @@ hr {
 
 section .entry-content p {
     font-size: 1em;
-    font-weight: bold;
     line-height: 1.5em;
+}
+
+section .entry-content img {
+    max-width: 100%;
 }
 
 footer {
