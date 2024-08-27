@@ -107,3 +107,38 @@ footer p {
     margin: 0;
     font-size: 1em;
 }
+
+.social-button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 0 0 0 10px;
+}
+
+.social-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.social-button.tiktok {
+  background-image: url('img/tiktok.png');
+}
+
+.social-button.instagram {
+  background-image: url('img/instagram.png');
+}
+
+.social-button.youtube {
+  background-image: url('img/youtube.png');
+}
+
+.social-button.blogger {
+  background-image: url('img/blogger.png');
+}
+
+.social-button.x {
+  background-image: url('img/twitterx.png');
+}
