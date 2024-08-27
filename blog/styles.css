@@ -106,6 +106,7 @@ footer {
 footer p {
     margin: 0;
     font-size: 1em;
+    display: inline;
 }
 
 .social-button {
@@ -124,21 +125,21 @@ footer p {
 }
 
 .social-button.tiktok {
-  background-image: url('img/tiktok.png');
+  background-image: url('../img/tiktok.png');
 }
 
 .social-button.instagram {
-  background-image: url('img/instagram.png');
+  background-image: url('../img/instagram.png');
 }
 
 .social-button.youtube {
-  background-image: url('img/youtube.png');
+  background-image: url('../img/youtube.png');
 }
 
 .social-button.blogger {
-  background-image: url('img/blogger.png');
+  background-image: url('../img/blogger.png');
 }
 
 .social-button.x {
-  background-image: url('img/twitterx.png');
+  background-image: url('../img/twitterx.png');
 }
