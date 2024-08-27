@@ -39,6 +39,20 @@ body {
     margin-bottom: 30px;
 }
 
+#home {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: rgba(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    background-color: #FCBF47;
+    font-size: 2em;
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+}
+
 #psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img, #islam-img, #astro-img, #health-img, #animals-img, #history-img, #plants-img, #food-img, #law-img, #music-img, #engineering-img, #filmmaking-img, #oceanography-img, #design-img, #education-img, #mathematics-img {
     width: 100px;
     height: 100px;
@@ -95,7 +109,6 @@ main {
     padding: 40px 20px;
     background-color: #1E1E2D;
     background-blend-mode: overlay;
-}
 }
 
 .container {
@@ -217,6 +230,41 @@ footer {
 footer p {
     margin: 0;
     font-size: 1em;
+}
+
+.social-button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 0 0 0 10px;
+}
+
+.social-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.social-button.tiktok {
+  background-image: url('img/tiktok.png');
+}
+
+.social-button.instagram {
+  background-image: url('img/instagram.png');
+}
+
+.social-button.youtube {
+  background-image: url('img/youtube.png');
+}
+
+.social-button.blogger {
+  background-image: url('img/blogger.png');
+}
+
+.social-button.x {
+  background-image: url('img/twitterx.png');
 }
 
 @media (max-width: 768px) {
