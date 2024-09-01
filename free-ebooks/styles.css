@@ -337,6 +337,24 @@ footer p {
     section p {
         font-size: 1em;
     }
+
+    .top-books {
+        flex-direction: column; /* Stack books vertically */
+        align-items: center; /* Center-align the books */
+    }
+
+    .book {
+        width: 100%; /* Make each book take up full width */
+        margin-bottom: 15px; /* Add spacing between books */
+    }
+
+    .book img {
+        width: 80px; /* Adjust image size for smaller screens */
+    }
+
+    .book-title {
+        font-size: 1em; /* Slightly increase font size for readability */
+    }
 }
 
 @media (max-width: 480px) {
