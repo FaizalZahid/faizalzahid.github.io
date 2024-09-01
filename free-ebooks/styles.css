@@ -137,6 +137,50 @@ section h2 {
     word-wrap: break-word;
 }
 
+.collapsible-content {
+    display: none;
+}
+
+.top-books {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.book {
+    text-align: center;
+    width: 30%;
+}
+
+.book img {
+    width: 100px;
+    height: auto;
+    border: 1px dashed #FCBF47;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.book-title {
+    font-family: 'Poppins', serif;
+    font-size: 0.9em;
+    color: #FCBF47;
+}
+
+.toggle-button {
+    color: #FCBF47;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.toggle-button.active {
+    transform: rotate(-90deg);
+}
+
 section p {
     font-size: 1.1em;
     line-height: 1.6;
