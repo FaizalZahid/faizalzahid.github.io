@@ -352,6 +352,10 @@ footer p {
         font-size: 2em;
     }
 
+    .header-content #home {
+        font-size: 1.5em;
+    }
+
     nav ul li {
         margin: 5px 0;
     }
@@ -395,6 +399,10 @@ footer p {
 @media (max-width: 480px) {
     .header-content h1 {
         font-size: 1.5em;
+    }
+
+    .header-content #home {
+        font-size: 1em;
     }
 
     nav ul li a {
