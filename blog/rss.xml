@@ -5,6 +5,12 @@
 		<link>https://faizalzahid.github.io/blog</link>
 		<description>Journal of learning and self-improvement.</description>
 
+		<image>
+	            <url>https://faizalzahid.github.io/favicon.ico</url>
+	            <title>Blog</title>
+	            <link>https://faizalzahid.github.io/blog</link>
+	        </image>
+
 		<item>
 			<title>Reason for Living</title>
 			<link>https://faizalzahid.github.io/blog/2024/Aug/29.html</link>
