@@ -23,14 +23,14 @@ body {
 
 .header-content {
     z-index: 1;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .header-content h1 {
     font-family: 'Poppins', serif;
     color: #FFD700;
     font-size: 4em;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
 }
 
 .header-content p {
@@ -81,6 +81,8 @@ nav ul li {
 }
 
 nav ul li a {
+    display: flex;
+    align-items: center;
     border-radius: 5px;
     padding: 5px 20px;
     color: #FCBF47;
@@ -95,6 +97,12 @@ nav ul li a {
 nav ul li a:hover {
     color: #FCBF47;
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+.link-with-image .link-icon {
+  width: 24px;
+  height: auto;
+  margin-right: 10px;
 }
 
 main {
@@ -118,6 +126,7 @@ main {
 }
 
 section {
+    min-height: 100vh;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
@@ -126,6 +135,9 @@ section {
     margin: 20px auto;
     width: 80%;
     max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section h2 {
@@ -137,8 +149,14 @@ section h2 {
     word-wrap: break-word;
 }
 
+.toggle-checkbox {
+    display: none;
+}
+
 .collapsible-content {
     display: none;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
 }
 
 .top-books {
@@ -166,6 +184,17 @@ section h2 {
     color: #FCBF47;
 }
 
+.toggle-checkbox:checked ~ .collapsible-content {
+    display: block;
+    min-height: 100vh;
+    opacity: 1;
+}
+
+.toggle-checkbox:checked ~ .toggle-button::after {
+    content: '▲';
+    transform: rotate(180deg);
+}
+
 .toggle-button {
     color: #FCBF47;
     background-color: black;
@@ -173,12 +202,18 @@ section h2 {
     border-radius: 8px;
     font-size: 1.5em;
     cursor: pointer;
+    display: inline-block;
+    position: relative;
     transition: transform 0.3s ease-in-out;
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    padding: 5px 20px;;
 }
 
-.toggle-button.active {
-    transform: rotate(-90deg);
+.toggle-button::after {
+    content: '▼';
+    font-size: 1em;
+    margin-left: 10px;
+    transition: transform 0.3s ease-out;
 }
 
 section p {
@@ -339,21 +374,21 @@ footer p {
     }
 
     .top-books {
-        flex-direction: column; /* Stack books vertically */
-        align-items: center; /* Center-align the books */
+        flex-direction: column;
+        align-items: center;
     }
 
     .book {
-        width: 100%; /* Make each book take up full width */
-        margin-bottom: 15px; /* Add spacing between books */
+        width: 100%;
+        margin-bottom: 15px;
     }
 
     .book img {
-        width: 80px; /* Adjust image size for smaller screens */
+        width: 80px;
     }
 
     .book-title {
-        font-size: 1em; /* Slightly increase font size for readability */
+        font-size: 1em;
     }
 }
 

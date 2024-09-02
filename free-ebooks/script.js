@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("play").addEventListener("click", function() {
+        var audio = document.getElementById("myAudio");
+        audio.volume = 0.5;
+        audio.play();
+    });
     const links = document.querySelectorAll("nav ul li a");
     const sections = document.querySelectorAll("main section");
 
@@ -26,17 +31,15 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
-});
 
-document.querySelectorAll('.toggle-button').forEach(button => {
-  button.addEventListener('click', () => {
-    const content = button.nextElementSibling;
-    if (content.style.display === "none" || !content.style.display) {
-      content.style.display = "block";
-      button.classList.add('active');
-    } else {
-      content.style.display = "none";
-      button.classList.remove('active');
-    }
-  });
+    document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            if (content.style.display === "none" || !content.style.display) {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    });
 });
