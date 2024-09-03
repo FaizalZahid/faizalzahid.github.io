@@ -6,6 +6,7 @@ body {
 .parallax {
     position: relative;
     min-height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,7 +163,7 @@ main {
 }
 
 section {
-    min-height: 100vh;
+    min-height: 95vh;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
