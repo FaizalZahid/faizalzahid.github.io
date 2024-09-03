@@ -64,6 +64,96 @@ body {
     height: 100px;
 }
 
+
+
+#islam {
+    background-image: url('../img/Quran.png');
+}
+
+#animals {
+    background-image: url('../img/animals.png');
+}
+
+#astro {
+    background-image: url('../img/astro.png');
+}
+
+#design {
+    background-image: url('../img/design.png');
+}
+
+#economy {
+    background-image: url('../img/economy.png');
+}
+
+#education {
+    background-image: url('../img/education.png');
+}
+
+#engineering {
+    background-image: url('../img/engineering.png');
+}
+
+#filmmaking {
+    background-image: url('../img/filmmaking.png');
+}
+
+#food {
+    background-image: url('../img/food.png');
+}
+
+#geography {
+    background-image: url('../img/geography.png');
+}
+
+#geopolitics {
+    background-image: url('../img/geopolitics.png');
+}
+
+#health {
+    background-image: url('../img/health.png');
+}
+
+#history {
+    background-image: url('../img/history.png');
+}
+
+#law {
+    background-image: url('../img/law.png');
+}
+
+#mathematics {
+    background-image: url('../img/mathematics.png');
+}
+
+#music {
+    background-image: url('../img/music.png');
+}
+
+#oceanography {
+    background-image: url('../img/oceanography.png');
+}
+
+#philosophy {
+    background-image: url('../img/philosophy.png');
+}
+
+#plants {
+    background-image: url('../img/plants.png');
+}
+
+#politics {
+    background-image: url('../img/politics.png');
+}
+
+#programming {
+    background-image: url('../img/programming.png');
+}
+
+#psychology {
+    background-image: url('../img/psychology.png');
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -119,6 +209,90 @@ main {
     background-blend-mode: overlay;
 }
 
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+.carousel-container h1 {
+    font-family: 'Poppins', serif;
+    font-size: 2.5em;
+    color: #FCBF47;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 60px);
+    max-width: 1000px;
+    overflow: hidden;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    margin: 0 -30px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, z-index 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    transform: scale(0.9);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin: 0.5rem 0 0;
+    color: #eee;
+}
+
+.card.active {
+    transform: scale(1);
+}
+
 .container {
     width: 80%;
     max-width: 1200px;
@@ -126,18 +300,22 @@ main {
 }
 
 section {
-    min-height: 100vh;
+    min-height: 95vh;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 18px;
     padding: 2em;
     margin: 20px auto;
-    width: 80%;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: color-burn;
 }
 
 section h2 {
@@ -147,10 +325,6 @@ section h2 {
     margin-bottom: 20px;
     font-family: 'Poppins', serif;
     word-wrap: break-word;
-}
-
-.toggle-checkbox {
-    display: none;
 }
 
 .collapsible-content {
@@ -170,6 +344,10 @@ section h2 {
     width: 30%;
 }
 
+.book a {
+    text-decoration: none;
+}
+
 .book img {
     width: 100px;
     height: auto;
@@ -184,13 +362,18 @@ section h2 {
     color: #FCBF47;
 }
 
-.toggle-checkbox:checked ~ .collapsible-content {
+.toggle-checkbox {
+    display: none;
+}
+
+#toggle-checkbox-islam:checked ~ .collapsible-content, #toggle-checkbox-animals:checked ~ .collapsible-content, #toggle-checkbox-astro:checked ~ .collapsible-content, #toggle-checkbox-design:checked ~ .collapsible-content, #toggle-checkbox-economy:checked ~ .collapsible-content, #toggle-checkbox-education:checked ~ .collapsible-content, #toggle-checkbox-engineering:checked ~ .collapsible-content, #toggle-checkbox-filmmaking:checked ~ .collapsible-content, #toggle-checkbox-food:checked ~ .collapsible-content, #toggle-checkbox-geography:checked ~ .collapsible-content, #toggle-checkbox-geopolitics:checked ~ .collapsible-content, #toggle-checkbox-health:checked ~ .collapsible-content, #toggle-checkbox-history:checked ~ .collapsible-content, #toggle-checkbox-law:checked ~ .collapsible-content, #toggle-checkbox-mathematics:checked ~ .collapsible-content, #toggle-checkbox-music:checked ~ .collapsible-content, #toggle-checkbox-oceanography:checked ~ .collapsible-content, #toggle-checkbox-philosophy:checked ~ .collapsible-content, #toggle-checkbox-plants:checked ~ .collapsible-content, #toggle-checkbox-politics:checked ~ .collapsible-content, #toggle-checkbox-programming:checked ~ .collapsible-content, #toggle-checkbox-psychology:checked ~ .collapsible-content {
     display: block;
     min-height: 100vh;
     opacity: 1;
 }
 
-.toggle-checkbox:checked ~ .toggle-button::after {
+
+#toggle-checkbox-islam:checked ~ .toggle-button::after, #toggle-checkbox-animals:checked ~ .toggle-button::after, #toggle-checkbox-astro:checked ~ .toggle-button::after, #toggle-checkbox-design:checked ~ .toggle-button::after, #toggle-checkbox-economy:checked ~ .toggle-button::after, #toggle-checkbox-education:checked ~ .toggle-button::after, #toggle-checkbox-engineering:checked ~ .toggle-button::after, #toggle-checkbox-filmmaking:checked ~ .toggle-button::after, #toggle-checkbox-food:checked ~ .toggle-button::after, #toggle-checkbox-geography:checked ~ .toggle-button::after, #toggle-checkbox-geopolitics:checked ~ .toggle-button::after, #toggle-checkbox-health:checked ~ .toggle-button::after, #toggle-checkbox-history:checked ~ .toggle-button::after, #toggle-checkbox-law:checked ~ .toggle-button::after, #toggle-checkbox-mathematics:checked ~ .toggle-button::after, #toggle-checkbox-music:checked ~ .toggle-button::after, #toggle-checkbox-oceanography:checked ~ .toggle-button::after, #toggle-checkbox-philosophy:checked ~ .toggle-button::after, #toggle-checkbox-plants:checked ~ .toggle-button::after, #toggle-checkbox-politics:checked ~ .toggle-button::after, #toggle-checkbox-programming:checked ~ .toggle-button::after, #toggle-checkbox-psychology:checked ~ .toggle-button::after {
     content: '▲';
     transform: rotate(180deg);
 }
@@ -418,6 +601,10 @@ footer p {
 
 .hover-change-bg:hover {
     background-color: #E0B700;
+}
+
+.hover-change-size:hover {
+    width: 110px;
 }
 
 .shake-animation {

@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
         audio.volume = 0.5;
         audio.play();
     });
+    document.getElementById("toggle-checkbox-music").addEventListener("click", function() {
+        var audio = document.getElementById("myAudio");
+        audio.volume = 0.5;
+        audio.play();
+    });
     const links = document.querySelectorAll("nav ul li a");
     const sections = document.querySelectorAll("main section");
 
@@ -43,3 +48,44 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+//////////////////////////////////
+//Popular Books Related Functions:
+
+const cards = document.querySelectorAll('.card');
+
+function activateCard(index) {
+    resetCards();
+    cards[index].classList.add('active');
+    setZIndex(index + 1);
+}
+
+function resetCards() {
+    cards.forEach(card => {
+        card.classList.remove('active');
+    });
+}
+
+function setZIndex(hoveredIndex) {
+    const maxZIndex = 5;
+
+    cards.forEach((card, index) => {
+        if (index === hoveredIndex - 1) {
+            card.style.zIndex = maxZIndex;
+        } else if (index < hoveredIndex - 1) {
+            card.style.zIndex = maxZIndex - 1 - (hoveredIndex - 1 - index);
+        } else if (index > hoveredIndex - 1) {
+            card.style.zIndex = maxZIndex - (index - hoveredIndex + 1);
+        }
+    });
+}
+
+cards.forEach((card, index) => {
+    card.addEventListener('mouseenter', () => {
+        resetCards();
+        card.classList.add('active');
+        setZIndex(index + 1);
+    });
+});
+
+activateCard(2);
