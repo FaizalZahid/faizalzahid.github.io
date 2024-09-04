@@ -1,0 +1,526 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="icon" type="image/x-icon" href="../img/aboutme.png">
+        <title>MBTI Result</title>
+    </head>
+    <body>
+        <div class="results-container">
+            <section>
+                <h1>Your MBTI Type is: <span id="mbti-type"></span></h1>
+                <p id="insights"></p>
+            </section>
+            <section>
+                <h2>Recommended E-Books</h2>
+                <div class="top-books">
+                    <div class="book">
+                        <p id="dynamic-book"></p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Recommended Blog Posts</h2>
+                <p id="blog"></p>
+            </section>
+            <section>
+                <h2>Share your result!</h2>
+                <a id="facebook-share" class="share" href="#" target="_blank"><i class="fab fa-facebook"></i> Share on Facebook</a>
+                <a id="twitter-share" class="share" href="#" target="_blank"><i class="fab fa-twitter"></i> Share on Twitter</a>
+                <a id="linkedin-share" class="share" href="#" target="_blank"><i class="fab fa-linkedin"></i> Share on LinkedIn</a>
+                <a id="whatsapp-share" class="share" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+            </section>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Faizal Zahid's Knowledge Hub. All Rights Reserved.</p>
+                <a href="https://www.tiktok.com/@faizal_zahid" target="_blank" class="social-button tiktok" title="Follow me on TikTok"></a>
+                <a href="https://instagram.com/faizal_zahid" target="_blank" class="social-button instagram" title="Follow me on Instagram"></a>
+                <a href="https://youtube.com/@faizalzahid7750" target="_blank" class="social-button youtube" title="Subscribe to my YouTube"></a>
+                <a href="https://manifestasisanubari.blogspot.com" target="_blank" class="social-button blogger" title="Visit my blog"></a>
+                <a href="https://x.com/FaizalZahid" target="_blank" class="social-button x" title="Follow me on X"></a>
+            </div>
+            <div class="explore-other-sections">
+                <h2>Explore Other Sections</h2>
+                <nav>
+                    <a href="../#duolingo">Duolingo</a>
+                    <a href="../#random-art">Random Art</a>
+                    <a href="../#faizalingo">FaizaLingo</a>
+                    <a href="../#contact-me">Contact Me</a>
+                    <a href="../free-ebooks">Free E-books</a>
+                </nav>
+            </div>
+        </footer>
+
+        <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+        <script>
+          kofiWidgetOverlay.draw('faizalzahid', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': '#fcbf47',
+            'floating-chat.donateButton.text-color': '#323842'
+          });
+        </script>
+
+        <script>
+            function getMBTITypeFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('type');
+            }
+
+            function displayResults() {
+                const mbtiType = getMBTITypeFromURL();
+                document.getElementById("mbti-type").textContent = mbtiType;
+
+                const insights = {
+                    "INTP": "You are a thinker, valuing logic and ideas. Explore these books on philosophy and coding.",
+                    "INTJ": "You are a strategist, valuing knowledge and efficiency. Delve into these books on systems and innovation.",
+                    "ENTP": "You are an innovator, enjoying debates and exploration. Discover these books on entrepreneurship and technology.",
+                    "ENTJ": "You are a leader, focused on structure and goals. Check out these books on leadership and management.",
+                    "INFJ": "You are an idealist, driven by a deep sense of purpose. Explore these books on psychology and personal growth.",
+                    "INFP": "You are a healer, valuing individuality and emotions. Discover these books on self-discovery and creativity.",
+                    "ENFJ": "You are a mentor, skilled in guiding and inspiring others. Check out these books on teaching and communication.",
+                    "ENFP": "You are a champion, full of energy and enthusiasm. Explore these books on creativity and motivation.",
+                    "ISTJ": "You are a guardian, valuing order and tradition. Discover these books on history and organization.",
+                    "ISFJ": "You are a nurturer, focused on care and service. Check out these books on health and community service.",
+                    "ESTJ": "You are a supervisor, practical and realistic. Explore these books on business and management.",
+                    "ESFJ": "You are a people-person, valuing harmony and community. Check out these blog posts on communication and relationships.",
+                    "ISTP": "You are a craftsman, enjoying hands-on work and problem-solving. Discover these books on engineering and technology.",
+                    "ISFP": "You are an artist, valuing creativity and aesthetics. Explore these books on art and design.",
+                    "ESTP": "You are a doer, action-oriented and spontaneous. Check out these books on adventure and entrepreneurship.",
+                    "ESFP": "You are a performer, enjoying life and bringing joy to others. Discover these books on entertainment and lifestyle."
+                };
+
+                document.getElementById("insights").textContent = insights[mbtiType] || "Impossible!";
+
+                if (mbtiType === "INTP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1WmqsVp9xBHS_YWEBpHZ8xNMIG5r1nnJ4" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/An Introduction to Chinese Philosophy.png" alt="An Introduction to Chinese Philosophy">' +
+                        '<p class="book-title">An Introduction to Chinese Philosophy</p>' +
+                        '</a>' +
+                        '<a href="https://raw.githubusercontent.com/FaizalZahid/faizalzahid.github.io/main/free-ebooks/programming/HTML5NotesForProfessionals.pdf" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/HTML5.png" alt="HTML5">' +
+                        '<p class="book-title">HTML 5 Notes For Professionals</p>' +
+                        '</a>';
+
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/An Introduction to Chinese Philosophy.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "INTJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1bBB2UNObJ0P_y95-WxaWWOqF2Bu40J5o" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Fundamentals of Robotic Mechanical Systems - Theory, Methods, and Algorithms.png" alt="Fundamentals of Robotic Mechanical Systems - Theory, Methods, and Algorithms">' +
+                        '<p class="book-title">Fundamentals of Robotic Mechanical Systems</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=18Ys-sVFhpO3qZwwztY5Po3y8cDtTtsV9" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Discovering the Solar System.png" alt="Discovering the Solar System">' +
+                        '<p class="book-title">Discovering the Solar System</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Fundamentals of Robotic Mechanical Systems - Theory, Methods, and Algorithms.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ENTP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://bit.ly/IslamandthePathtoHumanandEconomicDevelopment" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Islam and the Path to Human and Economic Development.png" alt="Islam and the Path to Human and Economic Development">' +
+                        '<p class="book-title">Islam & the Path to Human & Economic Development</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=186RxN3XNzJbrgS6eRHuL_tOXvWF6SYrp" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Deep Medicine - How Artificial Intelligence Can Make Healthcare Human Again.png" alt="Deep Medicine - How Artificial Intelligence Can Make Healthcare Human Again">' +
+                        '<p class="book-title">Deep Medicine</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Islam and the Path to Human and Economic Development.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ENTJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=13WzBDPcei-ZBJcoKkM3if7NsCvTwQsLM" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Educational Psychology for Effective Teaching.png" alt="Educational Psychology for Effective Teaching">' +
+                        '<p class="book-title">Educational Psychology for Effective Teaching</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1uqdINKM7gpQWT2_IwS-Oe-eHnLFnteQV" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/A Brief History of Japan - Samurai, Shogun and Zen - The Extraordinary Story of the Land of the Rising Sun.png" alt="A Brief History of Japan - Samurai, Shogun and Zen - The Extraordinary Story of the Land of the Rising Sun">' +
+                        '<p class="book-title">A Brief History of Japan - Samurai, Shogun and Zen</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Educational Psychology for Effective Teaching.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "INFJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=11BPSb8yJsbTycV2U0vEOP0PLTbKIKXts" target="_blank">' +
+                        '<img class="hover-change-size"src="../img/Finish What You Start - The Art of Following Through Taking Action Executing Self Discipline.png" alt="Finish What You Start - The Art of Following Through Taking Action Executing Self Discipline">' +
+                        '<p class="book-title">Finish What You Start</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1prRYdGfVLb8wOtoYHz7V-IVAqDZxqwBT" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Mind Sword - Mastering the Asian Dark Arts of Mind Manipulation.png" alt="Mind Sword - Mastering the Asian Dark Arts of Mind Manipulation">' +
+                        '<p class="book-title">Mind Sword</p></a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Finish What You Start - The Art of Following Through Taking Action Executing Self Discipline.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "INFP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=174M80gTiQxTDblQTweSpihemxoP-yvqN" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Quran.png" alt="Quran">' +
+                        '<p class="book-title">Quran</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1-lMVwXeu8tQ0L5yoo8a2ILoZRVLdBJXh" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Awaken Your Interior Designer.png" alt="Awaken Your Interior Designer">' +
+                        '<p class="book-title">Awaken Your Interior Designer</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Quran.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+                        
+                } else if (mbtiType === "ENFJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=15rBWLR84665-XZV1EzWBd3dBqWOBSa8S" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Curriculum and Imagination - Process Theory, Pedagogy and Action Research.png" alt="Curriculum and Imagination - Process Theory, Pedagogy and Action Research">' +
+                        '<p class="book-title">Curriculum and Imagination</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=13WzBDPcei-ZBJcoKkM3if7NsCvTwQsLM" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Educational Psychology for Effective Teaching.png" alt="Educational Psychology for Effective Teaching">' +
+                        '<p class="book-title">Educational Psychology for Effective Teaching</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Curriculum and Imagination - Process Theory, Pedagogy and Action Research.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ENFP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1-lMVwXeu8tQ0L5yoo8a2ILoZRVLdBJXh" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Awaken Your Interior Designer.png" alt="Awaken Your Interior Designer">' +
+                        '<p class="book-title">Awaken Your Interior Designer</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1LQ6GF5Ec2koQNwOIaMeSTsTrSFl1fAUW" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/The Dark Side of Creativity.png" alt="The Dark Side of Creativity">' +
+                        '<p class="book-title">The Dark Side of Creativity</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Awaken Your Interior Designer.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ISTJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1CfR7VlhpvtrWlvJMVkVaUl_JyQHjH0N3" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/A History of the Ottoman Empire.png" alt="A History of the Ottoman Empire">' +
+                        '<p class="book-title">A History of the Ottoman Empire</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1B5Gl0Q0-snDEaMDNkgCgUxvfdM_mujkJ" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/A Cultural History of Civil Examinations in Late Imperial China.png" alt="A Cultural History of Civil Examinations in Late Imperial China">' +
+                        '<p class="book-title">A Cultural History of Civil Examinations in Late Imperial China</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/A History of the Ottoman Empire.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ISFJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=17XjVi2wpLGiMNl20aVQCQM52WCtjCfet" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Clear Skin - A Step-by-Step Program to Stop Pimples, Blackheads, Acne.png" alt="Clear Skin - A Step-by-Step Program to Stop Pimples, Blackheads, Acne">' +
+                        '<p class="book-title">Clear Skin - A Step-by-Step Program to Stop Pimples, Blackheads, Acne</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=186RxN3XNzJbrgS6eRHuL_tOXvWF6SYrp" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Deep Medicine - How Artificial Intelligence Can Make Healthcare Human Again.png" alt="Deep Medicine - How Artificial Intelligence Can Make Healthcare Human Again">' +
+                        '<p class="book-title">Deep Medicine</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Clear Skin - A Step-by-Step Program to Stop Pimples, Blackheads, Acne.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ESTJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://bit.ly/BasicEconomics-ACommonSenseGuidetotheEconomy" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Basic Economics - A Common Sense Guide to the Economy.png" alt="Basic Economics - A Common Sense Guide to the Economy">' +
+                        '<p class="book-title">Basic Economics</p>' +
+                        '</a>' +
+                        '<a href="https://bit.ly/IslamandthePathtoHumanandEconomicDevelopment" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Islam and the Path to Human and Economic Development.png" alt="Islam and the Path to Human and Economic Development">' +
+                        '<p class="book-title">Islam & the Path to Human & Economic Development</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Basic Economics - A Common Sense Guide to the Economy.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ESFJ") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=174M80gTiQxTDblQTweSpihemxoP-yvqN" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Quran.png" alt="Quran">' +
+                        '<p class="book-title">Quran</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=13WzBDPcei-ZBJcoKkM3if7NsCvTwQsLM" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Educational Psychology for Effective Teaching.png" alt="Educational Psychology for Effective Teaching">' +
+                        '<p class="book-title">Educational Psychology for Effective Teaching</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Quran.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ISTP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1bBB2UNObJ0P_y95-WxaWWOqF2Bu40J5o" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Fundamentals of Robotic Mechanical Systems - Theory, Methods, and Algorithms.png" alt="Fundamentals of Robotic Mechanical Systems - Theory, Methods, and Algorithms">' +
+                        '<p class="book-title">Fundamentals of Robotic Mechanical Systems</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1NlzLYyB1YmC_N25SgA2VXPjKhv1qERU8" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Mechanics of Swimming and Flying.png" alt="Mechanics of Swimming and Flying">' +
+                        '<p class="book-title">Mechanics of Swimming and Flying</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Fundamentals of Robotic Mechanical Systems - Theory, Methods, and Algorithms.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ISFP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1-lMVwXeu8tQ0L5yoo8a2ILoZRVLdBJXh" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Awaken Your Interior Designer.png" alt="Awaken Your Interior Designer">' +
+                        '<p class="book-title">Awaken Your Interior Designer</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1FH8Q183wGgCZvnuSTOnntMbjoUARjhMv" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Complete Origami - An A-Z Facts.png" alt="Complete Origami - An A-Z Facts">' +
+                        '<p class="book-title">Complete Origami - An A-Z Facts</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Awaken Your Interior Designer.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ESTP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://bit.ly/IslamandthePathtoHumanandEconomicDevelopment" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Islam and the Path to Human and Economic Development.png" alt="Islam and the Path to Human and Economic Development">' +
+                        '<p class="book-title">Islam & the Path to Human & Economic Development</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=10P83je3Lf5ah9748kPv00G69BpN8F1Yd" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Backyard Bird Photography.png" alt="Backyard Bird Photography">' +
+                        '<p class="book-title">Backyard Bird Photography</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Islam and the Path to Human and Economic Development.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+
+                } else if (mbtiType === "ESFP") {
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=1U55an7DpF5oAzTCRT58Je5_QuJClP7h7" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Kittens For Dummies.png" alt="Kittens For Dummies">' +
+                        '<p class="book-title">Kittens For Dummies</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=1FH8Q183wGgCZvnuSTOnntMbjoUARjhMv" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Complete Origami - An A-Z Facts.png" alt="Complete Origami - An A-Z Facts">' +
+                        '<p class="book-title">Complete Origami - An A-Z Facts</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Kittens For Dummies.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+                } else {
+                    alert('Impossible!')
+                    document.getElementById("dynamic-book").innerHTML =
+                        '<a href="https://drive.google.com/uc?export=download&id=174M80gTiQxTDblQTweSpihemxoP-yvqN" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Quran.png" alt="Quran">' +
+                        '<p class="book-title">Quran</p>' +
+                        '</a>' +
+                        '<a href="https://drive.google.com/uc?export=download&id=174M80gTiQxTDblQTweSpihemxoP-yvqN" target="_blank">' +
+                        '<img class="hover-change-size" src="../img/Quran.png" alt="Quran">' +
+                        '<p class="book-title">Quran</p>' +
+                        '</a>';
+                    document.getElementById("blog").innerHTML =
+                        '<div class="entry-content">' +
+                        '<p class="title">Hello world!</p>' +
+                        '<p class="date">24th August 2024</p>' +
+                        '<hr>' +
+                        '<p class="entry">Assalamualaikum and <strong>peace</strong> be upon you!<br><br>This is my first blog on this website. I was thinking of creating this blog as a language-learning journal when I saw this video on YT:</p>' +
+                        '<a href="../blog/2024/Aug/24.html">Read more &rarr;</a>' +   
+                        '</div>';
+
+                    document.body.style.backgroundImage = 'url("../img/Quran.png")';
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundPosition = 'center';
+                    document.body.style.backgroundBlendMode = 'overlay';
+                }
+            }
+
+            function updateShareLinks(mbtiType) {
+                const baseUrl = 'https://yourwebsite.com/results.html';
+                const shareUrl = `${baseUrl}?type=${mbtiType}`;
+                const shareText = `I just discovered my MBTI type! I am an ${mbtiType}! What's yours?`;
+
+                document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+                document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+                document.getElementById('linkedin-share').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareText)}`;
+                document.getElementById('whatsapp-share').href = `https://wa.me/?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareUrl)}`;
+            }
+
+            window.onload = displayResults;
+            const mbtiType = getMBTITypeFromURL();
+            updateShareLinks(mbtiType);
+        </script>
+    </body>
+</html>
