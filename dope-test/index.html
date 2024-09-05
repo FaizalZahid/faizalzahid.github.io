@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOPE Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="../img/aboutme.png">
+    <style>
+        canvas {
+            width: 100%;
+            height: 500px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DOPE Test</h1>
+        <h2>Dove - Owl - Peacock - Eagle</h2>
+        <p>Compassionate? Meticulous? Dynamic? Decisive?<br>
+        DOPE test helps you understand your unique traits and how they shape your interactions and decisions.
+        <br><br>Select <strong>MULTIPLE</strong> options if it applies</p>
+    </header>
+    
+    <form id="personalityForm">
+        <div class="question">
+            <p>Question 1: When working in a team, you prefer to:</p>
+            <label><input type="checkbox" name="q1" value="Dove"> Ensure everyone is heard and feelings are respected</label><br>
+            <label><input type="checkbox" name="q1" value="Owl"> Organize tasks and plan the project in detail</label><br>
+            <label><input type="checkbox" name="q1" value="Peacock"> Keep the energy high and motivate everyone</label><br>
+            <label><input type="checkbox" name="q1" value="Eagle"> Take charge and make sure decisions are made promptly</label>
+        </div>
+
+        <div class="question">
+            <p>Question 2: In your free time, you are most likely to:</p>
+            <label><input type="checkbox" name="q2" value="Dove"> Enjoy peaceful, solitary activities like reading</label><br>
+            <label><input type="checkbox" name="q2" value="Owl"> Engage in hobbies that require precision and concentration</label><br>
+            <label><input type="checkbox" name="q2" value="Peacock"> Spend time with friends or in social gatherings</label><br>
+            <label><input type="checkbox" name="q2" value="Eagle"> Participate in competitive or challenging activities</label>
+        </div>
+
+        <div class="question">
+            <p>Question 3: When a conflict arises, you typically:</p>
+            <label><input type="checkbox" name="q3" value="Dove"> Seek to mediate and maintain harmony</label><br>
+            <label><input type="checkbox" name="q3" value="Owl"> Analyze the problem and find a logical solution</label><br>
+            <label><input type="checkbox" name="q3" value="Peacock"> Avoid the conflict and focus on positive aspects</label><br>
+            <label><input type="checkbox" name="q3" value="Eagle"> Confront the issue directly and assert your stance</label>
+        </div>
+
+        <div class="question">
+            <p>Question 4: You prefer to make decisions based on:</p>
+            <label><input type="checkbox" name="q4" value="Dove"> How it will affect others emotionally</label><br>
+            <label><input type="checkbox" name="q4" value="Owl"> Logical reasoning and facts</label><br>
+            <label><input type="checkbox" name="q4" value="Peacock"> What feels right in the moment</label><br>
+            <label><input type="checkbox" name="q4" value="Eagle"> The quickest path to achieving your goals</label>
+        </div>
+
+        <div class="question">
+            <p>Question 5: When faced with a new challenge, your first instinct is to:</p>
+            <label><input type="checkbox" name="q5" value="Dove"> Ensure everyone involved feels comfortable with the challenge</label><br>
+            <label><input type="checkbox" name="q5" value="Owl"> Break down the challenge and create a detailed plan</label><br>
+            <label><input type="checkbox" name="q5" value="Peacock"> Dive in with excitement and enthusiasm</label><br>
+            <label><input type="checkbox" name="q5" value="Eagle"> Take control and lead the effort to overcome it</label>
+        </div>
+
+        <div class="question">
+            <p>Question 6: Your ideal working environment is:</p>
+            <label><input type="checkbox" name="q6" value="Dove"> Cooperative and supportive, with a focus on teamwork</label><br>
+            <label><input type="checkbox" name="q6" value="Owl"> Structured and organized, with clear procedures</label><br>
+            <label><input type="checkbox" name="q6" value="Peacock"> Energetic and lively, with lots of interaction</label><br>
+            <label><input type="checkbox" name="q6" value="Eagle"> Competitive and dynamic, where results are rewarded</label>
+        </div>
+
+        <div class="question">
+            <p>Question 7: In social situations, you:</p>
+            <label><input type="checkbox" name="q7" value="Dove"> Prefer to listen and offer support when needed</label><br>
+            <label><input type="checkbox" name="q7" value="Owl"> Observe and analyze others’ behavior before engaging</label><br>
+            <label><input type="checkbox" name="q7" value="Peacock"> Enjoy being the center of attention and entertaining others</label><br>
+            <label><input type="checkbox" name="q7" value="Eagle"> Take charge and lead the conversation</label>
+        </div>
+
+        <div class="question">
+            <p>Question 8: When it comes to deadlines, you:</p>
+            <label><input type="checkbox" name="q8" value="Dove"> Make sure everyone is comfortable with the timeline</label><br>
+            <label><input type="checkbox" name="q8" value="Owl"> Plan meticulously to meet them with precision</label><br>
+            <label><input type="checkbox" name="q8" value="Peacock"> Approach them with flexibility and adaptability</label><br>
+            <label><input type="checkbox" name="q8" value="Eagle"> Push yourself and others to meet them quickly and efficiently</label>
+        </div>
+
+        <div class="question">
+            <p>Question 9: In group decisions, you tend to:</p>
+            <label><input type="checkbox" name="q9" value="Dove"> Seek consensus and ensure everyone agrees</label><br>
+            <label><input type="checkbox" name="q9" value="Owl"> Gather and analyze all available information before deciding</label><br>
+            <label><input type="checkbox" name="q9" value="Peacock"> Encourage quick, creative solutions</label><br>
+            <label><input type="checkbox" name="q9" value="Eagle"> Make the decision and expect others to follow</label>
+        </div>
+
+        <div class="question">
+            <p>Question 10: When working under pressure, you:</p>
+            <label><input type="checkbox" name="q10" value="Dove"> Focus on keeping the group calm and united</label><br>
+            <label><input type="checkbox" name="q10" value="Owl"> Double-check details to ensure accuracy</label><br>
+            <label><input type="checkbox" name="q10" value="Peacock"> Stay optimistic and keep morale high</label><br>
+            <label><input type="checkbox" name="q10" value="Eagle"> Take decisive action to overcome obstacles</label>
+        </div>
+
+        <div class="question">
+            <p>Question 11: In your interactions with others, you are most concerned with:</p>
+            <label><input type="checkbox" name="q11" value="Dove"> Maintaining harmony and avoiding conflict</label><br>
+            <label><input type="checkbox" name="q11" value="Owl"> Understanding the facts and logic behind their opinions</label><br>
+            <label><input type="checkbox" name="q11" value="Peacock"> Ensuring everyone is having a good time</label><br>
+            <label><input type="checkbox" name="q11" value="Eagle"> Getting straight to the point and making decisions</label>
+        </div>
+
+        <div class="question">
+            <p>Question 12: When attending meetings, you:</p>
+            <label><input type="checkbox" name="q12" value="Dove"> Focus on making sure everyone’s input is valued</label><br>
+            <label><input type="checkbox" name="q12" value="Owl"> Prepare thoroughly and contribute well-thought-out ideas</label><br>
+            <label><input type="checkbox" name="q12" value="Peacock"> Bring energy and enthusiasm to keep the discussion lively</label><br>
+            <label><input type="checkbox" name="q12" value="Eagle"> Direct the conversation towards actionable decisions</label>
+        </div>
+
+        <div class="question">
+            <p>Question 13: In difficult situations, you are more likely to:</p>
+            <label><input type="checkbox" name="q13" value="Dove"> Offer emotional support and comfort</label><br>
+            <label><input type="checkbox" name="q13" value="Owl"> Provide a detailed analysis of the situation</label><br>
+            <label><input type="checkbox" name="q13" value="Peacock"> Encourage everyone to stay positive</label><br>
+            <label><input type="checkbox" name="q13" value="Eagle"> Take charge and implement a solution</label>
+        </div>
+
+        <div class="question">
+            <p>Question 14: Your communication style is usually:</p>
+            <label><input type="checkbox" name="q14" value="Dove"> Gentle and considerate, focusing on others' feelings</label><br>
+            <label><input type="checkbox" name="q14" value="Owl"> Clear and precise, focusing on facts</label><br>
+            <label><input type="checkbox" name="q14" value="Peacock"> Enthusiastic and expressive, focusing on engagement</label><br>
+            <label><input type="checkbox" name="q14" value="Eagle"> Direct and assertive, focusing on action</label>
+        </div>
+
+        <div class="question">
+            <p>Question 15: When learning something new, you:</p>
+            <label><input type="checkbox" name="q15" value="Dove"> Prefer a supportive environment where you can ask questions freely</label><br>
+            <label><input type="checkbox" name="q15" value="Owl"> Focus on mastering the details and understanding the logic</label><br>
+            <label><input type="checkbox" name="q15" value="Peacock"> Enjoy interactive and dynamic learning methods</label><br>
+            <label><input type="checkbox" name="q15" value="Eagle"> Seek out challenges that push you to excel quickly</label>
+        </div>
+
+        <div class="question">
+            <p>Question 16: In your career, you are most motivated by:</p>
+            <label><input type="checkbox" name="q16" value="Dove"> Helping others and creating a positive impact</label><br>
+            <label><input type="checkbox" name="q16" value="Owl"> Gaining knowledge and developing expertise</label><br>
+            <label><input type="checkbox" name="q16" value="Peacock"> Recognition and social interaction</label><br>
+            <label><input type="checkbox" name="q16" value="Eagle"> Achieving goals and advancing in leadership</label>
+        </div>
+
+        <div class="question">
+            <p>Question 17: When receiving feedback, you:</p>
+            <label><input type="checkbox" name="q17" value="Dove"> Value it when it’s delivered with care and consideration</label><br>
+            <label><input type="checkbox" name="q17" value="Owl"> Appreciate detailed, constructive criticism</label><br>
+            <label><input type="checkbox" name="q17" value="Peacock"> Prefer positive and encouraging comments</label><br>
+            <label><input type="checkbox" name="q17" value="Eagle"> Want direct, actionable advice</label>
+        </div>
+
+        <div class="question">
+            <p>Question 18: Your approach to problem-solving is to:</p>
+            <label><input type="checkbox" name="q18" value="Dove"> Consider everyone’s perspective and find a solution that works for all</label><br>
+            <label><input type="checkbox" name="q18" value="Owl"> Analyze all aspects thoroughly before deciding</label><br>
+            <label><input type="checkbox" name="q18" value="Peacock"> Think creatively and look for outside-the-box solutions</label><br>
+            <label><input type="checkbox" name="q18" value="Eagle"> Make quick decisions and take action immediately</label>
+        </div>
+
+        <div class="question">
+            <p>Question 19: When planning an event, you focus on:</p>
+            <label><input type="checkbox" name="q19" value="Dove"> Ensuring everyone feels welcome and included</label><br>
+            <label><input type="checkbox" name="q19" value="Owl"> Organizing every detail meticulously</label><br>
+            <label><input type="checkbox" name="q19" value="Peacock"> Creating an exciting and fun atmosphere</label><br>
+            <label><input type="checkbox" name="q19" value="Eagle"> Setting clear objectives and making sure they are met</label>
+        </div>
+
+        <div class="question">
+            <p>Question 20: In a leadership role, you tend to:</p>
+            <label><input type="checkbox" name="q20" value="Dove"> Encourage and support your team</label><br>
+            <label><input type="checkbox" name="q20" value="Owl"> Provide clear instructions and expect accuracy</label><br>
+            <label><input type="checkbox" name="q20" value="Peacock"> Inspire and motivate others with your enthusiasm</label><br>
+            <label><input type="checkbox" name="q20" value="Eagle"> Take charge and direct the team towards goals</label>
+        </div>
+
+        <div class="question">
+            <p>Question 21: When discussing ideas, you:</p>
+            <label><input type="checkbox" name="q21" value="Dove"> Focus on how the ideas might affect everyone involved</label><br>
+            <label><input type="checkbox" name="q21" value="Owl"> Emphasize the logical structure and feasibility of the ideas</label><br>
+            <label><input type="checkbox" name="q21" value="Peacock"> Get excited about the possibilities and share them with enthusiasm</label><br>
+            <label><input type="checkbox" name="q21" value="Eagle"> Push for decisions and implementation of the best ideas</label>
+        </div>
+
+        <div class="question">
+            <p>Question 22: In your friendships, you value:</p>
+            <label><input type="checkbox" name="q22" value="Dove"> Loyalty and emotional support</label><br>
+            <label><input type="checkbox" name="q22" value="Owl"> Intellectual discussions and shared interests</label><br>
+            <label><input type="checkbox" name="q22" value="Peacock"> Fun, lively experiences together</label><br>
+            <label><input type="checkbox" name="q22" value="Eagle"> Mutual respect and shared goals</label>
+        </div>
+
+        <div class="question">
+            <p>Question 23: When handling a disagreement, you:</p>
+            <label><input type="checkbox" name="q23" value="Dove"> Try to understand everyone’s feelings and find a peaceful resolution</label><br>
+            <label><input type="checkbox" name="q23" value="Owl"> Break down the issue and address it logically</label><br>
+            <label><input type="checkbox" name="q23" value="Peacock"> Stay positive and try to keep things lighthearted</label><br>
+            <label><input type="checkbox" name="q23" value="Eagle"> Address the issue head-on and assert your perspective</label>
+        </div>
+
+        <div class="question">
+            <p>Question 24: In a brainstorming session, you:</p>
+            <label><input type="checkbox" name="q24" value="Dove"> Listen to everyone’s ideas and ensure a respectful discussion</label><br>
+            <label><input type="checkbox" name="q24" value="Owl"> Focus on finding the most logical and practical solutions</label><br>
+            <label><input type="checkbox" name="q24" value="Peacock"> Contribute creative and outside-the-box ideas</label><br>
+            <label><input type="checkbox" name="q24" value="Eagle"> Lead the session towards making concrete decisions</label>
+        </div>
+
+        <div class="question">
+            <p>Question 25: When organizing your work, you prefer:</p>
+            <label><input type="checkbox" name="q25" value="Dove"> A flexible schedule that accommodates everyone’s needs</label><br>
+            <label><input type="checkbox" name="q25" value="Owl"> A detailed plan with clear steps and timelines</label><br>
+            <label><input type="checkbox" name="q25" value="Peacock"> A dynamic environment with room for creativity</label><br>
+            <label><input type="checkbox" name="q25" value="Eagle"> A goal-oriented approach with a focus on efficiency</label>
+        </div>
+
+        <div class="question">
+            <p>Question 26: When making a presentation, you:</p>
+            <label><input type="checkbox" name="q26" value="Dove"> Focus on connecting with the audience emotionally</label><br>
+            <label><input type="checkbox" name="q26" value="Owl"> Emphasize data, facts, and clear explanations</label><br>
+            <label><input type="checkbox" name="q26" value="Peacock"> Engage the audience with enthusiasm and energy</label><br>
+            <label><input type="checkbox" name="q26" value="Eagle"> Deliver your points confidently and assertively</label>
+        </div>
+
+        <div class="question">
+            <p>Question 27: In a crisis, you are most likely to:</p>
+            <label><input type="checkbox" name="q27" value="Dove"> Provide emotional support and reassurance to others</label><br>
+            <label><input type="checkbox" name="q27" value="Owl"> Analyze the situation and propose a logical solution</label><br>
+            <label><input type="checkbox" name="q27" value="Peacock"> Stay positive and encourage others to keep their spirits up</label><br>
+            <label><input type="checkbox" name="q27" value="Eagle"> Take control and lead the response effort</label>
+        </div>
+
+        <div class="question">
+            <p>Question 28: When interacting with new people, you:</p>
+            <label><input type="checkbox" name="q28" value="Dove"> Focus on making them feel comfortable and welcomed</label><br>
+            <label><input type="checkbox" name="q28" value="Owl"> Observe and understand their background and interests</label><br>
+            <label><input type="checkbox" name="q28" value="Peacock"> Make an effort to be engaging and fun</label><br>
+            <label><input type="checkbox" name="q28" value="Eagle"> Direct the conversation towards shared goals or interests</label>
+        </div>
+        <button type="button" id="submit-button">Submit</button>
+    </form>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Faizal Zahid's Knowledge Hub. All Rights Reserved.</p>
+            <a href="https://www.tiktok.com/@faizal_zahid" target="_blank" class="social-button tiktok" title="Follow me on TikTok"></a>
+            <a href="https://instagram.com/faizal_zahid" target="_blank" class="social-button instagram" title="Follow me on Instagram"></a>
+            <a href="https://youtube.com/@faizalzahid7750" target="_blank" class="social-button youtube" title="Subscribe to my YouTube"></a>
+            <a href="https://manifestasisanubari.blogspot.com" target="_blank" class="social-button blogger" title="Visit my blog"></a>
+            <a href="https://x.com/FaizalZahid" target="_blank" class="social-button x" title="Follow me on X"></a>
+        </div>
+        <div class="explore-other-sections">
+            <h2>Explore Other Sections</h2>
+            <nav>
+                <a href="../#duolingo">Duolingo</a>
+                <a href="../#random-art">Random Art</a>
+                <a href="../#faizalingo">FaizaLingo</a>
+                <a href="../#contact-me">Contact Me</a>
+                <a href="../free-ebooks">Free E-books</a>
+            </nav>
+        </div>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

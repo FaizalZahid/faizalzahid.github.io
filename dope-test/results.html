@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../img/aboutme.png">
+    <title>DOPE Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Your Personality Result:</h1>
+    </header>
+    <div id="personality-result">
+        <h2>You are <span id="personality-type"></span> <span id="bird-emoji"></span></h2>
+        <p>Your dominant personality type is: <strong id="highest-type"></strong></p>
+        <p id="insight-text">Loading insights...</p>
+    </div>
+
+    <div class="result-container">
+        <section id="canvas-background">
+            <canvas id="myRadarChart"></canvas>
+        </section>
+        <section>
+            <h2>Share your result!</h2>
+            <a id="facebook-share" class="share" href="#" target="_blank"><i class="fab fa-facebook"></i> Share on Facebook</a>
+            <a id="twitter-share" class="share" href="#" target="_blank"><i class="fab fa-twitter"></i> Share on Twitter</a>
+            <a id="linkedin-share" class="share" href="#" target="_blank"><i class="fab fa-linkedin"></i> Share on LinkedIn</a>
+            <a id="whatsapp-share" class="share" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Faizal Zahid's Knowledge Hub. All Rights Reserved.</p>
+            <a href="https://www.tiktok.com/@faizal_zahid" target="_blank" class="social-button tiktok" title="Follow me on TikTok"></a>
+            <a href="https://instagram.com/faizal_zahid" target="_blank" class="social-button instagram" title="Follow me on Instagram"></a>
+            <a href="https://youtube.com/@faizalzahid7750" target="_blank" class="social-button youtube" title="Subscribe to my YouTube"></a>
+            <a href="https://manifestasisanubari.blogspot.com" target="_blank" class="social-button blogger" title="Visit my blog"></a>
+            <a href="https://x.com/FaizalZahid" target="_blank" class="social-button x" title="Follow me on X"></a>
+        </div>
+        <div class="explore-other-sections">
+            <h2>Explore Other Sections</h2>
+            <nav>
+                <a href="../#duolingo">Duolingo</a>
+                <a href="../#random-art">Random Art</a>
+                <a href="../#faizalingo">FaizaLingo</a>
+                <a href="../#contact-me">Contact Me</a>
+                <a href="../free-ebooks">Free E-books</a>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const result = JSON.parse(decodeURIComponent(params.get('type')));
+        const getResult = params.get('type');
+        const highestType = Object.entries(result).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+        const getArticle = (word) => ['A', 'E', 'I', 'O', 'U'].includes(word[0].toUpperCase()) ? 'an' : 'a';
+
+        const birdEmojis = {
+            'Dove': '🕊️',
+            'Owl': '🦉',
+            'Peacock': '🦚',
+            'Eagle': '🦅'
+        };
+
+        const birdBackgrounds = {
+            'Dove': '../img/dove.png',
+            'Owl': '../img/owl.png',
+            'Peacock': '../img/peacock-.png',
+            'Eagle': '../img/eagle.png'
+        };
+
+        const birdInsights = {
+            'Dove': 'Doves are known for their peaceful and harmonious nature. They are gentle, empathetic, and thrive in environments where they can help and support others.',
+            'Owl': 'Owls are wise and perceptive. They have a deep understanding of the world around them and are great at analyzing complex situations and making thoughtful decisions.',
+            'Peacock': 'Peacocks are vibrant and charismatic. They love to be in the spotlight and are known for their creativity and enthusiasm. They enjoy social interactions and expressing themselves.',
+            'Eagle': 'Eagles are ambitious and driven. They have a strong vision and are determined to achieve their goals. They are natural leaders and are not afraid to take on challenges.'
+        };
+
+        const baseUrl = 'https://faizalzahid.github.io/dope-test/results.html';
+        const shareUrl = `${baseUrl}?type=${encodeURIComponent(getResult)}`;
+        const shareText = `I just discovered my DOPE type! I am ${getArticle(highestType)} ${highestType}${birdEmojis[highestType]}! What's yours?`;
+        const encodedResult = encodeURIComponent(shareText);
+
+        document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+        document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodedResult}&url=${encodeURIComponent(shareUrl)}`;
+        document.getElementById('linkedin-share').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+        document.getElementById('whatsapp-share').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareUrl)}`;
+
+        const personalityType = document.getElementById('personality-type');
+        const birdEmoji = document.getElementById('bird-emoji');
+        const highestTypeElement = document.getElementById('highest-type');
+        const insightText = document.getElementById('insight-text');
+
+        personalityType.textContent = `${getArticle(highestType)} ${highestType}`;
+        birdEmoji.textContent = birdEmojis[highestType];
+        highestTypeElement.textContent = highestType;
+        insightText.textContent = birdInsights[highestType];
+
+        document.body.style.backgroundImage = `url("${birdBackgrounds[highestType]}")`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.backgroundAttachment = 'fixed';
+
+        const ctx = document.getElementById('myRadarChart').getContext('2d');
+        const radarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Dove', 'Owl', 'Peacock', 'Eagle'],
+                datasets: [{
+                    label: 'Personality Scores',
+                    data: [
+                        result['Dove'] || 0,
+                        result['Owl'] || 0,
+                        result['Peacock'] || 0,
+                        result['Eagle'] || 0
+                    ],
+                    backgroundColor: 'rgba(252, 191, 71, 0.2)',
+                    borderColor: '#000',
+                    borderWidth: 1,
+                    pointBackgroundColor: '#FCBF47',
+                    pointBorderColor: '#000',
+                    pointBorderWidth: 1 
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        grid: {
+                            color: 'rgba(252, 191, 71, 0.2)',
+                            lineWidth: 4
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(252, 191, 71, 1)', // Background color of tick labels
+                            color: '#333', // Font color of the ticks
+                            font: {
+                                size: 14 // Font size of the ticks
+                            }
+                        },
+                        pointLabels: {
+                            color: '#FCBF47', // Font color for the labels (Dove, Owl, etc.)
+                            font: {
+                                size: 16, // Font size of the labels
+                            }
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            color: '#FCBF47'
+                        }
+                    },
+                },
+            }
+        });
+    </script>
+</body>
+</html>
