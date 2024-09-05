@@ -53,6 +53,7 @@ label {
     border: 1px dashed #FCBF47;
     border-radius: 10px;
     padding: 5px 10px;
+    display: inline-block;
 }
 
 label.selected {
