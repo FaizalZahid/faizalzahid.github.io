@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../img/aboutme.png">
+    <title>DASS Test Results</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h1>Test Results</h1>
+        </header>
+        <div class="separate-score">
+            <p id="depressionScore">Depression Score: </p>
+            <div id="depressionInsight" class="insight"></div>
+        </div>
+
+        <div class="separate-score">
+            <p id="anxietyScore">Anxiety Score: </p>
+            <div id="anxietyInsight" class="insight"></div>
+        </div>
+
+        <div class="separate-score">
+            <p id="stressScore">Stress Score: </p>
+            <div id="stressInsight" class="insight"></div>
+        </div>
+    </section>
+    <section>
+        <h2>Share your result! (or not)</h2>
+        <div id="row-share">
+            <a id="facebook-share" class="share" href="#" target="_blank"><i class="fab fa-facebook"></i> Share on Facebook</a>
+            <a id="twitter-share" class="share" href="#" target="_blank"><i class="fab fa-twitter"></i> Share on Twitter</a>
+            <a id="linkedin-share" class="share" href="#" target="_blank"><i class="fab fa-linkedin"></i> Share on LinkedIn</a>
+            <a id="whatsapp-share" class="share" href="#" target="_blank"><i class="fab fa-whatsapp"></i> Share on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Faizal Zahid's Knowledge Hub. All Rights Reserved.</p>
+            <a href="https://www.tiktok.com/@faizal_zahid" target="_blank" class="social-button tiktok" title="Follow me on TikTok"></a>
+            <a href="https://instagram.com/faizal_zahid" target="_blank" class="social-button instagram" title="Follow me on Instagram"></a>
+            <a href="https://youtube.com/@faizalzahid7750" target="_blank" class="social-button youtube" title="Subscribe to my YouTube"></a>
+            <a href="https://manifestasisanubari.blogspot.com" target="_blank" class="social-button blogger" title="Visit my blog"></a>
+            <a href="https://x.com/FaizalZahid" target="_blank" class="social-button x" title="Follow me on X"></a>
+        </div>
+        <div class="explore-other-sections">
+            <h2>Explore Other Sections</h2>
+            <nav>
+                <a href="../#duolingo">Duolingo</a>
+                <a href="../#random-art">Random Art</a>
+                <a href="../#faizalingo">FaizaLingo</a>
+                <a href="../#contact-me">Contact Me</a>
+                <a href="../free-ebooks">Free E-books</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        function getQueryParams() {
+            var params = {};
+            window.location.search.substring(1).split('&').forEach(function(param) {
+                var parts = param.split('=');
+                params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+            });
+            return params;
+        }
+
+        function getInsight(score, type) {
+            if (score >= 0 && score <= 4) return `${type} is NORMAL.\nYou seem to be managing well.`;
+            if (score >= 5 && score <= 9) return `${type} is MILD.\nConsider practicing relaxation techniques.`;
+            if (score >= 10 && score <= 14) return `${type} is MODERATE.\nYou may want to seek support or counseling.`;
+            return `${type} is SEVERE.\nIt might be beneficial to consult a mental health professional.`;
+        }
+
+        var queryParams = getQueryParams();
+        var depressionScore = parseInt(queryParams.depression);
+        var anxietyScore = parseInt(queryParams.anxiety);
+        var stressScore = parseInt(queryParams.stress);
+
+        document.getElementById('depressionScore').textContent = `Depression Score: ${depressionScore}`;
+        document.getElementById('depressionInsight').textContent = getInsight(depressionScore, 'Depression');
+
+        document.getElementById('anxietyScore').textContent = `Anxiety Score: ${anxietyScore}`;
+        document.getElementById('anxietyInsight').textContent = getInsight(anxietyScore, 'Anxiety');
+
+        document.getElementById('stressScore').textContent = `Stress Score: ${stressScore}`;
+        document.getElementById('stressInsight').textContent = getInsight(stressScore, 'Stress');
+        
+        function encodeURIComponentCustom(str) {
+            return encodeURIComponent(str).replace(/[!'()*]/g, escape);
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const getDepression = params.get('depression');
+        const getAnxiety = params.get('anxiety');
+        const getStress = params.get('stress');
+        const baseUrl = 'https://faizalzahid.github.io/dass-test/results.html';
+        const shareUrl = `${baseUrl}?depression=${encodeURIComponent(getDepression)}&anxiety=${encodeURIComponent(getAnxiety)}&stress=${encodeURIComponent(getStress)}`;
+        const shareText = `Just got my DASS test results. Depression: ${getDepression}, Anxiety: ${getAnxiety}, Stress: ${getStress}.`;
+        const encodedShareText = encodeURIComponentCustom(shareText);
+
+        document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodedShareText}`;
+        document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodedShareText}&url=${encodeURIComponent(shareUrl)}`;
+        document.getElementById('linkedin-share').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=DASS%20Test%20Results&summary=${encodedShareText}`;
+        document.getElementById('whatsapp-share').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+    </script>
+</body>
+</html>
