@@ -5,11 +5,12 @@
 		<link>https://faizalzahid.github.io/blog</link>
 		<description>Journal of learning and self-improvement.</description>
 
-		<image>
-	            <url>https://faizalzahid.github.io/favicon.ico</url>
-	            <title>Blog</title>
-	            <link>https://faizalzahid.github.io/blog</link>
-	        </image>
+		<item>
+            <title>Shumi wa Zannen Desu (?!)</title>
+            <link>https://faizalzahid.github.io/blog/2024/Sep/05.html</link>
+            <description>Assalamualaikum and <strong>peace</strong> be upon you!<br/><br/>Thursday. Continuing the same unit from last week. LOL (<b>zannen</b> desu ne 😏).<br/><br/>The title is so random. Based on the two characters that I learned to write today:</description>
+            <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+        </item>
 
 		<item>
 			<title>Reason for Living</title>
