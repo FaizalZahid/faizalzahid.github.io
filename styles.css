@@ -332,6 +332,23 @@ section p {
     font-size: 1em;
 }
 
+#faizalingo-preview, #pokélingo-preview {
+    width: 100%;
+    height: 100%;
+}
+
+#faizalingo-preview {
+    border-radius: 10px 10px 0 0;
+}
+
+#pokélingo-preview {
+    border-radius: 0 0 50px 50px;
+}
+
+.faizalingo-container p, img{
+    padding-bottom: 10px;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
