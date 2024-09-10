@@ -438,7 +438,7 @@ ul li a:hover {
     opacity: 1;
 }
 
-#toggle-checkbox-literature:checked ~ .toggle-button::after, #toggle-checkbox-courses:checked ~ .toggle-button::after, #toggle-checkbox-journal:checked ~ .toggle-button::after, #toggle-checkbox-audiobook:checked ~ .toggle-button::after, #toggle-checkbox-general-knowledge:checked ~ .toggle-button::after, #toggle-checkbox-languages:checked ~ .toggle-button::after, #toggle-checkbox-cs:checked ~ .toggle-button::after, #toggle-checkbox-forum:checked ~ .toggle-button::after {
+#toggle-checkbox-literature:checked ~ .literature-toggle-button::after, #toggle-checkbox-courses:checked ~ .courses-toggle-button::after, #toggle-checkbox-journal:checked ~ .journal-toggle-button::after, #toggle-checkbox-audiobook:checked ~ .audiobook-toggle-button::after, #toggle-checkbox-general-knowledge:checked ~ .general-knowledge-toggle-button::after, #toggle-checkbox-languages:checked ~ .languages-toggle-button::after, #toggle-checkbox-cs:checked ~ .cs-toggle-button::after, #toggle-checkbox-forum:checked ~ .forum-toggle-button::after {
     content: '▲';
     transform: rotate(180deg);
 }
