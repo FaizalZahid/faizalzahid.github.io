@@ -63,7 +63,7 @@ body {
     margin-bottom: 30px;
 }
 
-#avatar, #duobanner, #socials {
+#avatar, #duobanner, #socials, #open-source-icon {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -385,6 +385,85 @@ ul li a:hover {
     margin: 20px 0 20px 0;
     width: 20%;
     height: 20%;
+}
+
+.open-source-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.open-source-container #open-source-initiative {
+    color: #FCBF47;
+    text-decoration: none;
+}
+
+.open-source-container #osi {
+    line-height: 1.5em;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+.collapsible-content {
+    display: none;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+}
+
+.collapsible-content ul li {
+    line-height: 1.5em;
+    margin: 10px;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    padding: 5px 20px;
+}
+
+.collapsible-content ul a {
+    color: #FCBF47;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+#toggle-checkbox-literature:checked ~ #literature-content, #toggle-checkbox-courses:checked ~ #courses-content, #toggle-checkbox-journal:checked ~ #journal-content, #toggle-checkbox-audiobook:checked ~ #audiobook-content, #toggle-checkbox-general-knowledge:checked ~ #general-knowledge-content, #toggle-checkbox-languages:checked ~ #languages-content, #toggle-checkbox-cs:checked ~ #cs-content, #toggle-checkbox-forum:checked ~ #forum-content {
+    display: block;
+    opacity: 1;
+}
+
+#toggle-checkbox-literature:checked ~ .toggle-button::after, #toggle-checkbox-courses:checked ~ .toggle-button::after, #toggle-checkbox-journal:checked ~ .toggle-button::after, #toggle-checkbox-audiobook:checked ~ .toggle-button::after, #toggle-checkbox-general-knowledge:checked ~ .toggle-button::after, #toggle-checkbox-languages:checked ~ .toggle-button::after, #toggle-checkbox-cs:checked ~ .toggle-button::after, #toggle-checkbox-forum:checked ~ .toggle-button::after {
+    content: '▲';
+    transform: rotate(180deg);
+}
+
+.toggle-button {
+    color: #FCBF47;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    padding: 5px 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.toggle-button::after {
+    content: '▼';
+    font-size: 1em;
+    margin-left: 10px;
+    transition: transform 0.3s ease-out;
 }
 
 footer {
