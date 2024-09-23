@@ -439,11 +439,12 @@
 
         <section id="soniachat">
             <div class="container soniachat-container">
-                <form id="chatForm">
-                    <input type="text" id="message" placeholder="Type your message..." required>
-                    <button type="submit">Send</button>
-                </form>
-                <div id="response"></div>
+                <h2>Ask Sonia</h2>
+  
+                <textarea id="userMessage" rows="4" cols="50" placeholder="Chat with Sonia AI here!"></textarea>
+                <button id="sendMessage">Send</button>
+
+                <div id="responseContainer"></div>
             </div>
         </section>
 
@@ -493,20 +494,30 @@
       });
     </script>
     <script>
-        document.getElementById('chatForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const message = document.getElementById('message').value;
+        document.getElementById('sendMessage').addEventListener('click', async () => {
+            const userMessage = document.getElementById('userMessage').value;
 
-            const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ message }),
-            });
+            try {
+                const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                });
 
-            const data = await response.json();
-            document.getElementById('response').innerText = JSON.stringify(data);
+                if (response.ok) {
+                    const data = await response.json();
+
+                    const chatbotResponse = data.text;
+
+                    document.getElementById('responseContainer').innerHTML = `<p>${chatbotResponse}</p>`;
+                } else {
+                    console.error('Error in response:', response.status);
+                }
+            } catch (error) {
+                console.error('Error fetching response:', error)
+            }
         });
     </script>
 </body>
