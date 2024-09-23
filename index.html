@@ -494,6 +494,8 @@
       });
     </script>
     <script>
+        let chatHistory = [];
+
         document.getElementById('sendMessage').addEventListener('click', async () => {
             const userMessage = document.getElementById('userMessage').value;
             const responseContainer = document.getElementById('responseContainer');
@@ -502,19 +504,25 @@
             responseContainer.classList.remove('fade-in');
             responseContainer.classList.add('fade-out');
 
+            // Add the new user message to the chat history
+            chatHistory.push({ role: 'User', message: userMessage });
+
             try {
                 const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ message: userMessage }),
+                    body: JSON.stringify({ message: userMessage, chatHistory: chatHistory }),
                 });
 
                 if (response.ok) {
                     const data = await response.json();
 
                     const chatbotResponse = data.text;
+
+                    // Add the chatbot's response to the chat history
+                    chatHistory.push({ role: 'Chatbot', message: chatbotResponse });
 
                     responseContainer.innerHTML = `<p>${chatbotResponse}</p>`;
 
