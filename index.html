@@ -6,7 +6,7 @@
     <title>Bayt al-Hikmah 2.0 - Knowledge Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico?">
+    <link rel="icon" type="image/x-icon" href="img/aboutme.png">
 </head>
 <body>
     <audio id="myAudio" loop>
@@ -54,7 +54,7 @@
                     <li><a class="hover-change-bg" href="https://invite.duolingo.com/BDHTZTB5CWWKSI2A7ZEVDUVWI4" target="_blank">Invitation</a></li>
                     <li><a class="hover-change-bg shake-animation" href="https://www.duolingo.com/classroom/fzqdfj" target="_blank">My Classroom</a></li>
                 </ul>
-                <nav>
+                <nav class="margin-top-nav">
                     <ul>
                         <li><a href="#blog">⬇ Blog (English) ⬇</a></li>
                     </ul>
@@ -411,6 +411,12 @@
                         <li><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a>
                         <br>Offers coding tutorials & courses for beginners to learn web development, programming & data science.</li>
 
+                        <li><a href="https://www.sololearn.com/" target="_blank">Sololearn</a>
+                        <br>Learning to code got simplified. Learn the latest technology with interactive, hands-on courses.</li>
+
+                        <li><a href="https://www.mimo.org/" target="_blank">Mimo</a>
+                        <br>Learn to code. Build a portfolio. Get hired.</li>
+
                     </ul>
                 </div>
 
@@ -423,11 +429,21 @@
                     </ul>
                 </div>
 
-                <nav>
+                <nav class="margin-top-nav">
                     <ul>
                         <li><a href="#faizalingo">⬇ FaizaLingo ⬇</a></li>
                     </ul>
                 </nav>
+            </div>
+        </section>
+
+        <section id="soniachat">
+            <div class="container soniachat-container">
+                <form id="chatForm">
+                    <input type="text" id="message" placeholder="Type your message..." required>
+                    <button type="submit">Send</button>
+                </form>
+                <div id="response"></div>
             </div>
         </section>
 
@@ -438,7 +454,7 @@
                 <p>FaizaLingo is a future project dedicated to offering resources for language learners, starting with Japanese and expanding to many more languages. Stay tuned for exciting updates!</p>
                 <img id="faizalingo-preview" alt="FaizaLingo website preview" src="img/FaizaLingo-preview.png">
                 <img id="pokélingo-preview" alt="PokéLingo game preview" src="img/PokéLingo-preview.gif">
-                <nav>
+                <nav class="margin-top-nav">
                     <ul>
                         <li><a href="#contact">⬇ Contact Me ⬇</a></li>
                     </ul>
@@ -475,6 +491,23 @@
         'floating-chat.donateButton.background-color': '#fcbf47',
         'floating-chat.donateButton.text-color': '#323842'
       });
+    </script>
+    <script>
+        document.getElementById('chatForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = document.getElementById('message').value;
+
+            const response = await fetch('https://soniachat.vercel.app/api/chat.js', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message }),
+            });
+
+            const data = await response.json();
+            document.getElementById('response').innerText = JSON.stringify(data);
+        });
     </script>
 </body>
 </html>
