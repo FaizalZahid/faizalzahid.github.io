@@ -1,0 +1,8 @@
+Animals		Astronomy		Design	
+Economics		Education		Engineering	
+Filmmaking		Food		Geography	
+Geopolitics		Health		History	
+Islam		Law		Mathematics	
+Music		Oceanography		Philosophy	
+Plants		Politics		Programming	
+Psychology
