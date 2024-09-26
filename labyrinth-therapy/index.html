@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Experience ultimate mindfulness with labyrinth therapy, where soothing audio guides you as you observe the serene journey of solving the labyrinth path.">
+    <meta name="keywords" content="labyrinth, maze, interactive, asmr, calm, peaceful, tranquil, serene, mental health, mindfulness, self-care, health">
+    <meta name="author" content="Faizal Zahid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labyrinth Therapy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lib/jasmine-1.2.0/jasmine.css">
+    <link rel="icon" type="image/x-icon" href="../img/aboutme.png">
+</head>
+<body class='index'>
+    <div id="maze-container">
+        <p id="please-wait">Generating labyrinth, please stare into the abyss...</p>
+        <canvas id="maze" width="600" height="600"></canvas>
+        <input type="submit" value="Solve Labyrinth" id="solve"></input>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="src/array.js"></script>
+    <script src="src/cell.js"></script>
+    <script src="src/graph.js"></script>
+    <script src="src/labyrinthGenerator.js"></script>
+    <script src="src/labyrinthSolver.js"></script>
+    <script src="src/maze.js"></script>
+    <script src="src/mazeGenerator.js"></script>
+    <script>
+        var maze = new Maze(document, 'maze');
+        var generator = new labyrinthGenerator(15, 15);
+        var solver = new labyrinthSolver();
+        var waitElem = $("#please-wait");
+        
+        setTimeout(function() {
+            generator.generate();
+            maze.draw(generator.graph);
+            waitElem.remove();
+            $("#solve").show();
+        }, 1000);
+
+        $(function() {
+            $('#solve').click(function() {
+                var targetCell = generator.graph.getCellAt(1, 0);
+                var path = solver.solve(generator.graph, targetCell);
+                maze.drawSolution(path);
+            });
+        });
+    </script>
+</body>
+</html>

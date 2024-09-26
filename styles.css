@@ -63,13 +63,13 @@ body {
     margin-bottom: 30px;
 }
 
-#avatar, #duobanner, #socials, #open-source-icon {
+#avatar, #duobanner, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon, #sonia-icon {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-#duoavatar, #blog-img {
+#duoavatar, #blog-icon {
     width: 100px;
     height: 100px;
 }
@@ -230,7 +230,25 @@ section p {
     text-decoration: underline;
 }
 
+#self-help h3 {
+    color: #FCBF47;
+}
+
 .cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.colouring-therapy-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.puzzle-therapy-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -239,12 +257,54 @@ section p {
 
 .card {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 290px;
+  height: 290px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.mandalas {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.puzzles {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mandalas-pdf {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#puzzles-pdf {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#mandalas-pdf-thumbnail {
+    width: 50%;
+    height: auto;
+}
+
+#puzzles-pdf-thumbnail {
+    width: 50%;
+    height: auto;
 }
 
 .card img {
@@ -287,21 +347,58 @@ section p {
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color: #FCBF47;;
+  background-color: #FCBF47;
   color: #000;
   border-radius: 20px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.pdf-btn, .labyrinth-therapy-btn {
+  padding: 10px 20px;
+  background-color: #FCBF47;
+  color: #000;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.pdf-btn:hover, .labyrinth-therapy-btn:hover {
+    transform: scale(1.05);
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
 }
 
 .card:hover .btn {
+  display: block;
+}
+
+.mandalas:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
+.puzzles:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
+.mandalas:hover .btn {
+  display: block;
+}
+
+.puzzles:hover .btn {
   display: block;
 }
 
@@ -321,7 +418,7 @@ section p {
 }
 
 .img-border {
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
@@ -335,7 +432,8 @@ section p {
 #faizalingo-preview, #pokélingo-preview {
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+
 }
 
 #faizalingo-preview {
@@ -398,6 +496,10 @@ ul li a:hover {
     text-decoration: none;
 }
 
+.open-source-container #osi:hover {
+    transform: scale(1.05);
+}
+
 .open-source-container #osi {
     line-height: 1.5em;
     background-color: black;
@@ -406,6 +508,10 @@ ul li a:hover {
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
     padding: 5px 20px;
     margin-top: 10px;
+}
+
+.open-source-container #osi:hover {
+    transform: scale(1.05);
 }
 
 .collapsible-content {
@@ -420,8 +526,12 @@ ul li a:hover {
     background-color: black;
     border: none;
     border-radius: 8px;
-    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 10px #ffffff;
     padding: 5px 20px;
+}
+
+.collapsible-content ul li:hover {
+    transform: scale(1.05);
 }
 
 .collapsible-content ul a {
@@ -471,6 +581,52 @@ ul li a:hover {
     margin-top: 20px;
 }
 
+.istockphoto-thumbnail-gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+.istockphoto-thumbnail-gallery img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(175, 175, 175, 0.8), 0 0 30px rgba(0, 0, 0, 0.8)
+}
+
+.istockphoto-thumbnail-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
+.istockphoto-thumbnail-gallery #istockphoto-thumbnail1 {
+    border-radius: 0 0 0 20px;
+}
+
+.istockphoto-thumbnail-gallery #istockphoto-thumbnail3 {
+    border-radius: 0 0 20px 0;
+}
+
+#support h3 {
+    color: #FCBF47;
+}
+
+#support #istockphoto-portfolio-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(175, 175, 175, 0.8), 0 0 30px rgba(0, 0, 0, 0.8)
+}
+
+#support #istockphoto-portfolio-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
 .soniachat-container {
     display: flex;
     flex-direction: column;
@@ -481,18 +637,28 @@ ul li a:hover {
     width: 100%;
     height: 100%;
     resize: none;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .soniachat-container #sendMessage {
-    margin-top: 20px;
-    border-radius: 5px;
-    padding: 5px 20px;
-    color: #FCBF47;
+    padding: 10px 20px;
+    background-color: #FCBF47;
+    color: #000;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.3);
     font-weight: bold;
-    transition: color 0.3s;
-    background-color: rgba(0, 0, 0);
-    font-size: 3em;
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    transition: transform 0.3s;
+    margin-top: 10px;
+}
+
+.soniachat-container #sendMessage:hover {
+    background-color: #fcd37e;
+    transform: scale(1.05);
 }
 
 .soniachat-container #responseContainer{
@@ -567,6 +733,14 @@ footer p {
 
     nav ul li {
         margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.5em;
+    }
+
+    #opposite-color {
+        font-size: 1.5em;
     }
 
     section {
