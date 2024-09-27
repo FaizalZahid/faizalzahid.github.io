@@ -114,6 +114,7 @@ body {
     height: 25px;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 #bar {
@@ -121,6 +122,17 @@ body {
     background-color: #FCBF47;
     width: 0;
     border-radius: 10px;
+}
+
+#thumb {
+    color: #FCBF47;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    cursor: pointer;
 }
 
 #play, #pause {
