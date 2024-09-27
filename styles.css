@@ -66,7 +66,7 @@ body {
 .header-content h3 {
     margin-top: 50px;
     color: #FCBF47;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 #avatar, #duobanner, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon, #sonia-icon {
@@ -815,6 +815,18 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    .header-content p {
+        font-size: 1em;
+    }
+
+    .header-content h3 {
+        font-size: 1.3em;
+    }
+
     nav ul {
         flex-direction: column;
     }
@@ -855,6 +867,18 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    .header-content p {
+        font-size: 1em;
+    }
+
+    .header-content h3 {
+        font-size: 1.3em;
+    }
+
     nav ul li a {
         font-size: 1.3em;
     }
