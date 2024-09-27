@@ -854,6 +854,10 @@ footer p {
         font-size: 1.5em;
     }
 
+    #opposite-color:hover {
+        font-size: 1.6em;
+    }
+
     section {
         width: 90%;
         padding: 15px;
