@@ -63,6 +63,12 @@ body {
     margin-bottom: 30px;
 }
 
+.header-content h3 {
+    margin-top: 50px;
+    color: #FCBF47;
+    font-size: 1.5em;
+}
+
 #avatar, #duobanner, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon, #sonia-icon {
     width: 100px;
     height: 100px;
@@ -72,6 +78,111 @@ body {
 #duoavatar, #blog-icon {
     width: 100px;
     height: 100px;
+}
+
+.audio-player {
+    width: 100%;
+    max-width: 600px;
+    background: #202020;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #FCBF47;
+    justify-self: center;
+    margin: 0 auto;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+#play-pause-btn {
+    background-color: black;
+    color: #FCBF47;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 0 10px #FFD700;
+    font-weight: bolder;
+}
+
+#play-pause-btn:hover {
+    background-color: #FCBF47;
+    color: black;
+}
+
+#seek-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+#seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #FCBF47;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#seek-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #FCBF47;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#seek-bar::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: #FCBF47;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#seek-bar::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+#seek-bar::-moz-range-track {
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+#seek-bar::-ms-track {
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+#transcript-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(252, 191, 71, 0.7);
+    color: #202020;
+    border-radius: 40px;
+    font-size: 18px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 nav ul {

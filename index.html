@@ -12,7 +12,7 @@
     <link rel="icon" type="image/x-icon" href="img/aboutme.png">
 </head>
 <body>
-    <audio id="myAudio" loop>
+    <audio id="exploration-audio" loop>
         <source src="https://www.dropbox.com/scl/fi/c18afbnudaq5ej2g7sd18/exploration.wav?rlkey=pqerwzgbx2q6tz42ig4hmxacb&st=fi0wrbjv&dl=1" type="audio/wav">
     </audio>
     <header>
@@ -27,6 +27,16 @@
                         <li><a id="opposite-color" href="./free-ebooks">Free E-Books</a></li>
                     </ul>
                 </nav>
+                <h3>TL;DR</h3>
+                <div class="audio-player">
+                    <audio id="audio" src="bayt al-hikmah 2.0.wav"></audio>
+                    <div class="controls">
+                        <button id="play-pause-btn">▶</button>
+                        <input type="range" id="seek-bar" value="0" />
+                        <span id="time-display">00:00:00 / 00:00:00</span>
+                    </div>
+                </div>
+                <div id="transcript-container">Too long, didn't read. Just click on the play button to listen.</div>
             </div>
         </div>
     </header>
@@ -596,5 +606,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="podcast_transcript.js"></script>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 </html>
