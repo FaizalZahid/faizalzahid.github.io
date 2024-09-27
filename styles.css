@@ -80,109 +80,84 @@ body {
     height: 100px;
 }
 
-.audio-player {
-    width: 100%;
-    max-width: 600px;
-    background: #202020;
+#audio-player {
+    box-shadow: 0 0 10px #FCBF47;
     border-radius: 40px;
-    box-shadow: 0 0 10px #ffffff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    color: #FCBF47;
-    justify-self: center;
-    margin: 0 auto;
+    padding: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.controls {
+#player-content {
     display: flex;
     align-items: center;
 }
 
-#play-pause-btn {
-    background-color: black;
-    color: #FCBF47;
-    border: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    cursor: pointer;
+#controls {
     margin-right: 10px;
-    box-shadow: 0 0 10px #FFD700;
-    font-weight: bolder;
 }
 
-#play-pause-btn:hover {
+#progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#progress {
+    flex-grow: 1; 
+    width: auto;
+    border: 1px solid #FCBF47;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#bar {
+    height: 100%;
+    background-color: #FCBF47;
+    width: 0;
+    border-radius: 10px;
+}
+
+#play, #pause {
+    display: none;
+}
+
+.play-pause {
+    font-weight: bolder;
+    background-color: black;
+    color: #FCBF47;
+    box-shadow: 0 0 10px #FCBF47;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.play-pause:hover {
     background-color: #FCBF47;
     color: black;
 }
 
-#seek-bar {
-    -webkit-appearance: none;
-    appearance: none;
-    flex-grow: 1;
-    margin: 0 10px;
+#time-display {
+    min-width: 110px;
+    text-align: right;
+    margin-left: 10px;
+    font-family: 'Poppins', serif;
+    color: #FCBF47;
 }
 
-#seek-bar::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #FCBF47;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: -5px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#seek-bar::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    background: #FCBF47;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#seek-bar::-ms-thumb {
-    width: 15px;
-    height: 15px;
-    background: #FCBF47;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#seek-bar::-webkit-slider-runnable-track {
-    height: 5px;
-    background: #ddd;
-    border-radius: 5px;
-}
-
-#seek-bar::-moz-range-track {
-    height: 5px;
-    background: #ddd;
-    border-radius: 5px;
-}
-
-#seek-bar::-ms-track {
-    height: 5px;
-    background: #ddd;
-    border-radius: 5px;
-}
-
-#transcript-container {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: rgba(252, 191, 71, 0.7);
-    color: #202020;
-    border-radius: 40px;
-    font-size: 18px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#transcript {
+    width: 90%;
+    max-width: 600px;
     text-align: center;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px #FCBF47;
+    padding: 5px 20px;
+    border-radius: 20px;
 }
 
 nav ul {
@@ -574,19 +549,20 @@ ul li a {
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s;
+    display: inline-block;
 }
 
 ul li a:hover {
     color: rgba(30, 30, 45);
 }
 
-#duolingo ul li a, #social ul li a {
+#duolingo ul li a {
     border-radius: 5px;
     padding: 10px;
     display: block;
 }
 
-#duolingo nav ul li a, #social nav ul li a {
+.duolingo-li {
     border: none;
     padding: 5px 20px;
 }
@@ -871,15 +847,19 @@ footer p {
         font-size: 1em;
     }
 
+    .collapsible-content ul li a {
+        font-size: 1.5em;
+    }
+
 }
 
 @media (max-width: 480px) {
     nav ul li a {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     
     #opposite-color {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     #signature {
@@ -891,7 +871,7 @@ footer p {
     }
 
     #opposite-color:hover {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 
     .img-container-item {
@@ -899,6 +879,10 @@ footer p {
     width: auto;
     height: auto;
     object-fit: contain;
+    }
+
+    .collapsible-content ul li a {
+        font-size: 1.3em;
     }
 }
 

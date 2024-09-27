@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bayt al-Hikmah 2.0 - Knowledge Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="img/aboutme.png">
 </head>
@@ -23,20 +24,32 @@
                 A Gateway to Knowledge, An Archive for Knowledge</p>
                 <nav>
                     <ul>
-                        <li><a id="play" href="#about">⬇ About ⬇</a></li>
+                        <li><a id="play-exploration" href="#about">⬇ About ⬇</a></li>
                         <li><a id="opposite-color" href="./free-ebooks">Free E-Books</a></li>
                     </ul>
                 </nav>
                 <h3>TL;DR</h3>
-                <div class="audio-player">
-                    <audio id="audio" src="bayt al-hikmah 2.0.wav"></audio>
-                    <div class="controls">
-                        <button id="play-pause-btn">▶</button>
-                        <input type="range" id="seek-bar" value="0" />
-                        <span id="time-display">00:00:00 / 00:00:00</span>
+                <audio id="audio">
+                    <source src="bayt al-hikmah 2.0.wav" type="audio/wav" />
+                </audio>
+
+                <div id="audio-player">
+                    <div id="player-content">
+                        <div id="controls">
+                            <span id="loading">Loading...</span>
+                            <button id="play" class="play-pause"><i class="fas fa-play"></i></button>
+                            <button id="pause" class="play-pause"><i class="fas fa-pause"></i></button>
+                        </div>
+                        <div id="progress-container">
+                            <div id="progress">
+                                <div id="bar"></div>
+                            </div>
+                            <div id="time-display">00:00:00/00:00:00</div>
+                        </div>
                     </div>
                 </div>
-                <div id="transcript-container">Too long, didn't read. Just click on the play button to listen.</div>
+
+                <div id="transcript">Too long, didn't read. Just click on the play button to listen.</div>
             </div>
         </div>
     </header>
@@ -61,9 +74,9 @@
                 <img id="duobanner" alt="Green owl" src="img/duo.png">
                 <h2>Duolingo</h2>
                 <ul>
-                    <li><a class="hover-change-bg" href="https://duome.eu/FaizalZahid" target="_blank">My Profile</a></li>
-                    <li><a class="hover-change-bg" href="https://invite.duolingo.com/BDHTZTB5CWWKSI2A7ZEVDUVWI4" target="_blank">Invitation</a></li>
-                    <li><a class="hover-change-bg shake-animation" href="https://www.duolingo.com/classroom/fzqdfj" target="_blank">My Classroom</a></li>
+                    <li class="duolingo-li"><a class="hover-change-bg" href="https://duome.eu/FaizalZahid" target="_blank">My Profile</a></li>
+                    <li class="duolingo-li"><a class="hover-change-bg" href="https://invite.duolingo.com/BDHTZTB5CWWKSI2A7ZEVDUVWI4" target="_blank">Invitation</a></li>
+                    <li class="duolingo-li"><a class="hover-change-bg shake-animation" href="https://www.duolingo.com/classroom/fzqdfj" target="_blank">My Classroom</a></li>
                 </ul>
                 <nav class="margin-top-nav">
                     <ul>
