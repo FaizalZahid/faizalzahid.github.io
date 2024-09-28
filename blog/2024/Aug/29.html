@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaizaLingo's Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://faizalzahid.github.io/blog/rss.xml"/>
 </head>
 <body>
@@ -22,6 +23,27 @@
     <main>
         <section>
             <div class="entry-content">
+                <audio id="audio">
+                    <source src="https://www.dropbox.com/scl/fi/tv5e28wf0e0hske8a142x/Reason-For-Living-29_09_2024.wav?rlkey=plyo05xfypxz2zyeuh0hyo9y9&st=y3ovbtnu&dl=1" type="audio/wav" />
+                </audio>
+
+                <div id="audio-player">
+                    <div id="player-content">
+                        <div id="controls">
+                            <span id="loading">Loading...</span>
+                            <button id="play" class="play-pause"><i class="fas fa-play"></i></button>
+                            <button id="pause" class="play-pause"><i class="fas fa-pause"></i></button>
+                        </div>
+                        <div id="progress-container">
+                            <div id="progress">
+                                <div id="bar"></div>
+                                <div id="thumb"><i class="fa fa-forward" aria-hidden="true"></i></div>
+                            </div>
+                            <div id="time-display">00:00:00/00:00:00</div>
+                        </div>
+                    </div>
+                </div>
+
                 <p class="title">Reason for Living</p>
                 <p class="date">29th August 2024</p>
                 <hr>
@@ -78,7 +100,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../../script.js"></script>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
     <script>
       kofiWidgetOverlay.draw('faizalzahid', {
