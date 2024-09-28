@@ -53,7 +53,101 @@ body {
     margin-bottom: 20px;
 }
 
-#psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img, #islam-img, #astro-img, #health-img, #animals-img, #history-img, #plants-img, #food-img, #law-img, #music-img, #engineering-img, #filmmaking-img, #oceanography-img, #design-img, #education-img, #mathematics-img {
+#audio-player {
+    box-shadow: 0 0 10px #FCBF47;
+    border-radius: 40px;
+    padding: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#player-content {
+    display: flex;
+    align-items: center;
+}
+
+#controls {
+    margin-right: 10px;
+}
+
+#progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#progress {
+    flex-grow: 1; 
+    width: auto;
+    border: 1px solid #FCBF47;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#bar {
+    height: 100%;
+    background-color: #FCBF47;
+    width: 0;
+    border-radius: 10px;
+}
+
+#thumb {
+    color: #FCBF47;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    cursor: pointer;
+}
+
+#play, #pause {
+    display: none;
+}
+
+.play-pause {
+    font-weight: bolder;
+    background-color: black;
+    color: #FCBF47;
+    box-shadow: 0 0 10px #FCBF47;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.play-pause:hover {
+    background-color: #FCBF47;
+    color: black;
+}
+
+#time-display {
+    min-width: 110px;
+    text-align: right;
+    margin-left: 10px;
+    font-family: 'Poppins', serif;
+    color: #FCBF47;
+}
+
+#manipulation-book-cover {
+    width: 50%;
+    height: auto;
+    box-shadow: 0 0 10px #ffffff;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+#manipulation-book-cover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FCBF47, 0 0 20px #FCBF47;
+}
+
+#psychology-img, #philosophy-img, #languages-img, #economy-img, #geography-img, #politics-img, #geopolitics-img, #islam-img, #astro-img, #health-img, #animals-img, #history-img, #plants-img, #food-img, #law-img, #music-img, #engineering-img, #filmmaking-img, #oceanography-img, #design-img, #education-img, #mathematics-img, #featured-bookcast-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -63,7 +157,6 @@ body {
     width: 100px;
     height: 100px;
 }
-
 
 
 #islam {
@@ -152,6 +245,10 @@ body {
 
 #psychology {
     background-image: url('../img/psychology.png');
+}
+
+#featured-bookcast {
+    background-image: url('../img/featured-bookcast.png');
 }
 
 nav ul {
@@ -327,6 +424,10 @@ section h2 {
     word-wrap: break-word;
 }
 
+section h3 {
+    color: #FCBF47;
+}
+
 .collapsible-content {
     display: none;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
@@ -389,7 +490,7 @@ section h2 {
     position: relative;
     transition: transform 0.3s ease-in-out;
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-    padding: 5px 20px;;
+    padding: 5px 20px;
 }
 
 .toggle-button::after {
