@@ -165,12 +165,12 @@ body {
     width: 90%;
     max-width: 600px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 10px #FCBF47;
     padding: 5px 20px;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
 }
 
 nav ul {
