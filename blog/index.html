@@ -23,6 +23,26 @@
     <main>
         <section>
             <div class="entry-content">
+                <audio id="audio">
+                    <source src="https://www.dropbox.com/scl/fi/8ovrfv97dgnx294m6mktm/The-Way-of-Life-01_10_2024.wav?rlkey=v4jr9dwfr7xs83ty7w1nvvn4p&st=1w2vlqt0&dl=1" type="audio/wav" />
+                </audio>
+
+                <div id="audio-player">
+                    <div id="player-content">
+                        <div id="controls">
+                            <span id="loading">Loading...</span>
+                            <button id="play" class="play-pause"><i class="fas fa-play"></i></button>
+                            <button id="pause" class="play-pause"><i class="fas fa-pause"></i></button>
+                        </div>
+                        <div id="progress-container">
+                            <div id="progress">
+                                <div id="bar"></div>
+                                <div id="thumb"><i class="fa fa-forward" aria-hidden="true"></i></div>
+                            </div>
+                            <div id="time-display">00:00:00/00:00:00</div>
+                        </div>
+                    </div>
+                </div>
                 <p class="title">The Way of Life</p>
                 <p class="date">1st October 2024</p>
                 <hr>
