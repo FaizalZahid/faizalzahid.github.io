@@ -170,12 +170,11 @@ function endGame(won) {
 
     // Add button for asking AI
     const askButton = document.createElement('button');
-    // Remove existing askButton if it exists to prevent duplicates
     const existingAskButton = messageBox.querySelector('.ask-button'); // Add this line
-    if (existingAskButton) { // Add this line
-        messageBox.removeChild(existingAskButton); // Add this line
-    } // Add this line
-    askButton.classList.add('ask-button'); // Add this line
+    if (existingAskButton) {
+        messageBox.removeChild(existingAskButton);
+    }
+    askButton.classList.add('ask-button');
     askButton.innerText = 'Ask Sonia AI the meaning';
     askButton.onclick = async () => {
         const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
@@ -186,7 +185,10 @@ function endGame(won) {
             body: JSON.stringify({ message: targetWord })
         });
         const data = await response.json();
-        messageBox.appendChild(data.text);
+        
+        const responseText = document.createElement('p');
+        responseText.textContent = data.text;
+        messageBox.appendChild(responseText);
     };
     messageBox.appendChild(askButton);
 }
@@ -203,7 +205,7 @@ function showMessage(title, content) {
     }
 
     const newGameButton = document.createElement('button');
-    newGameButton.classList.add('new-game-button'); // Add this line
+    newGameButton.classList.add('new-game-button');
     newGameButton.textContent = 'New Game';
     newGameButton.style.marginTop = '10px';
     newGameButton.style.padding = '10px 20px';
