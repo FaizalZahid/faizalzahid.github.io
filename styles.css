@@ -292,6 +292,19 @@ section p {
     margin: 0 auto;
 }
 
+summary {
+    color: #FCBF47;
+    background-color: black;
+    font-weight: bolder;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #FFD700;
+    padding: 10px;
+}
+
+details h4 {
+    color: #FCBF47;
+}
+
 .container {
     justify-content: center;
     align-items: center;
@@ -333,25 +346,14 @@ section p {
     color: #FCBF47;
 }
 
-.cards-container {
+.cards-container, .colouring-therapy-container, .puzzle-therapy-container, .sound-therapy-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
-.colouring-therapy-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.puzzle-therapy-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+.card, .mandalas, .puzzles, .sounds {
+    margin: 10px;
 }
 
 .card {
@@ -364,8 +366,8 @@ section p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.margin-top-50 {
-    margin-top: 50px;
+.margin-top-10 {
+    margin-top: 10px;
 }
 
 .mandalas {
@@ -380,6 +382,19 @@ section p {
     border-radius: 20px;
     padding: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sounds {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
 }
 
 #mandalas-pdf {
@@ -586,18 +601,10 @@ ul li a:hover {
     height: 20%;
 }
 
-.open-source-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .open-source-container #open-source-initiative {
     color: #FCBF47;
     text-decoration: none;
-}
-
-.open-source-container #osi:hover {
-    transform: scale(1.05);
+    font-weight: bolder;
 }
 
 .open-source-container #osi {
@@ -607,20 +614,19 @@ ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
     padding: 5px 20px;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .open-source-container #osi:hover {
     transform: scale(1.05);
 }
 
-.collapsible-content {
-    display: none;
+details {
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    overflow: hidden;
+    margin: 10px;
 }
 
-.collapsible-content ul li {
+details ul li {
     line-height: 1.5em;
     margin: 10px;
     background-color: black;
@@ -628,13 +634,14 @@ ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px #ffffff;
     padding: 5px 20px;
+    display: inline-block;
 }
 
-.collapsible-content ul li:hover {
+details ul li:hover {
     transform: scale(1.05);
 }
 
-.collapsible-content ul a {
+details ul a {
     color: #FCBF47;
     text-decoration: none;
     padding-left: 20px;
@@ -876,7 +883,7 @@ footer p {
         font-size: 1em;
     }
 
-    .collapsible-content ul li a {
+    details ul li a {
         font-size: 1.5em;
     }
 
@@ -926,7 +933,7 @@ footer p {
     object-fit: contain;
     }
 
-    .collapsible-content ul li a {
+    details ul li a {
         font-size: 1.3em;
     }
 }
