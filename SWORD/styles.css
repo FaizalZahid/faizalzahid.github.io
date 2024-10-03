@@ -54,7 +54,7 @@ body p {
     box-shadow: 0 0 10px #FFD700;
     color: #FCBF47;
     background-color: black;
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bold;
     cursor: pointer;
 }
@@ -138,4 +138,10 @@ body p {
     box-shadow: 0 0 10px #FFD700;
     border: none;
     border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+    .key {
+        font-size: 1em;
+    }
 }

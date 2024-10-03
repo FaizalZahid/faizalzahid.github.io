@@ -41,7 +41,7 @@ qwertyKeys.forEach(row => {
 });
 
 const eraseBtn = document.createElement('button');
-eraseBtn.innerHTML = '<i class="fa fa-window-close" aria-hidden="true"></i>'; // Updated to use icon
+eraseBtn.innerHTML = '<i class="fa fa-window-close" aria-hidden="true"></i>';
 eraseBtn.classList.add('key');
 eraseBtn.addEventListener('click', handleBackspace);
 
@@ -50,13 +50,13 @@ submitBtn.innerHTML = '<i class="fa fa-sign-in" aria-hidden="true"></i>';
 submitBtn.classList.add('key');
 submitBtn.addEventListener('click', handleEnter);
 
-const buttonContainer = document.createElement('div'); // Create a container for buttons
-buttonContainer.style.display = 'flex'; // Use flexbox for alignment
-buttonContainer.style.justifyContent = 'center'; // Center the buttons
+const buttonContainer = document.createElement('div');
+buttonContainer.style.display = 'flex';
+buttonContainer.style.justifyContent = 'center';
 
-buttonContainer.appendChild(eraseBtn); // Add erase button to container
-buttonContainer.appendChild(submitBtn); // Add submit button to container
-keyboard.appendChild(buttonContainer); // Append the container to the keyboard
+buttonContainer.appendChild(eraseBtn);
+buttonContainer.appendChild(submitBtn);
+keyboard.appendChild(buttonContainer);
 
 async function fetchWord() {
     try {
@@ -194,7 +194,8 @@ function endGame(won) {
         messageBox.removeChild(existingResponseText);
     }
     askButton.classList.add('ask-button');
-    askButton.innerText = 'Ask Sonia AI the meaning';
+    askButton.style.fontSize = '25px';
+    askButton.innerHTML = '<img src="../img/Sonia AI Loop 2.gif" alt="Icon" style="width: 30px; height: 30px; margin-right: 5px;"> Ask Sonia AI the meaning';
     const askQuery = 'What is the meaning of the word ' + targetWord;
     askButton.onclick = async () => {
         try {
