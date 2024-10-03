@@ -22,25 +22,41 @@ for (let i = 0; i < MAX_GUESSES; i++) {
     }
 }
 
-'QWERTYUIOPASDFGHJKLZXCVBNM'.split('').forEach(letter => {
-    const key = document.createElement('button');
-    key.textContent = letter;
-    key.classList.add('key');
-    key.addEventListener('click', () => handleInput(letter));
-    keyboard.appendChild(key);
+const qwertyKeys = [
+    'QWERTYUIOP',
+    'ASDFGHJKL',
+    'ZXCVBNM'
+];
+
+qwertyKeys.forEach(row => {
+    const rowDiv = document.createElement('div');
+    row.split('').forEach(letter => {
+        const key = document.createElement('button');
+        key.textContent = letter;
+        key.classList.add('key');
+        key.addEventListener('click', () => handleInput(letter));
+        rowDiv.appendChild(key);
+    });
+    keyboard.appendChild(rowDiv);
 });
 
 const eraseBtn = document.createElement('button');
 eraseBtn.innerHTML = '<i class="fa fa-window-close" aria-hidden="true"></i>'; // Updated to use icon
 eraseBtn.classList.add('key');
 eraseBtn.addEventListener('click', handleBackspace);
-keyboard.appendChild(eraseBtn);
 
 const submitBtn = document.createElement('button');
 submitBtn.innerHTML = '<i class="fa fa-sign-in" aria-hidden="true"></i>';
 submitBtn.classList.add('key');
 submitBtn.addEventListener('click', handleEnter);
-keyboard.appendChild(submitBtn);
+
+const buttonContainer = document.createElement('div'); // Create a container for buttons
+buttonContainer.style.display = 'flex'; // Use flexbox for alignment
+buttonContainer.style.justifyContent = 'center'; // Center the buttons
+
+buttonContainer.appendChild(eraseBtn); // Add erase button to container
+buttonContainer.appendChild(submitBtn); // Add submit button to container
+keyboard.appendChild(buttonContainer); // Append the container to the keyboard
 
 async function fetchWord() {
     try {
@@ -181,19 +197,26 @@ function endGame(won) {
     askButton.innerText = 'Ask Sonia AI the meaning';
     const askQuery = 'What is the meaning of the word ' + targetWord;
     askButton.onclick = async () => {
-        const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message: askQuery })
-        });
-        const data = await response.json();
-        
-        const responseText = document.createElement('p');
-        responseText.classList.add('response-text');
-        responseText.textContent = data.text;
-        messageBox.appendChild(responseText);
+        try {
+            const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: askQuery })
+            });
+            const data = await response.json();
+            
+            const responseText = document.createElement('p');
+            responseText.classList.add('response-text');
+            responseText.textContent = data.text || 'No response available.';
+            messageBox.appendChild(responseText);
+        } catch (error) {
+            const responseText = document.createElement('p');
+            responseText.classList.add('response-text');
+            responseText.textContent = 'Error fetching meaning. Please try again.';
+            messageBox.appendChild(responseText);
+        }
     };
     messageBox.appendChild(askButton);
 }

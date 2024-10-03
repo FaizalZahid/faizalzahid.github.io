@@ -1,4 +1,5 @@
 body {
+    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -7,12 +8,11 @@ body {
     color: #FCBF47;
     margin: 0;
     padding: 20px;
-    height: 100vh;
     justify-content: center;
 }
 
-body h1 {
-    font-family: 'Poppins', serif;
+body p {
+    color: white;
 }
 
 #game-board {
@@ -39,19 +39,21 @@ body h1 {
 #keyboard {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 5px;
     margin-bottom: 20px;
-    width: 50%;
+    width: 100%;
 }
 
 .key {
     padding: 10px;
+    margin: 2px;
     border-radius: 10px;
     box-shadow: 0 0 10px #FFD700;
     color: #FCBF47;
     background-color: black;
-    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
