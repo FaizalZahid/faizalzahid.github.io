@@ -187,6 +187,11 @@ function endGame(won) {
         const data = await response.json();
         
         const responseText = document.createElement('p');
+        const existingResponseText = messageBox.querySelector('.response-text');
+        if (existingResponseText) {
+            messageBox.removeChild(existingResponseText);
+        }
+        responseText.classList.add('response-text');
         responseText.textContent = data.text;
         messageBox.appendChild(responseText);
     };
@@ -232,8 +237,6 @@ function startNewGame() {
     guessCount = 0;
     newGameBtn.style.display = 'none';
     hideMessage();
-    
-    messageBox.innerHTML = '';
 
     const tiles = gameBoard.getElementsByClassName('tile');
     Array.from(tiles).forEach(tile => {
