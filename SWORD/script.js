@@ -176,13 +176,14 @@ function endGame(won) {
     }
     askButton.classList.add('ask-button');
     askButton.innerText = 'Ask Sonia AI the meaning';
+    const askQuery = 'What is the meaning of the word ' + targetWord;
     askButton.onclick = async () => {
         const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ message: targetWord })
+            body: JSON.stringify({ message: askQuery })
         });
         const data = await response.json();
         
@@ -199,7 +200,7 @@ function showMessage(title, content) {
     overlay.style.display = 'block';
     messageBox.style.display = 'block';
 
-    const existingButton = messageBox.querySelector('.new-game-button'); // Update this line
+    const existingButton = messageBox.querySelector('.new-game-button');
     if (existingButton) {
         messageBox.removeChild(existingButton);
     }
