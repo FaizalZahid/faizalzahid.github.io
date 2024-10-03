@@ -173,6 +173,10 @@ function endGame(won) {
     if (existingAskButton) {
         messageBox.removeChild(existingAskButton);
     }
+    const existingResponseText = messageBox.querySelector('.response-text');
+    if (existingResponseText) {
+        messageBox.removeChild(existingResponseText);
+    }
     askButton.classList.add('ask-button');
     askButton.innerText = 'Ask Sonia AI the meaning';
     const askQuery = 'What is the meaning of the word ' + targetWord;
@@ -187,10 +191,6 @@ function endGame(won) {
         const data = await response.json();
         
         const responseText = document.createElement('p');
-        const existingResponseText = messageBox.querySelector('.response-text');
-        if (existingResponseText) {
-            messageBox.removeChild(existingResponseText);
-        }
         responseText.classList.add('response-text');
         responseText.textContent = data.text;
         messageBox.appendChild(responseText);
