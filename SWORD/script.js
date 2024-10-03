@@ -168,9 +168,8 @@ function endGame(won) {
         showMessage('Game Over', `You've used all ${MAX_GUESSES} guesses. The word was "${targetWord}".`);
     }
 
-    // Add button for asking AI
     const askButton = document.createElement('button');
-    const existingAskButton = messageBox.querySelector('.ask-button'); // Add this line
+    const existingAskButton = messageBox.querySelector('.ask-button');
     if (existingAskButton) {
         messageBox.removeChild(existingAskButton);
     }
@@ -234,6 +233,8 @@ function startNewGame() {
     newGameBtn.style.display = 'none';
     hideMessage();
     
+    messageBox.innerHTML = '';
+
     const tiles = gameBoard.getElementsByClassName('tile');
     Array.from(tiles).forEach(tile => {
         tile.textContent = '';
