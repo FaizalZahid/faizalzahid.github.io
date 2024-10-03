@@ -1,0 +1,51 @@
+body {
+    font-family: 'Roboto', serif;
+    margin: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #FCBF47;
+    font-family: 'Poppins', serif;
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    color: white;
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #FCBF47;
+}
