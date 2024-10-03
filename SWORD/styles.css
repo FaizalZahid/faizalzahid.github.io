@@ -48,12 +48,13 @@ body p {
 }
 
 .key {
-    padding: 10px;
+    padding: 5px;
     margin: 2px;
     border-radius: 10px;
     box-shadow: 0 0 10px #FFD700;
     color: #FCBF47;
     background-color: black;
+    font-size: 1em;
     font-weight: bold;
     cursor: pointer;
 }
