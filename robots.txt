@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /private-section/
-Sitemap: https://faizalzahid.github.io/sitemap.xml
+Sitemap: https://faizalzahid.pages.dev/sitemap.xml
