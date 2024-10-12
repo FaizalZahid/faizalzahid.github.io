@@ -13,6 +13,7 @@ const messageBox = document.getElementById('message-box');
 const messageTitle = document.getElementById('message-title');
 const messageContent = document.getElementById('message-content');
 const closeMessageBtn = document.getElementById('close-message');
+const askButton = document.createElement('button');
 
 for (let i = 0; i < MAX_GUESSES; i++) {
     for (let j = 0; j < WORD_LENGTH; j++) {
@@ -50,13 +51,15 @@ submitBtn.innerHTML = '<i class="fa fa-sign-in" aria-hidden="true"></i>';
 submitBtn.classList.add('key');
 submitBtn.addEventListener('click', handleEnter);
 
-const buttonContainer = document.createElement('div');
-buttonContainer.style.display = 'flex';
-buttonContainer.style.justifyContent = 'center';
+// Create a container for the row of buttons
+const buttonRowContainer = document.createElement('div');
+buttonRowContainer.style.display = 'flex';
+buttonRowContainer.style.justifyContent = 'center';
 
-buttonContainer.appendChild(eraseBtn);
-buttonContainer.appendChild(submitBtn);
-keyboard.appendChild(buttonContainer);
+// Append eraseBtn and submitBtn to the row container
+buttonRowContainer.appendChild(eraseBtn);
+buttonRowContainer.appendChild(submitBtn);
+keyboard.appendChild(buttonRowContainer);
 
 async function fetchWord() {
     try {
@@ -185,14 +188,8 @@ function endGame(won) {
     }
 
     const askButton = document.createElement('button');
-    const existingAskButton = messageBox.querySelector('.ask-button');
-    if (existingAskButton) {
-        messageBox.removeChild(existingAskButton);
-    }
-    const existingResponseText = messageBox.querySelector('.response-text');
-    if (existingResponseText) {
-        messageBox.removeChild(existingResponseText);
-    }
+    askButton.style.display = 'block'; // Ensure askButton is displayed as a block
+    askButton.style.marginTop = '10px'; // Add margin for spacing
     askButton.classList.add('ask-button');
     askButton.style.fontSize = '25px';
     askButton.innerHTML = '<img src="../img/Sonia AI Loop 2.gif" alt="Icon" style="width: 30px; height: 30px; margin-right: 5px;"> Ask Sonia AI the meaning';
