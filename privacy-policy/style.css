@@ -14,6 +14,13 @@ body {
     padding: 20px;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+}
+
 h1, h2 {
     color: #FCBF47;
     font-family: 'Poppins', serif;
