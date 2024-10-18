@@ -36,6 +36,13 @@
     text-align: center;
 }
 
+#quotes {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5em;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
 #solve {
     border-radius: 5px;
     padding: 5px 20px;
