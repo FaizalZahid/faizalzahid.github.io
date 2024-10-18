@@ -29,7 +29,7 @@ header h1 {
 header #blog-icon {
     width: auto;
     height: 3em;
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 header #rss-icon {
