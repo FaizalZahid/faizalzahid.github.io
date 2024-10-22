@@ -696,14 +696,20 @@ details ul a {
     margin-top: 20px;
 }
 
-.istockphoto-thumbnail-gallery {
+.stock-logo {
+    width: 200px;
+    height: auto;
+}
+
+.stockphoto-thumbnail-gallery {
     display: flex;
     justify-content: space-around;
     gap: 5px;
     flex-wrap: nowrap;
+    margin-bottom: 30px;
 }
 
-.istockphoto-thumbnail-gallery img {
+.stockphoto-thumbnail-gallery img {
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -711,16 +717,16 @@ details ul a {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(175, 175, 175, 0.8), 0 0 30px rgba(0, 0, 0, 0.8)
 }
 
-.istockphoto-thumbnail-gallery img:hover {
+.stockphoto-thumbnail-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
 }
 
-.istockphoto-thumbnail-gallery #istockphoto-thumbnail1 {
+.stockphoto-thumbnail-gallery #istockphoto-thumbnail1, #adobestockphoto-thumbnail1{
     border-radius: 0 0 0 20px;
 }
 
-.istockphoto-thumbnail-gallery #istockphoto-thumbnail3 {
+.stockphoto-thumbnail-gallery #istockphoto-thumbnail3, #adobestockphoto-thumbnail3{
     border-radius: 0 0 20px 0;
 }
 
@@ -728,7 +734,7 @@ details ul a {
     color: #FCBF47;
 }
 
-#support #istockphoto-portfolio-img {
+#support .stockphoto-portfolio-img {
     width: 100%;
     height: auto;
     border-radius: 20px 20px 0 0;
@@ -737,7 +743,7 @@ details ul a {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(175, 175, 175, 0.8), 0 0 30px rgba(0, 0, 0, 0.8)
 }
 
-#support #istockphoto-portfolio-img:hover {
+#support .stockphoto-portfolio-img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
 }
