@@ -699,6 +699,7 @@ details ul a {
 .stock-logo {
     width: 200px;
     height: auto;
+    max-width: 100%;
 }
 
 .stockphoto-thumbnail-gallery {
