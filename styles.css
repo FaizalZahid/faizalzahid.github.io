@@ -21,7 +21,7 @@ body {
     background-blend-mode: overlay;
 }
 
-#about, #duolingo, #social, #faizalingo {
+#about, #duolingo, #blog, #self-help, #art, #open-source, #support, #soniachat, #faizalingo {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,19 +30,39 @@ body {
 }
 
 #about {
-    background-image: url('img/aboutme.png');
+    background-image: url('img/aboutme.webp');
 }
 
 #duolingo {
-    background-image: url('img/classroom.png');
+    background-image: url('img/classroom.webp');
 }
 
-#social {
-    background-image: url('img/socmed.png');
+#blog {
+    background-image: url('img/blog-bg.webp');
+}
+
+#self-help {
+    background-image: url('img/self-help-bg.webp');
+}
+
+#art {
+    background-image: url('img/random-art-bg.webp');
+}
+
+#open-source {
+    background-image: url('img/open-source-bg.webp');
+}
+
+#support {
+    background-image: url('img/support-me-bg.webp');
+}
+
+#soniachat {
+    background-image: url('img/Sonia AI bg.webp');
 }
 
 #faizalingo {
-    background-image: url('img/faizalingo.png');
+    background-image: url('img/faizalingo.webp');
 }
 
 .header-content {
@@ -254,7 +274,7 @@ nav ul li a:hover:after {
 }
 
 main {
-    background-image: url('img/scholars-library.png');
+    background-image: url('img/scholars-library.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
