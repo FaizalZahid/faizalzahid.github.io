@@ -325,6 +325,7 @@ summary {
     border-radius: 8px;
     box-shadow: 0 0 10px #FFD700;
     padding: 10px;
+    cursor: pointer;
 }
 
 details h4 {
@@ -654,7 +655,7 @@ details {
     margin: 10px;
 }
 
-details ul li {
+details div {
     line-height: 1.5em;
     margin: 10px;
     background-color: black;
@@ -665,51 +666,14 @@ details ul li {
     display: inline-block;
 }
 
-details ul li:hover {
+details div:hover {
     transform: scale(1.05);
 }
 
-details ul a {
+details a {
     color: #FCBF47;
     text-decoration: none;
     padding-left: 20px;
-}
-
-.toggle-checkbox {
-    display: none;
-}
-
-#toggle-checkbox-literature:checked ~ #literature-content, #toggle-checkbox-courses:checked ~ #courses-content, #toggle-checkbox-journal:checked ~ #journal-content, #toggle-checkbox-audiobook:checked ~ #audiobook-content, #toggle-checkbox-general-knowledge:checked ~ #general-knowledge-content, #toggle-checkbox-languages:checked ~ #languages-content, #toggle-checkbox-cs:checked ~ #cs-content, #toggle-checkbox-forum:checked ~ #forum-content {
-    display: block;
-    opacity: 1;
-}
-
-#toggle-checkbox-literature:checked ~ .literature-toggle-button::after, #toggle-checkbox-courses:checked ~ .courses-toggle-button::after, #toggle-checkbox-journal:checked ~ .journal-toggle-button::after, #toggle-checkbox-audiobook:checked ~ .audiobook-toggle-button::after, #toggle-checkbox-general-knowledge:checked ~ .general-knowledge-toggle-button::after, #toggle-checkbox-languages:checked ~ .languages-toggle-button::after, #toggle-checkbox-cs:checked ~ .cs-toggle-button::after, #toggle-checkbox-forum:checked ~ .forum-toggle-button::after {
-    content: '▲';
-    transform: rotate(180deg);
-}
-
-.toggle-button {
-    color: #FCBF47;
-    background-color: black;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.5em;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 0 10px #FFD700;
-    padding: 5px 20px;
-    margin-top: 20px;
-    width: 100%;
-}
-
-.toggle-button::after {
-    content: '▼';
-    font-size: 1em;
-    margin-left: 10px;
-    transition: transform 0.3s ease-out;
 }
 
 .margin-top-nav {
