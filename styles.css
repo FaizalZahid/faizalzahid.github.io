@@ -70,6 +70,12 @@ body {
     padding: 0 10px;
 }
 
+.header-content img {
+    display: inline-block;
+    weight: 100px;
+    height: 100px;
+}
+
 .header-content h1 {
     font-family: 'Poppins', serif;
     color: #FFD700;
