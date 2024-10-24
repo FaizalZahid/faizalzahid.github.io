@@ -12,7 +12,7 @@ body {
     align-items: center;
     text-align: center;
     background: rgba(30, 30, 45, 0.8);
-    background-image: url('../img/abbasid.png');
+    background-image: url('../img/abbasid.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -160,95 +160,95 @@ body {
 
 
 #islam {
-    background-image: url('../img/Quran.png');
+    background-image: url('../img/Quran.webp');
 }
 
 #animals {
-    background-image: url('../img/animals.png');
+    background-image: url('../img/animals.webp');
 }
 
 #astro {
-    background-image: url('../img/astro.png');
+    background-image: url('../img/astro.webp');
 }
 
 #design {
-    background-image: url('../img/design.png');
+    background-image: url('../img/design.webp');
 }
 
 #economy {
-    background-image: url('../img/economy.png');
+    background-image: url('../img/economy.webp');
 }
 
 #education {
-    background-image: url('../img/education.png');
+    background-image: url('../img/education.webp');
 }
 
 #engineering {
-    background-image: url('../img/engineering.png');
+    background-image: url('../img/engineering.webp');
 }
 
 #filmmaking {
-    background-image: url('../img/filmmaking.png');
+    background-image: url('../img/filmmaking.webp');
 }
 
 #food {
-    background-image: url('../img/food.png');
+    background-image: url('../img/food.webp');
 }
 
 #geography {
-    background-image: url('../img/geography.png');
+    background-image: url('../img/geography.webp');
 }
 
 #geopolitics {
-    background-image: url('../img/geopolitics.png');
+    background-image: url('../img/geopolitics.webp');
 }
 
 #health {
-    background-image: url('../img/health.png');
+    background-image: url('../img/health.webp');
 }
 
 #history {
-    background-image: url('../img/history.png');
+    background-image: url('../img/history.webp');
 }
 
 #law {
-    background-image: url('../img/law.png');
+    background-image: url('../img/law.webp');
 }
 
 #mathematics {
-    background-image: url('../img/mathematics.png');
+    background-image: url('../img/mathematics.webp');
 }
 
 #music {
-    background-image: url('../img/music.png');
+    background-image: url('../img/music.webp');
 }
 
 #oceanography {
-    background-image: url('../img/oceanography.png');
+    background-image: url('../img/oceanography.webp');
 }
 
 #philosophy {
-    background-image: url('../img/philosophy.png');
+    background-image: url('../img/philosophy.webp');
 }
 
 #plants {
-    background-image: url('../img/plants.png');
+    background-image: url('../img/plants.webp');
 }
 
 #politics {
-    background-image: url('../img/politics.png');
+    background-image: url('../img/politics.webp');
 }
 
 #programming {
-    background-image: url('../img/programming.png');
+    background-image: url('../img/programming.webp');
 }
 
 #psychology {
-    background-image: url('../img/psychology.png');
+    background-image: url('../img/psychology.webp');
 }
 
 #featured-bookcast {
-    background-image: url('../img/featured-bookcast.png');
+    background-image: url('../img/featured-bookcast.webp');
 }
 
 nav ul {
@@ -287,13 +287,13 @@ nav ul li a:hover {
 }
 
 .link-with-image .link-icon {
-  width: 24px;
-  height: auto;
-  margin-right: 10px;
+    width: 24px;
+    height: auto;
+    margin-right: 10px;
 }
 
 main {
-    background-image: url('../img/scholars-library.png');
+    background-image: url('../img/scholars-library.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
