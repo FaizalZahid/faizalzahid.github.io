@@ -70,7 +70,7 @@ body {
     padding: 0 10px;
 }
 
-.header-content img {
+.header-content #main-logo {
     display: inline-block;
     weight: 100px;
     height: 100px;
