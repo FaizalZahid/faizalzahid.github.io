@@ -661,7 +661,7 @@ details {
     margin: 10px;
 }
 
-details div {
+.open-source-details div {
     line-height: 1.5em;
     margin: 10px;
     background-color: black;
@@ -672,11 +672,11 @@ details div {
     display: inline-block;
 }
 
-details div:hover {
+.open-source-details div:hover {
     transform: scale(1.05);
 }
 
-details a {
+.open-source-details a {
     color: #FCBF47;
     text-decoration: none;
     padding-left: 20px;
