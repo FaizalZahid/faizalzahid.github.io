@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="../img/aboutme.png">
+    <link rel="icon" type="image/x-icon" href="../img/bayt al-hikmah 2.0.svg">
     <title>DASS Test Results</title>
 </head>
 <body>
@@ -39,6 +39,21 @@
         </div>
     </section>
 
+    <div align="center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1868008660532815"
+             crossorigin="anonymous"></script>
+        <!-- Horizontal -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1868008660532815"
+             data-ad-slot="2679727200"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Faizal Zahid's Knowledge Hub. All Rights Reserved.</p>
@@ -59,55 +74,15 @@
             </nav>
         </div>
     </footer>
-
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
     <script>
-        function getQueryParams() {
-            var params = {};
-            window.location.search.substring(1).split('&').forEach(function(param) {
-                var parts = param.split('=');
-                params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
-            });
-            return params;
-        }
-
-        function getInsight(score, type) {
-            if (score >= 0 && score <= 4) return `${type} is NORMAL.\nYou seem to be managing well.`;
-            if (score >= 5 && score <= 9) return `${type} is MILD.\nConsider practicing relaxation techniques.`;
-            if (score >= 10 && score <= 14) return `${type} is MODERATE.\nYou may want to seek support or counseling.`;
-            return `${type} is SEVERE.\nIt might be beneficial to consult a mental health professional.`;
-        }
-
-        var queryParams = getQueryParams();
-        var depressionScore = parseInt(queryParams.depression);
-        var anxietyScore = parseInt(queryParams.anxiety);
-        var stressScore = parseInt(queryParams.stress);
-
-        document.getElementById('depressionScore').textContent = `Depression Score: ${depressionScore}`;
-        document.getElementById('depressionInsight').textContent = getInsight(depressionScore, 'Depression');
-
-        document.getElementById('anxietyScore').textContent = `Anxiety Score: ${anxietyScore}`;
-        document.getElementById('anxietyInsight').textContent = getInsight(anxietyScore, 'Anxiety');
-
-        document.getElementById('stressScore').textContent = `Stress Score: ${stressScore}`;
-        document.getElementById('stressInsight').textContent = getInsight(stressScore, 'Stress');
-        
-        function encodeURIComponentCustom(str) {
-            return encodeURIComponent(str).replace(/[!'()*]/g, escape);
-        }
-
-        const params = new URLSearchParams(window.location.search);
-        const getDepression = params.get('depression');
-        const getAnxiety = params.get('anxiety');
-        const getStress = params.get('stress');
-        const baseUrl = 'https://faizalzahid.github.io/dass-test/results.html';
-        const shareUrl = `${baseUrl}?depression=${encodeURIComponent(getDepression)}&anxiety=${encodeURIComponent(getAnxiety)}&stress=${encodeURIComponent(getStress)}`;
-        const shareText = `Just got my DASS test results. Depression: ${getDepression}, Anxiety: ${getAnxiety}, Stress: ${getStress}.`;
-        const encodedShareText = encodeURIComponentCustom(shareText);
-
-        document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodedShareText}`;
-        document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodedShareText}&url=${encodeURIComponent(shareUrl)}`;
-        document.getElementById('linkedin-share').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=DASS%20Test%20Results&summary=${encodedShareText}`;
-        document.getElementById('whatsapp-share').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+      kofiWidgetOverlay.draw('faizalzahid', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#fcbf47',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
     </script>
+    <script type="text/javascript" src="results_script.js"></script>
 </body>
 </html>
