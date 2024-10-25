@@ -146,28 +146,7 @@ footer {
 }
 
 .social-button:hover {
-  background-color: #e0e0e0;
   transform: scale(1.1);
-}
-
-.social-button.tiktok {
-  background-image: url('../img/tiktok.png');
-}
-
-.social-button.instagram {
-  background-image: url('../img/instagram.png');
-}
-
-.social-button.youtube {
-  background-image: url('../img/youtube.png');
-}
-
-.social-button.blogger {
-  background-image: url('../img/blogger.png');
-}
-
-.social-button.x {
-  background-image: url('../img/twitterx.png');
 }
 
 .explore-other-sections {
