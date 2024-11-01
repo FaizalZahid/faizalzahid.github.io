@@ -700,6 +700,15 @@ details {
     margin-bottom: 30px;
 }
 
+.canva-thumbnail-gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+}
+
 .stockphoto-thumbnail-gallery img {
     width: 100%;
     max-width: 200px;
