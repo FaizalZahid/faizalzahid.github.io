@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;700&display=swap">
+    <title>404 - Ghosted by the Internet</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', serif;
+            color: white;
+            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3NybnZtNWN1bmxpa2Voc2cwazdwNmJsdW0xcjl6aXgycW5lYWd2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jUolSnfkEC2CRFLC1c/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: white;
+            background-color: #333;
+            border: 2px solid #555;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>404 - Ghosted by the Internet</h1>
+        <p>This page was here, and now it’s gone. Was it ever real?</p>
+        <div class="buttons">
+            <button class="button" onclick="playWhiteNoise()">Enjoy the white noise</button>
+            <button class="button" onclick="location.href='.'">Go Back Home</button>
+        </div>
+    </div>
+
+    <script>
+        let audio;
+        function playWhiteNoise() {
+            if (!audio) {
+                audio = new Audio('https://www.dropbox.com/scl/fi/q1n1jnb0dg7wrn6cr8b09/white-noise.mp3?rlkey=almbk2l2vfpt0hq5dsw0ehocw&st=w0t65xa1&dl=1');
+                audio.loop = true;
+            }
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
