@@ -786,22 +786,6 @@ details {
     margin-top: 20px;
 }
 
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-#responseContainer p {
-    border-right: 2px solid black;
-    white-space: pre-wrap;
-    animation: blink 1s step-end infinite;
-}
-
-#responseContainer p:last-child {
-    border-right: none;
-}
-
 footer {
     background-color: #2E2E3D;
     padding: 20px 0;
