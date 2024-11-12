@@ -786,16 +786,20 @@ details {
     margin-top: 20px;
 }
 
-/* Ink fade-in effect */
-.fade-in {
-  opacity: 1;
-  letter-spacing: 1px; /* As it fades in, letters come closer */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Ink fade-out effect */
-.fade-out {
-  opacity: 0;
-  letter-spacing: 2px; /* As it fades out, letters space out slightly */
+#responseContainer p {
+    border-right: 2px solid black;
+    white-space: pre-wrap;
+    animation: blink 1s step-end infinite;
+}
+
+#responseContainer p:last-child {
+    border-right: none;
 }
 
 footer {
