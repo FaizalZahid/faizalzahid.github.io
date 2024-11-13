@@ -921,7 +921,6 @@ footer p {
 .chat-input textarea {
     width: 95%;
     padding: 8px;
-    border: 1px solid #dee2e6;
     border-radius: 4px;
     margin-bottom: 8px;
     resize: none;
@@ -949,6 +948,7 @@ footer p {
 .chat-input button:hover {
     background: black;
     color: #FCBF47;
+    border: 1px solid #FCBF47;
     transform: translateY(-1px);
 }
 
