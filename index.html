@@ -541,7 +541,7 @@
             </script>
         </div>
 
-        <section id="soniachat">
+        <!-- <section id="soniachat">
             <div class="container">
                 <img id="sonia-icon" alt="Sonia AI icon" src="img/Sonia AI Loop 2.webp">
                 <div class="container soniachat-container">
@@ -561,7 +561,7 @@
                     </nav>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section id="faizalingo">
             <div class="container faizalingo-container">
@@ -622,4 +622,22 @@
     <script src="script.js"></script>
     <script src="podcast_transcript.js"></script>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+
+    <div id="floating-chat-container">
+        <button id="chat-button" class="chat-button">
+            <img id="sonia-icon" alt="Sonia AI icon" src="img/Sonia AI Loop 2.webp">
+        </button>
+        <div id="chat-dialog" class="chat-dialog hidden">
+            <div class="chat-header">
+                <h2>Ask Sonia AI</h2>
+                <button id="close-chat" class="close-button">×</button>
+            </div>
+            <div id="responseContainer" class="chat-content"></div>
+            <div class="chat-input">
+                <textarea id="userMessage" rows="4" placeholder="Chat with Sonia AI here!"></textarea>
+                <button id="sendMessage">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

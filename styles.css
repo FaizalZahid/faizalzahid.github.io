@@ -57,9 +57,9 @@ body {
     background-image: url('img/support-me-bg.webp');
 }
 
-#soniachat {
+/*#soniachat {
     background-image: url('img/Sonia AI bg.webp');
-}
+}*/
 
 #faizalingo {
     background-image: url('img/faizalingo.webp');
@@ -101,7 +101,7 @@ body {
     margin-right: 10px;
 }
 
-#avatar, #duobanner, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon, #sonia-icon {
+#avatar, #duobanner, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -748,7 +748,7 @@ details {
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
 }
 
-.soniachat-container {
+/*.soniachat-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -784,7 +784,7 @@ details {
 
 .soniachat-container #responseContainer{
     margin-top: 20px;
-}
+}*/
 
 footer {
     background-color: #2E2E3D;
@@ -801,17 +801,188 @@ footer p {
 }
 
 .social-button {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: cover;
-  border-radius: 50%;
-  transition: background-color 0.3s, transform 0.3s;
-  margin: 0 0 0 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 0 0 10px;
 }
 
 .social-button:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#floating-chat-container {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+.chat-button:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.chat-button.hidden {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.chat-button img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat-dialog {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 380px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: bottom right;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.chat-dialog.hidden {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    pointer-events: none;
+}
+
+.chat-header {
+    padding: 16px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 8px;
+    color: #666;
+    transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+    color: #333;
+    transform: scale(1.1);
+}
+
+.chat-content {
+    padding: 16px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.chat-input {
+    padding: 16px;
+    border-top: 1px solid #e9ecef;
+}
+
+.chat-input textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    resize: none;
+    transition: border-color 0.2s ease;
+}
+
+.chat-input textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.chat-input button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chat-input button:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.chat-input button:active {
+    transform: translateY(0);
+}
+
+.sonia-response {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .chat-dialog {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        transform: translateY(100%);
+    }
+    
+    .chat-dialog:not(.hidden) {
+        transform: translateY(0);
+    }
+    
+    .chat-content {
+        height: calc(100% - 130px);
+    }
 }
 
 @media (max-width: 768px) {
