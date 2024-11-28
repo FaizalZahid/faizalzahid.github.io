@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'AquilineTwo';
+    src: url('https://faizalzahid.pages.dev/fonts/AquilineTwo.ttf');
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #E0E0E0;
@@ -957,6 +962,7 @@ footer p {
 }
 
 .sonia-response {
+    font-family: 'AquilineTwo', serif;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 12px;
