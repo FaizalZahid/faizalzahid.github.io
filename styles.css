@@ -963,6 +963,8 @@ footer p {
 
 .sonia-response {
     font-family: 'AquilineTwo', serif;
+    font-size: 20px;
+    font-weight: bold;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 12px;
