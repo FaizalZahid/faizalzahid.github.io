@@ -43,6 +43,11 @@ header a {
     color: inherit;
 }
 
+a {
+   color: #FCBF47;
+   text-decoration: none; 
+}
+
 header #subscribe-rss {
     font-family: 'Roboto', sans-serif;
     color: #FFD700;
