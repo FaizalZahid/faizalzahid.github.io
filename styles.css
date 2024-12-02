@@ -16,14 +16,25 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-sizing:border-box;
+}
+
+.parallax::before {
+    content: '';
+    position: absolute;
+    inset: 0;
     background: rgba(30, 30, 45, 0.8);
     background-image: url('img/abbasid.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    box-sizing:border-box;
     background-blend-mode: overlay;
+    z-index: -1;
+
+    mask-image: url('img/inky.gif');
+    mask-size: cover;
+    mask-position: center;
 }
 
 #about, #duolingo, #blog, #self-help, #art, #open-source, #support, #soniachat, #faizalingo {
