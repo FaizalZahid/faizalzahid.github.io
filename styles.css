@@ -33,7 +33,7 @@ body {
     background-blend-mode: overlay;
     z-index: -1;
 
-    mask-image: url('img/inky.gif');
+    mask-image: url('img/inky.webp');
     mask-size: cover;
     mask-position: center;
 }
