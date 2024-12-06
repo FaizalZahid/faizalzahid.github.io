@@ -89,7 +89,7 @@ body {
 
 .header-content #main-logo {
     display: inline-block;
-    weight: 100px;
+    width: 100px;
     height: 100px;
 }
 
@@ -110,6 +110,12 @@ body {
     margin-top: 50px;
     color: #FCBF47;
     font-size: 1.8em;
+}
+
+.header-content ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
 }
 
 .link-icon {
@@ -273,23 +279,23 @@ nav ul li a:hover:after {
     bottom: -50px;
 }
 
-#opposite-color {
+.header-content nav ul li #opposite-color {
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 8px 20px;
     color: rgb(0, 0, 0);
     background-color: #FCBF47;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: bolder;
     transition: color 0.3s;
     font-size: 3em;
     box-shadow: 0 0 10px #000000, 0 0 20px #ffffff;
 }
 
-#opposite-color:after {
+.header-content #opposite-color:after {
     content: '';
 }
 
-#opposite-color:hover {
+.header-content #opposite-color:hover {
     color: rgb(0, 0, 0);
     background-color: rgba(250, 226, 177, 0.5);
     padding: 10px 25px;
@@ -1030,15 +1036,15 @@ footer p {
         font-size: 1em;
     }
 
-    nav ul {
+    nav ul, .header-content nav ul {
         flex-direction: column;
     }
 
-    nav ul li {
+    nav ul li, .header-content nav ul li {
         margin: 5px 0;
     }
 
-    nav ul li a {
+    nav ul li a, .header-content nav ul li a, .header-content nav ul li #opposite-color{
         font-size: 1.5em;
     }
 
