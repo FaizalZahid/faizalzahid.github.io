@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #E0E0E0;
     background-color: black;
+    text-align: center;
 }
 
 .parallax {
@@ -766,43 +767,10 @@ details {
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
 }
 
-/*.soniachat-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+#contact summary {
+    display: inline-block;
+    padding: 10px 24%;
 }
-
-.soniachat-container #userMessage {
-    width: 100%;
-    height: 100%;
-    resize: none;
-    border-radius: 20px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.soniachat-container #sendMessage {
-    padding: 10px 20px;
-    background-color: #FCBF47;
-    color: #000;
-    border-radius: 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
-    transition: transform 0.3s;
-    margin-top: 10px;
-}
-
-.soniachat-container #sendMessage:hover {
-    background-color: #fcd37e;
-    transform: scale(1.05);
-}
-
-.soniachat-container #responseContainer{
-    margin-top: 20px;
-}*/
 
 footer {
     background-color: #2E2E3D;
