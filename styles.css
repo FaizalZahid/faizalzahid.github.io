@@ -954,12 +954,14 @@ footer p {
 }
 
 .btn-link {
+    display: inline-block;
     padding: 10px 20px;
     background-color: #FCBF47;
     color: black;
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .btn-link:hover {
