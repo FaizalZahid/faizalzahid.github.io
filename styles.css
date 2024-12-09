@@ -1026,11 +1026,7 @@ footer p {
         font-size: 1.5em;
     }
 
-    #opposite-color {
-        font-size: 1.5em;
-    }
-
-    #opposite-color:hover {
+    .header-content nav ul li #opposite-color:hover {
         font-size: 1.6em;
     }
 
@@ -1074,7 +1070,7 @@ footer p {
         font-size: 1.3em;
     }
     
-    #opposite-color {
+    .header-content nav ul li #opposite-color {
         font-size: 1.3em;
     }
 
@@ -1086,7 +1082,7 @@ footer p {
         height: auto;
     }
 
-    #opposite-color:hover {
+    .header-content nav ul li #opposite-color:hover {
         font-size: 1.4em;
     }
 
