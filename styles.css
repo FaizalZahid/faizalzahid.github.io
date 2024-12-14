@@ -728,6 +728,18 @@ details {
     margin-bottom: 30px;
 }
 
+.milagro-thumbnail-gallery {
+    column-count: 2;
+    margin-bottom: 30px;
+}
+
+.milagro-thumbnail-gallery img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(175, 175, 175, 0.8), 0 0 30px rgba(0, 0, 0, 0.8)
+}
+
 .stockphoto-thumbnail-gallery img {
     width: 100%;
     max-width: 200px;
@@ -737,6 +749,11 @@ details {
 }
 
 .stockphoto-thumbnail-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
+.milagro-thumbnail-gallery img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
 }
