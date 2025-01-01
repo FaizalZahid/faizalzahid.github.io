@@ -309,7 +309,6 @@ main {
     box-sizing: border-box;
     overflow-x: hidden;
     padding: 40px 20px;
-    background-color: #1E1E2D;
     background-blend-mode: overlay;
 }
 
@@ -634,10 +633,14 @@ ul li a:hover {
     color: rgba(30, 30, 45);
 }
 
-#duolingo ul li a {
+#duolingo ul li a, #canva-template-button {
     border-radius: 5px;
     padding: 10px;
     display: block;
+}
+
+#canva-template-button {
+    background-color: black;
 }
 
 .duolingo-li {
@@ -709,15 +712,6 @@ details {
 
 .stockphoto-thumbnail-gallery {
     display: flex;
-    justify-content: space-around;
-    gap: 5px;
-    flex-wrap: nowrap;
-    margin-bottom: 30px;
-}
-
-.canva-thumbnail-gallery {
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
     gap: 5px;
     flex-wrap: nowrap;
