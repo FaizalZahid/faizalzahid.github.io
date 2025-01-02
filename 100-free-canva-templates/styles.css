@@ -6,7 +6,7 @@
 
 body {
     min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', serif;
     background-color: #121212;
     background-image: url("../img/abbasid-animation.webp");
     background-size: cover;
@@ -16,11 +16,21 @@ body {
     color: #fff;
     margin: 20px;
     text-align: center;
+    line-height: 1.5em;
 }
 
 h1 {
-    font-family: 'Poppins', serif;
     color: #fcbf47;
+    margin: 20px;
+}
+
+p {
+    margin: 20px;
+}
+
+span {
+    font-weight: bold;
+    color: darkgray;
 }
 
 .masonry {
