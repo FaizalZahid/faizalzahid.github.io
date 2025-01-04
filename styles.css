@@ -34,6 +34,22 @@ body {
     mask-position: center;
 }
 
+#kopi-kurma-latte-banner-square {
+    display: none;
+}
+
+#kopi-kurma-latte-banner {
+    width: 80%;
+    max-width: 1000px;
+    transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
+}
+
+#kopi-kurma-latte-banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FFD700;
+    opacity: 80%;
+}
+
 #about, #duolingo, #blog, #self-help, #art, #open-source, #support, #soniachat, #faizalingo {
     background-size: cover;
     background-repeat: no-repeat;
@@ -984,26 +1000,6 @@ footer p {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 480px) {
-    .chat-dialog {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-        transform: translateY(100%);
-    }
-    
-    .chat-dialog:not(.hidden) {
-        transform: translateY(0);
-    }
-    
-    .chat-content {
-        height: calc(100% - 130px);
-    }
-}
-
 @media (max-width: 768px) {
     .header-content h1 {
         font-size: 2em;
@@ -1054,6 +1050,21 @@ footer p {
         font-size: 1.5em;
     }
 
+    #kopi-kurma-latte-banner {
+        display: none;
+    }
+
+    #kopi-kurma-latte-banner-square {
+        display: inherit;
+        width: 80%;
+        transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
+    }
+
+    #kopi-kurma-latte-banner-square:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px #FFD700;
+        opacity: 80%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1102,6 +1113,24 @@ footer p {
 
     details ul li a {
         font-size: 1.3em;
+    }
+
+    .chat-dialog {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        transform: translateY(100%);
+    }
+    
+    .chat-dialog:not(.hidden) {
+        transform: translateY(0);
+    }
+    
+    .chat-content {
+        height: calc(100% - 130px);
     }
 }
 
