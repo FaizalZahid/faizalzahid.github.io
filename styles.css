@@ -39,7 +39,7 @@ body {
 }
 
 #kopi-kurma-latte-banner {
-    width: 100%;
+    width: 80%;
     max-width: 1000px;
     transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
 }
@@ -700,6 +700,12 @@ details {
     margin: 10px;
 }
 
+#special-thanks-yellow {
+    color: #fcbf47;
+    font-family: 'Poppins', serif;
+    font-weight: bold;
+}
+
 .open-source-details div {
     line-height: 1.5em;
     margin: 10px;
@@ -1061,7 +1067,7 @@ footer p {
 
     #kopi-kurma-latte-banner-square {
         display: inherit;
-        width: 100%;
+        width: 80%;
         transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
     }
 
@@ -1145,6 +1151,15 @@ footer p {
     20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
+@keyframes glow {
+    0% { box-shadow: 0 0 10px 5px #ffff9e; }
+    20% { box-shadow: 0 0 10px 5px #c843d1, 0 0 20px #ffff9e; }
+    40% { box-shadow: 0 0 10px 5px #c2c257; }
+    60% { box-shadow: 0 0 10px 5px #43d1b2, 0 0 20px #c2c257; }
+    80% { box-shadow: 0 0 10px 5px #fcbf47; }
+    100% { box-shadow: 0 0 10px 5px #ffd700, 0 0 20px #fcbf47; }
+}
+
 .hover-change-bg {
     background-color: rgb(30, 30, 45);
     box-shadow: 0 0 10px #FFD700;
@@ -1157,5 +1172,14 @@ footer p {
 
 .shake-animation {
     animation: shake 2s ease-in-out infinite alternate;
+    animation-delay: 2s;
+}
+
+#special-thanks {
+    border: 1px solid #fcbf47;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #fcbf47;
+    margin-top: 20px;
+    animation: glow 2s ease-in-out infinite alternate;
     animation-delay: 2s;
 }
