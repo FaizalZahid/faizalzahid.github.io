@@ -292,6 +292,11 @@ nav ul li a:hover:after {
     bottom: -50px;
 }
 
+#aa, #ae, #tbl, #rs, #jw, #me, #bk {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header-content nav ul li #opposite-color {
     border-radius: 5px;
     padding: 8px 20px;
