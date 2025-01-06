@@ -137,10 +137,22 @@ body {
     margin-right: 10px;
 }
 
-#avatar, #duobanner, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon {
+#avatar, #duobanner, #duobanner-animated, #socials, #open-source-icon, #self-help-icon, #art-icon, #support-icon {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+#duobanner-animated {
+    display: none;
+}
+
+#duolingo-owl:hover #duobanner {
+    display: none;
+}
+
+#duolingo-owl:hover #duobanner-animated {
+    display: inherit;
 }
 
 #duoavatar, #blog-icon {
@@ -292,7 +304,7 @@ nav ul li a:hover:after {
     bottom: -50px;
 }
 
-#aa, #ae, #tbl, #rs, #jw, #me, #bk {
+#aa, #ae, #tbl, #rs, #jw, #me, #bk, #utus {
     text-decoration: none;
     color: inherit;
 }
