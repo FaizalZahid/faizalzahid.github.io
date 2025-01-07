@@ -160,99 +160,6 @@ body {
     height: 100px;
 }
 
-#audio-player {
-    box-shadow: 0 0 10px #FCBF47;
-    border-radius: 40px;
-    padding: 15px;
-    display: inline-block;
-    margin-bottom: 20px;
-    width: 80%;
-    max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#player-content {
-    display: flex;
-    align-items: center;
-}
-
-#controls {
-    margin-right: 10px;
-}
-
-#progress-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-#progress {
-    flex-grow: 1; 
-    width: auto;
-    border: 1px solid #FCBF47;
-    cursor: pointer;
-    height: 25px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-#bar {
-    height: 100%;
-    background-color: #FCBF47;
-    width: 0;
-    border-radius: 10px;
-}
-
-#thumb {
-    color: #FCBF47;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    cursor: pointer;
-}
-
-#play, #pause {
-    display: none;
-}
-
-.play-pause {
-    font-weight: bolder;
-    background-color: black;
-    color: #FCBF47;
-    box-shadow: 0 0 10px #FCBF47;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.play-pause:hover {
-    background-color: #FCBF47;
-    color: black;
-}
-
-#time-display {
-    min-width: 110px;
-    text-align: right;
-    margin-left: 10px;
-    font-family: 'Poppins', serif;
-    color: #FCBF47;
-}
-
-#transcript {
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    font-size: 1.2em;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 10px #FCBF47;
-    padding: 5px 20px;
-    border-radius: 20px;
-    margin: 0 auto 20px auto;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -846,6 +753,142 @@ footer p {
     transform: scale(1.1);
 }
 
+#audio-player {
+    box-shadow: 0 0 10px #FCBF47;
+    border-radius: 40px;
+    padding: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#player-content {
+    display: flex;
+    align-items: center;
+}
+
+#controls {
+    margin-right: 10px;
+}
+
+#progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#progress {
+    flex-grow: 1; 
+    width: auto;
+    border: 1px solid #FCBF47;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#bar {
+    height: 100%;
+    background-color: #FCBF47;
+    width: 0;
+    border-radius: 10px;
+}
+
+#thumb {
+    color: #FCBF47;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    cursor: pointer;
+}
+
+#play, #pause {
+    display: none;
+}
+
+.play-pause {
+    font-weight: bolder;
+    background-color: black;
+    color: #FCBF47;
+    box-shadow: 0 0 10px #FCBF47;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.play-pause:hover {
+    background-color: #FCBF47;
+    color: black;
+}
+
+#time-display {
+    min-width: 110px;
+    text-align: right;
+    margin-left: 10px;
+    font-family: 'Poppins', serif;
+    color: #FCBF47;
+}
+
+#transcript {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px #FCBF47;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 0 auto 20px auto;
+}
+
+#floating-audio-container {
+    position: fixed;
+    bottom: 80px;  /* Positioned 70px higher than the chat button */
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Reusing the existing chat button styles for consistency */
+#audio-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+#audio-button:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+#audio-button.hidden {
+    transform: scale(0);
+    opacity: 0;
+}
+
+#audio-button img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#audio-dialog {
+    bottom: 160px;  /* Positioned above the audio button */
+    width: 450px;
+    border: 1px solid #fcbf47;
+}
+
 #floating-chat-container {
     position: fixed;
     bottom: 10px;
@@ -889,6 +932,7 @@ footer p {
     width: 380px;
     background: black;
     border-radius: 12px;
+    border: 1px solid #fcbf47;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
@@ -938,7 +982,7 @@ footer p {
 
 .chat-content {
     padding: 16px;
-    height: 100px;
+    height: 130px;
     overflow-y: auto;
 }
 

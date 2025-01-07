@@ -44,30 +44,6 @@
                 <img id="main-logo" alt="bayt al-hikmah 2.0 logo" src="img/bayt al-hikmah 2.0.svg">
                 <p>Bayt al-Hikmah 2.0 -<br>
                 A Gateway to Knowledge, An Archive for Knowledge</p>
-
-                <h3>TL;DR</h3>
-                <audio id="audio">
-                    <source src="https://www.dropbox.com/scl/fi/7h1xmlz8wm8a4yzq1jof9/bayt-al-hikmah-2.0.wav?rlkey=n424fgpz6zg977z6rgu5tv2bw&st=y09fgj9b&dl=1" type="audio/wav" />
-                </audio>
-
-                <div id="audio-player">
-                    <div id="player-content">
-                        <div id="controls">
-                            <span id="loading">Loading...</span>
-                            <button id="play" class="play-pause"><i class="fas fa-play"></i></button>
-                            <button id="pause" class="play-pause"><i class="fas fa-pause"></i></button>
-                        </div>
-                        <div id="progress-container">
-                            <div id="progress">
-                                <div id="bar"></div>
-                                <div id="thumb"><i class="fa fa-forward" aria-hidden="true"></i></div>
-                            </div>
-                            <div id="time-display">00:00:00/00:00:00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="transcript">Too long, didn't read. Play to listen.</div>
                 
                 <nav>
                     <ul>
@@ -646,6 +622,40 @@
     <script src="script.js"></script>
     <script src="podcast_transcript.js"></script>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+
+    <div id="floating-audio-container">
+        <button id="audio-button" class="chat-button">
+            <img id="audio-icon" alt="TL;DR Audio Player icon" src="img/tldr.webp">
+        </button>
+        <div id="audio-dialog" class="chat-dialog hidden">
+            <div class="chat-header">
+                <h2>TL;DR</h2>
+                <audio id="audio">
+                    <source src="https://www.dropbox.com/scl/fi/7h1xmlz8wm8a4yzq1jof9/bayt-al-hikmah-2.0.wav?rlkey=n424fgpz6zg977z6rgu5tv2bw&st=y09fgj9b&dl=1" type="audio/wav" />
+                </audio>
+                <button id="close-audio" class="close-button">×</button>
+            </div>
+            <div id="audio-content" class="chat-content">
+                <div id="audio-player">
+                    <div id="player-content">
+                        <div id="controls">
+                            <span id="loading">Loading...</span>
+                            <button id="play" class="play-pause"><i class="fas fa-play"></i></button>
+                            <button id="pause" class="play-pause"><i class="fas fa-pause"></i></button>
+                        </div>
+                        <div id="progress-container">
+                            <div id="progress">
+                                <div id="bar"></div>
+                                <div id="thumb"><i class="fa fa-forward" aria-hidden="true"></i></div>
+                            </div>
+                            <div id="time-display">00:00:00/00:00:00</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="transcript">Too long, didn't read. Play to listen.</div>
+            </div>
+        </div>
+    </div>
 
     <div id="floating-chat-container">
         <button id="chat-button" class="chat-button">
