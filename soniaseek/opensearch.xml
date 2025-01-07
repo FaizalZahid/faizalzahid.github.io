@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Sonia Seek</ShortName>
+  <Description>Search and seek across sea and secrecy at Sonia Seek</Description>
+  <Image width="16" height="16" type="image/x-icon">https://faizalzahid.pages.dev/img/bayt al-hikmah 2.0.svg</Image>
+  <Url type="text/html" 
+       template="https://faizalzahid.pages.dev/soniaseek/search?q={searchTerms}"/>
+  <Url type="application/x-suggestions+json"
+       template="https://faizalzahid.pages.dev/soniaseek/suggestions?q={searchTerms}"/>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+</OpenSearchDescription>
