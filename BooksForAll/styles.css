@@ -399,6 +399,7 @@ main {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
+    justify-items: center;
 }
 
 section {
@@ -466,6 +467,21 @@ section h3 {
     font-family: 'Poppins', serif;
     font-size: 0.9em;
     color: #FCBF47;
+}
+
+#listen-quran {
+    margin-top: 20px;
+}
+
+#listen-quran h3 {
+    font-family: 'Poppins', serif;
+}
+
+iframe {
+    --scale: 0.7;
+    transform: scale(var(--scale));
+    transform-origin: top center;
+    margin-bottom: calc((var(--scale) - 1) * 120%);
 }
 
 .toggle-checkbox {
