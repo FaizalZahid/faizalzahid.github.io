@@ -1182,7 +1182,7 @@ footer p {
         font-size: 1.3em;
     }
 
-    .chat-dialog {
+    #chat-dialog {
         position: fixed;
         bottom: 0;
         right: 0;
@@ -1192,12 +1192,30 @@ footer p {
         transform: translateY(100%);
     }
     
-    .chat-dialog:not(.hidden) {
+    #chat-dialog:not(.hidden) {
         transform: translateY(0);
     }
     
-    .chat-content {
+    #responseContainer {
         height: calc(100% - 130px);
+    }
+
+    #audio-dialog {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+        transform: translateX(100%);
+    }
+    
+    #audio-dialog:not(.hidden) {
+        transform: translateY(-80px);
+    }
+    
+    #audio-content {
+        height: 130px;
+        overflow-y: auto;
     }
 }
 
