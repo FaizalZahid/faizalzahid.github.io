@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
   <ShortName>Sonia Seek</ShortName>
+  <LongName>Sonia Seek</LongName>
   <Description>Search and seek across sea and secrecy at Sonia Seek</Description>
-  <Image width="16" height="16" type="image/x-icon">https://faizalzahid.pages.dev/img/bayt al-hikmah 2.0.svg</Image>
-  <Url type="text/html" 
-       template="https://faizalzahid.pages.dev/soniaseek/search?q={searchTerms}"/>
-  <Url type="application/x-suggestions+json"
-       template="https://faizalzahid.pages.dev/soniaseek/suggestions?q={searchTerms}"/>
   <InputEncoding>UTF-8</InputEncoding>
-  <OutputEncoding>UTF-8</OutputEncoding>
+  <Image type="image/x-icon" width="16" height="16">https://faizalzahid.pages.dev/img/bayt al-hikmah 2.0.svg</Image>
+  <Url rel="results" type="text/html" template="https://faizalzahid.pages.dev/soniaseek/search?q={searchTerms}"/>
+  <Url rel="suggestions" type="application/x-suggestions+json" template="https://faizalzahid.pages.dev/soniaseek/suggestions?q={searchTerms}"/>
+  <Url rel="self" type="application/opensearchdescription+xml" method="GET" template="https://faizalzahid.pages.dev/soniaseek/opensearch.xml"/>
+  <Query role="example" searchTerms="Sonia Seek"/>
+  <moz:SearchForm>https://faizalzahid.pages.dev/soniaseek/search</moz:SearchForm>
 </OpenSearchDescription>
