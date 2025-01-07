@@ -704,6 +704,10 @@ footer p {
         width: 160px;
         height: 240px;
     }
+
+    iframe {
+        --scale: 0.5;
+    }
 }
 
 @media (max-width: 480px) {
@@ -730,6 +734,10 @@ footer p {
 
     .card p {
         font-size: 0.8rem;
+    }
+
+    iframe {
+        --scale: 0.4;
     }
 }
 
