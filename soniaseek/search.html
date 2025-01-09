@@ -92,6 +92,15 @@
             color: #000000;
         }
 
+        .sonia-response {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.3s ease forwards;
+        }
+
         .gcse-searchresults-only {
             width: 100%;
             margin: 0 auto;
@@ -125,6 +134,8 @@
         </script>
     </div>
 
+    <div id="responseContainer" class="chat-content"></div>
+
     <main>
         <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
         </script>
@@ -134,5 +145,7 @@
     <footer class="footer">
         <p>"The only true wisdom is in knowing you know nothing"</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
