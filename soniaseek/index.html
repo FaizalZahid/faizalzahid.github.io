@@ -50,6 +50,7 @@
             color: #fcbf47;
             line-height: 50px;
             font-family: 'Poppins', serif;
+            cursor: pointer;
         }
 
         .subtitle {
@@ -103,30 +104,58 @@
             background-color: #ffffff;
             color: #000000;
         }
+
+        .search-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sonia-response {
+            padding: 12px;
+            border-radius: 8px;
+            margin: 20px 0;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="decorative-pattern"></div>
     
     <header class="header">
-        <h1 class="title">S<img id="sonia-icon" alt="Sonia AI icon" src="../img/SoniaAI.webp">nia Seek</h1>
+        <h1 class="title" onclick="returnToHome()">S<img id="sonia-icon" alt="Sonia AI icon" src="../img/SoniaAI.webp">nia Seek</h1>
         <p class="subtitle">Search with Sonia • Seek with Sonia</p>
     </header>
 
     <main>
-        <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
-        </script>
-        <div id="userMessage" class="gcse-searchbox-only"></div>
+        <div class="search-container">
+            <div class="gcse-searchbox-only"></div>
+            <div id="responseContainer"></div>
+            <a href="https://wa.me/message/ZZ4W4R74TRMAP1" target="_blank">
+                <img id="kopi-kurma-latte-banner" src="../img/KOPI 1920x1080.png">
+            </a>
+            <div id="searchResults" class="gcse-searchresults-only"></div>
+        </div>
     </main>
-
-    <a href="https://wa.me/message/ZZ4W4R74TRMAP1" target="_blank">
-        <img id="kopi-kurma-latte-banner" src="../img/KOPI 1920x1080.png">
-    </a>
 
     <footer class="footer">
         <p>"Wisdom begins in wonder"</p>
     </footer>
 
+    <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
+        </script>
     <script src="script.js"></script>
 </body>
 </html>
