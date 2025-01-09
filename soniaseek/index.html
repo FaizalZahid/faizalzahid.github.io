@@ -168,23 +168,43 @@
         function initializeSearch() {
             console.log('Initializing search');
             
-            // Listen for Google Custom Search ready event
-            if (window.google) {
-                google.search.cse.element.on('load', () => {
-                    console.log('CSE fully loaded');
+            // Use MutationObserver to wait for the search box to be ready
+            const observer = new MutationObserver((mutations, obs) => {
+                if (document.querySelector('.gsc-input')) {
+                    obs.disconnect();
                     setupSearchListener();
-                });
-            }
+                }
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
         }
 
         function setupSearchListener() {
-            // Get the search box element
-            const element = google.search.cse.element.getElement('gsc-i-id1');
+            console.log('Setting up search listener');
             
-            // Listen for search events
-            google.search.cse.element.listen('search', (event) => {
-                console.log('Search executed:', event);
-                handleSearch(event.query);
+            // Create a custom observer for the search results
+            const resultsObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'childList' && 
+                        document.querySelector('.gsc-results-wrapper-visible')) {
+                        const searchInput = document.querySelector('.gsc-input');
+                        if (searchInput) {
+                            const query = searchInput.value;
+                            console.log('Search detected:', query);
+                            handleSearch(query);
+                        }
+                    }
+                });
+            });
+
+            // Observe the search results container
+            const searchResults = document.getElementById('searchResults');
+            resultsObserver.observe(searchResults, {
+                childList: true,
+                subtree: true
             });
         }
 
@@ -257,11 +277,9 @@
             responseContainer.innerHTML = '';
             searchResults.innerHTML = '';
             
-            if (window.google && google.search && google.search.cse && google.search.cse.element) {
-                const element = google.search.cse.element.getElement('gsc-i-id1');
-                if (element) {
-                    element.clearAllResults();
-                }
+            const searchInput = document.querySelector('.gsc-input');
+            if (searchInput) {
+                searchInput.value = '';
             }
         }
     </script>
