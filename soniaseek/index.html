@@ -149,6 +149,121 @@
         <p>"Wisdom begins in wonder"</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Initialize Google Custom Search
+        window.__gcse = {
+            parsetags: 'explicit',
+            callback: function() {
+                console.log('Google Custom Search loaded');
+                if (document.readyState !== 'loading') {
+                    initializeSearch();
+                } else {
+                    document.addEventListener('DOMContentLoaded', initializeSearch);
+                }
+            }
+        };
+    </script>
+    <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09"></script>
+    <script>
+        function initializeSearch() {
+            console.log('Initializing search');
+            
+            // Listen for Google Custom Search ready event
+            if (window.google) {
+                google.search.cse.element.on('load', () => {
+                    console.log('CSE fully loaded');
+                    setupSearchListener();
+                });
+            }
+        }
+
+        function setupSearchListener() {
+            // Get the search box element
+            const element = google.search.cse.element.getElement('gsc-i-id1');
+            
+            // Listen for search events
+            google.search.cse.element.listen('search', (event) => {
+                console.log('Search executed:', event);
+                handleSearch(event.query);
+            });
+        }
+
+        async function handleSearch(query) {
+            console.log('Handling search for query:', query);
+            const responseContainer = document.getElementById('responseContainer');
+            
+            if (!query) {
+                console.log('Empty query, returning');
+                return;
+            }
+            
+            responseContainer.innerHTML = '';
+            
+            try {
+                console.log('Fetching response from API...');
+                const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: query }),
+                });
+
+                console.log('API response status:', response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Received data:', data);
+                    displayResponse(data.text, responseContainer);
+                } else {
+                    console.error('Error response:', await response.text());
+                    responseContainer.innerHTML = '<p class="sonia-response">Sorry, there was an error getting a response.</p>';
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                responseContainer.innerHTML = '<p class="sonia-response">Sorry, there was an error processing your request.</p>';
+            }
+        }
+
+        function displayResponse(text, container) {
+            console.log('Displaying response:', text);
+            const responseParagraph = document.createElement('p');
+            responseParagraph.className = 'sonia-response';
+            container.appendChild(responseParagraph);
+
+            const parts = text.split('<a ');
+            const textBeforeLink = parts[0];
+            const linkTag = parts[1];
+
+            let currentChar = 0;
+            function typeWriter() {
+                if (currentChar < textBeforeLink.length) {
+                    responseParagraph.textContent += textBeforeLink.charAt(currentChar);
+                    currentChar++;
+                    setTimeout(typeWriter, 30);
+                } else if (linkTag) {
+                    responseParagraph.innerHTML += '<br><br>';
+                    responseParagraph.innerHTML += `<a ${linkTag}`;
+                }
+            }
+            
+            typeWriter();
+        }
+
+        function returnToHome() {
+            console.log('Returning to home');
+            const responseContainer = document.getElementById('responseContainer');
+            const searchResults = document.getElementById('searchResults');
+            responseContainer.innerHTML = '';
+            searchResults.innerHTML = '';
+            
+            if (window.google && google.search && google.search.cse && google.search.cse.element) {
+                const element = google.search.cse.element.getElement('gsc-i-id1');
+                if (element) {
+                    element.clearAllResults();
+                }
+            }
+        }
+    </script>
 </body>
 </html>
