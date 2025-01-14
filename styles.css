@@ -318,6 +318,7 @@ details h4 {
     padding: 0 10px 10px 10px;
     margin-bottom: 30px;
     background-color: rgba(100, 100, 100, 0.5);
+    word-wrap: break-word;
 }
 
 .blog-preview h3 {
@@ -345,42 +346,36 @@ details h4 {
     color: #FCBF47;
 }
 
-.cards-container, .colouring-therapy-container, .puzzle-therapy-container, .sound-therapy-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.cards-container, .sound-therapy-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.card, .mandalas, .puzzles, .sounds {
+.card, .sounds {
     margin: 10px;
 }
 
 .card {
-  position: relative;
-  width: 290px;
-  height: 290px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    width: 290px;
+    height: 290px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.labyrinth-grouping {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
 }
 
 .margin-top-10 {
     margin-top: 10px;
-}
-
-.mandalas {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.puzzles {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sounds {
@@ -459,7 +454,7 @@ iframe {
   font-weight: bold;
 }
 
-.pdf-btn, .labyrinth-therapy-btn, .app-btn {
+.pdf-btn, #labyrinth-therapy-btn, .app-btn {
   padding: 10px 20px;
   background-color: #FCBF47;
   color: #000;
@@ -472,7 +467,7 @@ iframe {
   transition: transform 0.3s;
 }
 
-.pdf-btn:hover, .labyrinth-therapy-btn:hover, .app-btn:hover {
+.pdf-btn:hover, #labyrinth-therapy-btn:hover, .app-btn:hover {
     transform: scale(1.05);
 }
 
@@ -482,24 +477,6 @@ iframe {
 }
 
 .card:hover .btn {
-  display: block;
-}
-
-.mandalas:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
-}
-
-.puzzles:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
-}
-
-.mandalas:hover .btn {
-  display: block;
-}
-
-.puzzles:hover .btn {
   display: block;
 }
 
@@ -617,6 +594,26 @@ ul li a:hover {
 details {
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     margin: 10px;
+}
+
+#special-thanks #special-thanks-title {
+    font-size: clamp(2rem, 6vw + 1rem, 3rem);
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+
+    background-image: linear-gradient(to right, #14f339, #007aff, #f6ee00, #007aff, #14f339, #ff6262, #f6ee00, #007aff, #14f339);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    --bg-size: 200%;
+    color: transparent;
+    background-size: var(--bg-size);
+    animation: text-animate 5s steps(5) infinite;
+    animation: text-animate 5s linear infinite;
+    animation: text-animate 5s ease infinite;
 }
 
 #special-thanks-yellow {
@@ -1058,14 +1055,6 @@ footer p {
     background-color: darkgoldenrod;
 }
 
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .header-content h1 {
@@ -1172,10 +1161,10 @@ footer p {
     }
 
     .img-container-item {
-    max-height: 10vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+        max-height: 10vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
     }
 
     details ul li a {
@@ -1226,12 +1215,28 @@ footer p {
 }
 
 @keyframes glow {
-    0% { box-shadow: 0 0 10px 5px #ffff9e; }
-    20% { box-shadow: 0 0 10px 5px #c843d1, 0 0 20px #ffff9e; }
-    40% { box-shadow: 0 0 10px 5px #c2c257; }
-    60% { box-shadow: 0 0 10px 5px #43d1b2, 0 0 20px #c2c257; }
-    80% { box-shadow: 0 0 10px 5px #fcbf47; }
-    100% { box-shadow: 0 0 10px 5px #ffd700, 0 0 20px #fcbf47; }
+    0% { box-shadow: 0 0 10px 5px #14f339; }
+    20% { box-shadow: 0 0 10px 5px #007aff, 0 0 20px #14f339; }
+    40% { box-shadow: 0 0 10px 5px #f6ee00; }
+    60% { box-shadow: 0 0 10px 5px #007aff, 0 0 20px #f6ee00; }
+    80% { box-shadow: 0 0 10px 5px #14f339; }
+    100% { box-shadow: 0 0 10px 5px #ff6262, 0 0 20px #14f339; }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes text-animate {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: var(--bg-size);
+    }
 }
 
 .hover-change-bg {
@@ -1250,6 +1255,8 @@ footer p {
 }
 
 #special-thanks {
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
     border: 1px solid #fcbf47;
     border-radius: 20px;
     box-shadow: 0 0 10px #fcbf47;
