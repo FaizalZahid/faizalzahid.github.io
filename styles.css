@@ -119,12 +119,6 @@ body {
     margin-bottom: 30px;
 }
 
-.header-content h3 {
-    margin-top: 50px;
-    color: #FCBF47;
-    font-size: 1.8em;
-}
-
 .header-content ul {
     display: flex;
     flex-direction: row;
@@ -226,6 +220,7 @@ nav ul li a:hover:after {
     transition: color 0.3s;
     font-size: 3em;
     box-shadow: 0 0 10px #000000, 0 0 20px #ffffff;
+    transition: transform 0.2s ease;
 }
 
 .header-content #opposite-color:after {
@@ -235,8 +230,8 @@ nav ul li a:hover:after {
 .header-content #opposite-color:hover {
     color: rgb(0, 0, 0);
     background-color: rgba(250, 226, 177, 0.5);
-    padding: 10px 25px;
     font-size: 3.1em;
+    transform: scale(1.05);
 }
 
 main {
