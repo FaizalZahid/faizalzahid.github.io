@@ -111,7 +111,7 @@ nav ul li {
 nav ul li a {
     position: relative;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 6px 20px;
     color: #FCBF47;
     text-decoration: none;
     font-weight: bold;
@@ -245,7 +245,7 @@ section p {
 }
 
 .sounds {
-    margin: 10px;
+    margin: 0 auto;
     border-radius: 20px;
     padding: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
