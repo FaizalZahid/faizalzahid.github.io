@@ -39,12 +39,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-blend-mode: overlay;
+    background-blend-mode: luminosity;
     z-index: 2;
 
-    mask-image: url('img/inky.webp');
+    /*mask-image: url('img/inky.webp');
     mask-size: cover;
-    mask-position: center;
+    mask-position: center;*/
 }
 
 #kopi-kurma-latte-banner-square {
@@ -67,6 +67,7 @@ body {
     z-index: 3;
     padding: 0 10px;
 }
+
 .header-content h1 {
     font-family: 'Poppins', serif;
     color: #FFD700;
@@ -196,7 +197,6 @@ video {
     position: relative;
     z-index: 1;
     color: white;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     width: 80%;
@@ -213,7 +213,7 @@ section {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 18px;
     padding: 2em;
-    margin: 20px auto;
+    margin: 0 auto;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
