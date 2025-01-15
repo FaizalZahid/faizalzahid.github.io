@@ -1,0 +1,277 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #E0E0E0;
+    background-color: black;
+    text-align: center;
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.parallel-x {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing:border-box;
+}
+
+.parallel-x::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    background-image: url('img/hands.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    z-index: 2;
+
+    mask-image: url('img/inky.webp');
+    mask-size: cover;
+    mask-position: center;
+}
+
+#kopi-kurma-latte-banner-square {
+    display: none;
+}
+
+#kopi-kurma-latte-banner {
+    width: 100%;
+    max-width: 1000px;
+    transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
+}
+
+#kopi-kurma-latte-banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FFD700;
+    opacity: 80%;
+}
+
+.header-content {
+    z-index: 3;
+    padding: 0 10px;
+}
+.header-content h1 {
+    font-family: 'Poppins', serif;
+    color: #FFD700;
+    font-size: 3em;
+    margin: 0 0 5px 0;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    color: #E0E0E0;
+    margin-bottom: 30px;
+}
+
+.header-content ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+
+.link-icon {
+    width: 0.7em;
+    height: auto;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    text-align: center;
+}
+
+nav ul li a {
+    position: relative;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: #FCBF47;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    background-color: rgba(0, 0, 0);
+    font-size: 3em;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+}
+
+nav ul li a:after {
+    content: '⇊';
+    position: absolute;
+    opacity: 0;  
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+nav ul li a:hover {
+    color: #FCBF47;
+    background-color: rgba(30, 30, 45, 0.5);
+    padding-top: 1px;
+    padding-bottom: 9px;
+}
+
+nav ul li a:hover:after {
+    opacity: 1;
+    bottom: -50px;
+}
+
+.header-content nav ul li #opposite-color {
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: rgb(0, 0, 0);
+    background-color: #FCBF47;
+    text-decoration: none;
+    font-weight: bolder;
+    transition: color 0.3s;
+    font-size: 3em;
+    box-shadow: 0 0 10px #000000, 0 0 20px #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.header-content #opposite-color:after {
+    content: '';
+}
+
+.header-content #opposite-color:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(250, 226, 177, 0.5);
+    font-size: 3.1em;
+    transform: scale(1.05);
+}
+
+main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 40px 20px;
+    min-height: 200vh;
+}
+
+.video-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind the main content */
+    pointer-events: none; /* Makes the video non-interactive */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Ensures content stays above the video */
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    position: relative;
+    z-index: 1; /* Content appears above the video */
+    min-height: 90vh;
+    text-align: center;
+    background: rgba(30, 30, 45, 0.8);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    padding: 2em;
+    margin: 20px auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    color: #FCBF47;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Poppins', serif;
+}
+
+section h3 {
+    color: #FCBF47;
+    font-family: 'Poppins', serif;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+section p {
+    font-size: 1.3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sounds {
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #FCBF47;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+ul li a:hover {
+    color: rgba(30, 30, 45);
+}
