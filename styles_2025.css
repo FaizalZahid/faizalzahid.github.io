@@ -47,8 +47,32 @@ body {
     mask-position: center;*/
 }
 
-#kopi-kurma-latte-banner-square {
+#ad-banner-container {
+    position: relative;
+    display: inline-block;
+}
+
+#ad-banner-container-2 {
     display: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.ad-banner-link {
+    display: block;
+    position: relative;
 }
 
 #kopi-kurma-latte-banner {
@@ -111,15 +135,15 @@ nav ul li {
 
 nav ul li a {
     position: relative;
-    border-radius: 5px;
     padding: 6px 20px;
-    color: #FCBF47;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-    background-color: rgba(0, 0, 0);
     font-size: 3em;
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    width: 5em;
+    background-color: firebrick;
+    color: white;
+    border-radius: 40px;
 }
 
 nav ul li a:after {
@@ -145,16 +169,16 @@ nav ul li a:hover:after {
 }
 
 .header-content nav ul li #opposite-color {
-    border-radius: 5px;
     padding: 8px 20px;
-    color: rgb(0, 0, 0);
-    background-color: #FCBF47;
     text-decoration: none;
     font-weight: bolder;
     transition: color 0.3s;
     font-size: 3em;
-    box-shadow: 0 0 10px #000000, 0 0 20px #ffffff;
     transition: transform 0.2s ease;
+    width: 5em;
+    background-color: royalblue;
+    color: white;
+    border-radius: 40px;
 }
 
 .header-content #opposite-color:after {
@@ -314,7 +338,12 @@ ul li a:hover {
         font-size: 1em;
     }
 
-    #kopi-kurma-latte-banner {
+    #ad-banner-container-2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #ad-banner-container {
         display: none;
     }
 

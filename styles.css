@@ -34,8 +34,32 @@ body {
     mask-position: center;
 }
 
-#kopi-kurma-latte-banner-square {
+#ad-banner-container {
+    position: relative;
+    display: inline-block;
+}
+
+#ad-banner-container-2 {
     display: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.ad-banner-link {
+    display: block;
+    position: relative;
 }
 
 #kopi-kurma-latte-banner {
@@ -1097,7 +1121,12 @@ footer p {
         font-size: 1.5em;
     }
 
-    #kopi-kurma-latte-banner {
+    #ad-banner-container-2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #ad-banner-container {
         display: none;
     }
 
