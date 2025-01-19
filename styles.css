@@ -34,6 +34,11 @@ body {
     mask-position: center;
 }
 
+#ad-banner-container-0 {
+    position: relative;
+    display: inline-block;
+}
+
 #ad-banner-container {
     position: relative;
     display: inline-block;
