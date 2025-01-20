@@ -477,7 +477,7 @@ section h3 {
     font-family: 'Poppins', serif;
 }
 
-iframe {
+#quran-iframe {
     --scale: 0.7;
     transform: scale(var(--scale));
     transform-origin: top center;
@@ -705,7 +705,7 @@ footer p {
         height: 240px;
     }
 
-    iframe {
+    #quran-iframe {
         --scale: 0.5;
     }
 }
@@ -736,7 +736,7 @@ footer p {
         font-size: 0.8rem;
     }
 
-    iframe {
+    #quran-iframe {
         --scale: 0.4;
     }
 }
