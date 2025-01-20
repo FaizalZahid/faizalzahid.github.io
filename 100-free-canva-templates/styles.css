@@ -28,6 +28,14 @@ p {
     margin: 20px;
 }
 
+.post-script {
+    font-size: 0.5em;
+    margin: 0;
+    font-style: italic;
+    line-height: 1em;
+    padding: 5px;
+}
+
 span {
     font-weight: bold;
     color: darkgray;
