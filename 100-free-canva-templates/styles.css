@@ -122,6 +122,17 @@ span {
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
 }
 
+.share {
+    margin: 5px;
+    text-decoration: none;
+    color: #FCBF47;
+}
+
+#row-share {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 768px) {
     .masonry {
         column-count: 2;
