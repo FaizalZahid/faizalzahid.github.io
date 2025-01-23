@@ -30,7 +30,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            justify-self: center;
             background-color: black;
             color: white;
             font-family: 'Roboto', sans-serif;
@@ -61,7 +60,6 @@
         }
 
         main {
-            width: 100%;
             margin-bottom: 20px;
         }
 
@@ -96,26 +94,14 @@
             margin-top: 10px;
         }
 
-        #custom-search-input {
-            width: 75%;
-        }
-
-        #custom-search-input, #custom-search-button {
-            border: 1px solid #fcbf47;
-            height: 30px;
-            border-radius: 10px;
-            background-color: black;
-            color: #fcbf47;
-            font-weight: bold;
-            margin: 5px;
-        }
-
-        .gsc-control-cse {
-            display: none !important;
-        }
-
         .gcse-searchbox-only {
-            display: none !important;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .gcse-searchbox-only .gsc-input {
+            background-color: #ffffff;
+            color: #000000;
         }
     </style>
 </head>
@@ -127,12 +113,10 @@
         <p class="subtitle">Search with Sonia • Seek with Sonia</p>
     </header>
 
-    <main align="center">
+    <main>
         <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
         </script>
         <div class="gcse-searchbox-only"></div>
-        <input type="text" id="custom-search-input" placeholder="Search...">
-        <button id="custom-search-button">🔍</button>
     </main>
 
     <a href="https://wa.me/message/ZZ4W4R74TRMAP1" target="_blank">
@@ -142,61 +126,5 @@
     <footer class="footer">
         <p>"Wisdom begins in wonder"</p>
     </footer>
-    <script>
-        const observer = new MutationObserver((mutations) => {
-            const searchBox = document.querySelector('.gcse-searchbox-only');
-            if (searchBox) {
-                searchBox.remove();
-                observer.disconnect();
-            }
-        });
-
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        function generateUUID() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                const r = Math.random() * 16 | 0;
-                const v = c === 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
-
-        let sessionId = localStorage.getItem('chatSessionId');
-        if (!sessionId) {
-            sessionId = generateUUID();
-            localStorage.setItem('chatSessionId', sessionId);
-        }
-
-        document.getElementById('custom-search-button').addEventListener('click', async () => {
-            const query = document.getElementById('custom-search-input').value;
-            if (query) {
-                try {
-                    // Step 1: Send query to your LLM API
-                    const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: query, sessionId: localStorage.getItem('chatSessionId') }),
-                    });
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        localStorage.setItem('searchQuery', query);
-                        localStorage.setItem('llmResponse', data.response);
-
-                        // Step 2: Trigger Google CSE search
-                        const googleCSEElement = document.querySelector('.gcse-searchbox-only input');
-                        if (googleCSEElement) {
-                            googleCSEElement.value = query;
-                            googleCSEElement.dispatchEvent(new Event('input', { bubbles: true }));
-                        }
-                    } else {
-                        console.error('Error in response:', response.status);
-                    }
-                } catch (error) {
-                    console.error('Error fetching response:', error);
-                }
-            }
-        });
-    </script>
 </body>
 </html>
