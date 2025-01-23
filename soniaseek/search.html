@@ -32,6 +32,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            justify-self: center;
             background-color: black;
             color: white;
             font-family: 'Roboto', sans-serif;
@@ -82,14 +84,22 @@
             opacity: 0.7;
         }
 
-        .gcse-searchbox-only {
-            width: 100%;
-            margin: 0 auto;
+        #custom-search-input {
+            width: 75%;
         }
 
-        .gcse-searchbox-only .gsc-input {
-            background-color: #ffffff;
-            color: #000000;
+        #custom-search-input, #custom-search-button {
+            border: 1px solid #fcbf47;
+            height: 30px;
+            border-radius: 10px;
+            background-color: black;
+            color: #fcbf47;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .gcse-searchbox-only {
+            display: none !important;
         }
 
         .sonia-response {
@@ -115,26 +125,29 @@
         <p class="subtitle">Search with Sonia • Seek with Sonia</p>
     </header>
 
-    <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
-    </script>
-    <div class="gcse-searchbox-only"></div>
-
-    <div align="center">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1868008660532815"
-             crossorigin="anonymous"></script>
-        <!-- Horizontal -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1868008660532815"
-             data-ad-slot="2679727200"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
     <main>
+        <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
+        </script>
+        <div class="gcse-searchbox-only"></div>
+        <input type="text" id="custom-search-input" placeholder="Search...">
+        <button id="custom-search-button">🔍</button>
+
+        <div align="center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1868008660532815"
+                 crossorigin="anonymous"></script>
+            <!-- Horizontal -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1868008660532815"
+                 data-ad-slot="2679727200"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div id="responseContainer"></div>
         <script async src="https://cse.google.com/cse.js?cx=538e1808b88694d09">
         </script>
         <div class="gcse-searchresults-only"></div>
@@ -143,5 +156,85 @@
     <footer class="footer">
         <p>"The only true wisdom is in knowing you know nothing"</p>
     </footer>
+    <script>
+        const observer = new MutationObserver((mutations) => {
+            const searchBox = document.querySelector('.gcse-searchbox-only');
+            if (searchBox) {
+                searchBox.remove();
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0;
+                const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        let sessionId = localStorage.getItem('chatSessionId');
+        if (!sessionId) {
+            sessionId = generateUUID();
+            localStorage.setItem('chatSessionId', sessionId);
+        }
+
+        const query = localStorage.getItem('searchQuery');
+        const llmResponse = localStorage.getItem('llmResponse');
+
+        if (query && llmResponse) {
+            const responseContainer = document.getElementById('responseContainer');
+            const responseParagraph = document.createElement('p');
+            responseParagraph.className = 'sonia-response';
+            responseContainer.appendChild(responseParagraph);
+
+            let currentChar = 0;
+            const typeWriter = () => {
+                if (currentChar < llmResponse.length) {
+                    responseParagraph.textContent += llmResponse.charAt(currentChar);
+                    currentChar++;
+                    setTimeout(typeWriter, 30);
+                }
+            };
+
+            typeWriter();
+
+            localStorage.removeItem('searchQuery');
+            localStorage.removeItem('llmResponse');
+        }
+
+        document.getElementById('custom-search-button').addEventListener('click', async () => {
+            const query = document.getElementById('custom-search-input').value;
+            if (query) {
+                try {
+                    const response = await fetch('https://soniachat.vercel.app/api/soniachat.js', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: query, sessionId: localStorage.getItem('chatSessionId') }),
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        localStorage.setItem('searchQuery', query);
+                        localStorage.setItem('llmResponse', data.response);
+
+                        const googleCSEElement = document.querySelector('.gcse-searchbox-only input');
+                        if (googleCSEElement) {
+                            googleCSEElement.value = query;
+                            googleCSEElement.dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+
+                        window.location.reload();
+                    } else {
+                        console.error('Error in response:', response.status);
+                    }
+                } catch (error) {
+                    console.error('Error fetching response:', error);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
