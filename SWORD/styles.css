@@ -1,5 +1,6 @@
 body {
     min-height: 100vh;
+    width: auto;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -60,6 +61,7 @@ body::before {
     gap: 5px;
     margin-bottom: 20px;
     width: 100%;
+    flex-grow: 1;
 }
 
 .key {
@@ -157,6 +159,6 @@ body::before {
 
 @media (max-width: 480px) {
     .key {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 }
