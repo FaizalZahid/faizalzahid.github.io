@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    width: auto;
+    width: 90vw;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
