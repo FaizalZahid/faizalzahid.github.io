@@ -158,6 +158,6 @@ body::before {
 
 @media (max-width: 480px) {
     .key {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 }
