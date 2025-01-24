@@ -42,9 +42,9 @@ body {
     background-blend-mode: luminosity;
     z-index: 2;
 
-    /*mask-image: url('img/inky.webp');
+    mask-image: url('img/inky.webp');
     mask-size: cover;
-    mask-position: center;*/
+    mask-position: center;
 }
 
 #ad-banner-container {
@@ -298,6 +298,34 @@ ul li a {
 
 ul li a:hover {
     color: rgba(30, 30, 45);
+}
+
+footer {
+    background-color: #2E2E3D;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 3px solid #FCBF47;
+    display: flex;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    display: inline;
+}
+
+.social-button {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 0 0 10px;
+}
+
+.social-button:hover {
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
