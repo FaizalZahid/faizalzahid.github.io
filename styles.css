@@ -352,7 +352,18 @@ details h4 {
     margin: 0 auto;
 }
 
+.blog-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
 .blog-preview {
+    display: none;
+    position: relative;
+}
+
+.blog-preview.active {
+    display: block;
     border: dashed 1px #FCBF47;
     border-radius: 0 20px 0 20px;
     padding: 0 10px 10px 10px;
@@ -380,6 +391,29 @@ details h4 {
 
 .blog-preview a:hover {
     text-decoration: underline;
+}
+
+.blog-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.blog-nav-btn {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.blog-nav-btn:hover {
+    background: rgba(0,0,0,0.7);
 }
 
 #self-help h3 {
