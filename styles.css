@@ -120,10 +120,6 @@ body {
     background-image: url('img/support-me-bg.webp');
 }
 
-/*#soniachat {
-    background-image: url('img/Sonia AI bg.webp');
-}*/
-
 .header-content {
     z-index: 1;
     padding: 0 10px;
@@ -136,10 +132,30 @@ body {
 }
 
 .header-content h1 {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', 'Jost', 'Aref Ruqaa', 'David Libre', 'Yuji Boku', 'GFS Didot', 'Noto Serif Armenian', 'Noto Serif Georgian', 'Yeon Sung', 'Amita', serif;
     color: #FFD700;
     font-size: 3em;
     margin: 0 0 5px 0;
+}
+
+.dynamic-word {
+    bakground-color: black;
+    color: #FFD700;
+    position: relative;
+}
+
+.caret {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: #FFD700;
+    animation: blink 0.7s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .header-content p {
