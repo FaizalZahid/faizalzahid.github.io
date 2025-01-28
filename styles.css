@@ -304,6 +304,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 section h2 {
@@ -618,6 +619,83 @@ ul li a {
 
 ul li a:hover {
     color: rgba(30, 30, 45);
+}
+
+#text {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 70px 0;
+}
+
+#utus-title {
+    display: none;
+    opacity: 0;
+    position: relative;
+}
+
+#duo-title, #utus-title {
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#duolingo-owl:hover + #text #duo-title {
+    opacity: 0;
+}
+
+#duolingo-owl:hover + #text #utus-title {
+    opacity: 1;
+    display: block;
+}
+
+#duolingo-owl:not(:hover) + #text #duo-title {
+    opacity: 1;
+}
+
+#duolingo-owl:not(:hover) + #text #utus-title {
+    opacity: 0;
+    display: none;
+}
+
+#utus-title span {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+    animation: scatter 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes scatter {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(var(--x), var(--y)) rotate(var(--r));
+    }
+}
+
+#utus-title span:nth-child(1) {
+    --x: -50px; --y: -25px; --r: 19deg;
+    animation-delay: 0.1s;
+}
+#utus-title span:nth-child(2) {
+    --x: -35px; --y: 3px; --r: -9deg;
+    animation-delay: 0.2s;
+}
+#utus-title span:nth-child(3) {
+    --x: -1px; --y: -18px; --r: 9deg;
+    animation-delay: 0.3s;
+}
+#utus-title span:nth-child(4) {
+    --x: 32px; --y: -8px; --r: -4deg;
+    animation-delay: 0.4s;
+}
+#utus-title span:nth-child(5) {
+    --x: 50px; --y: 2px; --r: 5deg;
+    animation-delay: 0.5s;
 }
 
 #duolingo ul li a, #canva-template-button {
@@ -1007,12 +1085,11 @@ footer p {
 
 #floating-audio-container {
     position: fixed;
-    bottom: 80px;  /* Positioned 70px higher than the chat button */
+    bottom: 80px;
     right: 20px;
     z-index: 9999;
 }
 
-/* Reusing the existing chat button styles for consistency */
 #audio-button {
     width: 60px;
     height: 60px;
@@ -1043,7 +1120,7 @@ footer p {
 }
 
 #audio-dialog {
-    bottom: 160px;  /* Positioned above the audio button */
+    bottom: 160px;
     width: 450px;
     border: 1px solid #fcbf47;
 }
