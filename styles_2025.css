@@ -205,6 +205,13 @@ main {
     width: 100%;
 }
 
+main img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
 .video-wrapper {
     position: fixed;
     top: 0;
@@ -556,11 +563,8 @@ footer p {
     .header-content nav ul li #opposite-color:hover {
         font-size: 1.4em;
     }
-}
 
-main img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px auto;
-    display: block;
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
