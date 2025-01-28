@@ -3,6 +3,7 @@ body {
     color: #E0E0E0;
     background-color: black;
     text-align: center;
+    min-height: 90vh;
 }
 
 .header {
@@ -193,12 +194,15 @@ nav ul li a:hover:after {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-color: rgba(0, 0, 0, 0.7);
     box-sizing: border-box;
     overflow: hidden;
-    padding: 40px 20px;
     min-height: 200vh;
+    align-items: center;
+    width: 100%;
 }
 
 .video-wrapper {
@@ -237,8 +241,9 @@ section {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 18px;
     padding: 2em;
-    margin: 0 auto;
+    margin: 5px 0 5px 0;
     max-width: 1000px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -254,6 +259,7 @@ section h2 {
 
 section h3 {
     color: #FCBF47;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Poppins', serif;
     margin-bottom: 10px;
     margin-top: 30px;
@@ -261,7 +267,6 @@ section h3 {
 
 section p {
     font-size: 1.3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
     text-align: center;
     max-width: 800px;
@@ -299,6 +304,145 @@ ul li a {
 ul li a:hover {
     color: rgba(30, 30, 45);
 }
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.emoji-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.month-card.expanded .emoji-overlay {
+    opacity: 0;
+}
+
+.month-card {
+    aspect-ratio: 1;
+    background: black;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    will-change: transform, opacity, grid-column;
+}
+
+.month-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.month-name, .month-content {
+    position: relative;
+    z-index: 1;
+}
+
+.month-card.placeholder {
+    background: #f0f0f0;
+    opacity: 0.7;
+}
+
+.month-card.placeholder .emoji-overlay {
+    opacity: 0.15;
+}
+
+.month-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.month-content {
+  display: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: black;
+  user-select: text;
+  white-space: pre-line;
+  padding-bottom: 20px;
+}
+
+.close-btn {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fcbf47;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #fcbf47;
+  color: black;
+}
+
+.month-card.expanded {
+  grid-column: span 3;
+  min-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+  padding-bottom: 2rem;
+  transform: scale(1.02);
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.month-card.expanded .month-content {
+  display: block;
+  opacity: 0;
+  position: sticky;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeIn 0.3s ease-in-out 0.2s forwards;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.month-card.expanded .close-btn {
+  display: block;
+}
+
+.month-card.collapsed {
+  opacity: 0.6;
+  transform: scale(0.98);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.winter { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+.spring { background: linear-gradient(135deg, #f1f8e9, #dcedc8); }
+.summer { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+.autumn { background: linear-gradient(135deg, #ffebee, #ffcdd2); }
 
 footer {
     background-color: #2E2E3D;
@@ -412,4 +556,11 @@ footer p {
     .header-content nav ul li #opposite-color:hover {
         font-size: 1.4em;
     }
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
 }
