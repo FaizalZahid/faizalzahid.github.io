@@ -13,10 +13,19 @@
 			font-family: 'Roboto', sans-serif;
 		}
 
-		div {
+		#main, #how {
 			border-radius: 20px;
 			box-shadow: 0px 0px 10px #fcbf47;
 			padding: 20px 30px;
+		}
+
+		#iframe {
+			border: none;
+		}
+
+		iframe {
+			border:none;
+			overflow:hidden
 		}
 
 		h1, summary, li::marker {
@@ -60,6 +69,17 @@
 			align-content: center;
 			text-align: center;
 		}
+
+		@media (max-width: 480px) {
+			#iframe {
+				display: flex;
+				flex-direction: column;
+			}
+
+			iframe {
+				width: 100%;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -91,7 +111,21 @@
 
 		<br><br><b>☑ Join the movement. Get involved in your local community. Organize your workplace. Let's create a world where people and planet come before profit!</b></p>
 
-		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/37ZG9lddxto?si=XbR5aqRU4XUx1o2v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<div id="iframe">
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/LiWlvBro9eI?si=bt7Mx82KslqHnOIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/qfQ7vMv5m_0?si=_Et5l4BAgn6E5eRS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/qDKvnvlv-V8?si=goRJpYUQK0xl6mdy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/fUKDlV-rio4?si=640t2YF0At3EJTla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/XLiqvZOP8TY?si=JQfZh6eNoWWw_S71" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://cdn.theguardian.tv/brightcove/2012/11/25/121125BangladeshFire-16x9.mp4" title="The 2012 Factory Fire in Dhaka, Bangladesh (Tazreen Fashions)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/ISj8BECf40Q?si=tzvX4MKftGUbMhTe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/OyfnS0DBIlU?si=5YaOG2iZlQS095Xv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/oKFupx9x0-k?si=AOewMirQJwhbCL0m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FVOANews%2Fvideos%2F1189993195229903%2F&show_text=false&width=560&t=0" scrolling="no" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/3tUt9O99hHg?si=liB8j0aVE_qKyYhr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/37ZG9lddxto?si=XbR5aqRU4XUx1o2v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			
+		</div>
 	</div>
 </body>
 </html>
