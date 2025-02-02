@@ -698,7 +698,7 @@ ul li a:hover {
     animation-delay: 0.5s;
 }
 
-#duolingo ul li a, #canva-template-button {
+#duolingo ul li a, .canva-template-button {
     border-radius: 5px;
     padding: 10px;
     display: block;
@@ -706,7 +706,7 @@ ul li a:hover {
     color: #fcbf47;
 }
 
-#canva-template-button {
+.canva-template-button {
     background-color: black;
 }
 
