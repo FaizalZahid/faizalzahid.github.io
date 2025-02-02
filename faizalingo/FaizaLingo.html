@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaizaLingo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&family=Yuji+Boku&family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" type="image/x-icon" href="ringo.png">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            background-color: rgb(88, 204, 2);
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: 'Poppins', serif;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        #nav-button-container {
+            max-width: 800px;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            justify-self: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .lesson {
+            border: 1px solid rgb(55, 70, 79);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .lesson h2 {
+            margin-top: 0;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: black;
+            font-weight: bold;
+            color: rgb(225, 255, 198);
+            border: 1px solid rgb(55, 70, 79);
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(88, 204, 2, 0.5);
+        }
+
+        input {
+            background-color: black;
+            font-weight: bold;
+            color: white;
+            border: 1px solid rgb(55, 70, 79);
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+
+        footer {
+            background-color: rgb(88, 204, 2);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            #nav-button-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🍎 FaizaLingo</h1>
+</header>
+
+<nav>
+    <div id="nav-button-container">
+        <button>Home</button>
+        <button>Lessons</button>
+        <button>Practice</button>
+        <button>Profile</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="lesson">
+        <h2>Hiragana</h2>
+        <div class="question">
+            <p>How do you say "あ"?</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+        <div class="question">
+            <p>How do you write "i" in hiragana?</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+    </div>
+    <div class="lesson">
+        <h2>Katakana</h2>
+        <div class="question">
+            <p>How do you say "シ"?</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+        <div class="question">
+            <p>How do you write "te" in katakana?</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+    </div>
+    <div class="lesson">
+        <h2>Vocab</h2>
+        <div class="question">
+            <p>Translate "you" to Japanese:</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+        <div class="question">
+            <p>Translate "友達" to English:</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+    </div>
+    <div class="lesson">
+        <h2>Grammar</h2>
+        <div class="question">
+            <p><bold>Which particle is used in the blank?</bold></p>
+            <p>君_____入って_____いけない。</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+        <div class="question">
+            <p><bold>How to say "You cannot enter"?</bold></p>
+            <p>入ってはいけ_____ん。</p>
+            <input type="text">
+            <button>Submit</button>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 FaizaLingo</p>
+</footer>
+
+</body>
+</html>
