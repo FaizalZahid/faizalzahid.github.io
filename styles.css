@@ -125,12 +125,6 @@ body {
     padding: 0 10px;
 }
 
-.header-content #main-logo {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-}
-
 .header-content h1 {
     font-family: 'Poppins', 'Jost', 'Aref Ruqaa', 'David Libre', 'Yuji Boku', 'GFS Didot', 'Noto Serif Armenian', 'Noto Serif Georgian', 'Yeon Sung', 'Amita', serif;
     color: #FFD700;
@@ -192,15 +186,15 @@ body {
 }
 
 .sticky-nav .logo img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
 
 .sticky-nav .logo-text {
     color: #FFD700;
     font-family: 'Poppins', serif;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
@@ -249,7 +243,7 @@ body {
     width: 25px;
     height: 3px;
     background-color: #FCBF47;
-    margin: 5px 0;
+    margin: 3px 0;
 }
 
 .mobile-nav {
@@ -1483,6 +1477,9 @@ footer p {
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        border-radius: 10px;
+        background-color: rgba(200, 200, 200, 0.3);
+        padding: 5px;
     }
 
     section {
