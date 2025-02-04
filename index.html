@@ -34,6 +34,37 @@
 </head>
 
 <body>
+    <nav class="sticky-nav">
+        <div class="logo">
+            <img src="img/bayt al-hikmah 2.0.svg" alt="Bayt al-Hikmah 2.0 Logo">
+            <span class="logo-text">Bayt al-Hikmah 2.0</span>
+        </div>
+        <div class="sticky-nav-menu">
+            <a href="#about">About</a> |
+            <a href="#faizalingo">FaizaLingo</a> |
+            <a href="#duolingo">Duolingo</a> |
+            <a href="#blog">Blog (English)</a> |
+            <a href="#self-help">Self-Help</a> |
+            <a href="#open-source">Open-Source</a>
+        </div>
+
+        <div class="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <div class="mobile-nav-close">✕</div>
+        <a href="#about">About</a>
+        <a href="#faizalingo">FaizaLingo</a>
+        <a href="#duolingo">Duolingo</a>
+        <a href="#blog">Blog (English)</a>
+        <a href="#self-help">Self-Help</a>
+        <a href="#open-source">Open-Source</a>
+    </div>
+
     <audio id="exploration-audio" loop>
         <source src="https://www.dropbox.com/scl/fi/c18afbnudaq5ej2g7sd18/exploration.wav?rlkey=pqerwzgbx2q6tz42ig4hmxacb&st=fi0wrbjv&dl=1" type="audio/wav">
     </audio>
@@ -107,7 +138,7 @@
                 <img loading="lazy" id="duoavatar" alt="Owner's Duolingo avatar" src="img/FaizalZahid.webp">
                 <h2>FaizaLingo</h2>
                 <p>FaizaLingo is a future project dedicated to offering resources for language learners, starting with Japanese and expanding to many more languages. Stay tuned for exciting updates!</p>
-                <a href="./faizalingo" target="_blank" class="canva-template-button">FaizaLingo concept webpage</a>
+                <a href="./faizalingo" target="_blank" class="app-btn">FaizaLingo concept webpage</a>
                 <details class="margin-top-nav">
                     <summary>Kanji game preview</summary>
                     <img loading="lazy" id="pokélingo-preview" alt="PokéLingo game preview" src="img/PokéLingo-preview.webp">
@@ -282,6 +313,11 @@
                             <img loading="lazy" src="img/mandalas/Mindfulness affirmation mandalas.jfif" alt="mindfulness affirmation mandalas">
                             <a href="img/mandalas/Mindfulness affirmation mandalas.jfif" target="_blank" class="btn">Download</a>
                         </div>
+
+                        <div id="mandalas-pdf">
+                            <a href="img/mandalas/16 differently themed MANDALAS.pdf" target="_blank" class="pdf-btn">[FREE PDF]16 differently themed MANDALAS ⬇</a>
+                            <img loading="lazy" class="mandalas-pdf-thumbnail" src="img/mandalas/16 differently themed MANDALAS.webp" alt="differently themed MANDALAS">
+                        </div>
                     </div>
                 </details>
 
@@ -436,7 +472,7 @@
 
                 <div class="support-div">
                     <img loading="lazy" class="stock-logo" alt="Canva logo" src="https://static.canva.com/web/images/856bac30504ecac8dbd38dbee61de1f1.svg"><span style="font-size: 6em;">📊</span>
-                    <a class="canva-template-button" class="hover-change-bg" href="100-free-canva-templates/" target="_blank">100 Free Canva Templates</a>
+                    <a id="canva-template-button" class="hover-change-bg" href="100-free-canva-templates/" target="_blank">100 Free Canva Templates</a>
                 </div>
 
                 <div class="support-div">
