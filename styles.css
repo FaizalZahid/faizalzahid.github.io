@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: block;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+}
+
+:root, :host {
+  --fa-style-family-classic: 'Font Awesome 6 Free';
+}
+
+.icon::before {
+  font-family: 'Font Awesome 6 Free';
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #E0E0E0;
@@ -365,7 +380,9 @@ nav ul li a {
 }
 
 nav ul li a:after {
-    content: '⇊';
+    font-family: 'Font Awesome 6 Free';
+    -webkit-font-smoothing: antialiased;
+    content: '\f103';
     position: absolute;
     opacity: 0;  
     bottom: -10px;
@@ -393,7 +410,7 @@ nav ul li a:hover:after {
 
 .header-content nav ul li #opposite-color {
     border-radius: 5px;
-    padding: 8px 20px;
+    padding: 5px 20px;
     color: rgb(0, 0, 0);
     background-color: #FCBF47;
     text-decoration: none;
