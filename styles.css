@@ -333,6 +333,13 @@ body {
     border-radius: 50%;
 }
 
+#duo-is-ded {
+    width: 13px;
+    height: 13px;
+    border: 5px solid #FCBF47;
+    border-radius: 50%;
+}
+
 #duobanner-animated {
     display: none;
 }
@@ -611,7 +618,7 @@ iframe {
     aspect-ratio: 16 / 9;
 }
 
-#mandalas-pdf, #puzzles-pdf, #faizalingo-app, #faizalingo-site {
+#mandalas-pdf, #puzzles-pdf, #faizalingo-app {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1506,6 +1513,12 @@ footer p {
 
     section h2 {
         font-size: 1.8em;
+    }
+
+    #duo-is-ded {
+        width: 8px;
+        height: 8px;
+        border: 4px solid #fcbf47;
     }
 
     section p {
