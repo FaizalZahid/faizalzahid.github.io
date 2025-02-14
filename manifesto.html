@@ -4,13 +4,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Manifesto Against Capitalism</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&family=IM+Fell+DW+Pica&family=Roboto:wght@400;700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&family=Yuji+Boku&family=IM+Fell+DW+Pica&family=Roboto:wght@400;700&display=swap">
 	<link rel="icon" type="image/x-icon" href="img/bayt al-hikmah 2.0.svg">
+    <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
 	<style>
 		body {
 			background-color: black;
 			color: white;
 			font-family: 'Roboto', sans-serif;
+			text-align: center;
 		}
 
 		#main, #how {
@@ -70,6 +73,27 @@
 			text-align: center;
 		}
 
+		#quotes {
+			margin: 20px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		#isshoukenmei {
+			font-family: 'Yuji Boku', sans-serif;
+		    font-size: 3em;
+		    color: transparent;
+		    background-image: linear-gradient(188deg, #d22e12, #940818, #d22e12, transparent);
+		    background-clip: text;
+		}
+
+		#my-video {
+			width: 560px !important;
+			height: 315px !important;
+			margin: 0 auto !important;
+			display: inline-block !important;
+		}
+
 		@media (max-width: 480px) {
 			#iframe {
 				display: flex;
@@ -114,20 +138,48 @@
 
 		<div id="iframe">
 			<img src="img/The greedy beat the needy.gif" alt="The greedy beat the needy, Willy.">
+			<!-- <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/eFKLymJpZS8?start=2850&amp;end=3130" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+			<!-- <video loading="lazy" width="560" height="315" title="Child Labor" frameborder="0" controls allowfullscreen>
+				<source src="Child Labor.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video> -->
+		    <video id="my-video" class="video-js vjs-default-skin" controls preload="auto">
+			    <source src="vid/playlist.m3u8" type="application/x-mpegURL" />
+			    <p class="vjs-no-js">
+			    	To view this video please enable JavaScript, and consider upgrading to a web browser that
+			    	<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+			    </p>
+			 </video>
+			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/37ZG9lddxto?si=XbR5aqRU4XUx1o2v" title="Beast Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/LiWlvBro9eI?si=bt7Mx82KslqHnOIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/qfQ7vMv5m_0?si=_Et5l4BAgn6E5eRS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/qDKvnvlv-V8?si=goRJpYUQK0xl6mdy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/fUKDlV-rio4?si=640t2YF0At3EJTla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/XLiqvZOP8TY?si=JQfZh6eNoWWw_S71" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			<iframe loading="lazy" width="560" height="315" src="https://cdn.theguardian.tv/brightcove/2012/11/25/121125BangladeshFire-16x9.mp4" title="The 2012 Factory Fire in Dhaka, Bangladesh (Tazreen Fashions)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+			<iframe loading="lazy" width="560" height="315" src="https://cdn.theguardian.tv/brightcove/2012/11/25/121125BangladeshFire-16x9.mp4" title="The 2012 Factory Fire in Dhaka, Bangladesh (Tazreen Fashions)" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/ISj8BECf40Q?si=tzvX4MKftGUbMhTe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/OyfnS0DBIlU?si=5YaOG2iZlQS095Xv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/oKFupx9x0-k?si=AOewMirQJwhbCL0m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.facebook.com/plugins/video.php?height=315&href=https%3A%2F%2Fwww.facebook.com%2FVOANews%2Fvideos%2F1189993195229903%2F&show_text=false&width=560&t=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/3tUt9O99hHg?si=liB8j0aVE_qKyYhr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			<iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/37ZG9lddxto?si=XbR5aqRU4XUx1o2v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			
 		</div>
 	</div>
+	<p id="quotes"><span id="isshoukenmei">一生懸命</span><br><em>The greedy beat the needy every time, Mr. Wonka.</em></p>
+	<script>
+		var player = videojs('my-video', {
+			autoplay: true,
+			controls: true,
+		});
+
+		player.play();
+
+		player.pause();
+
+		player.src('vid/playlist.m3u8');
+
+		player.on('ended', function() {
+			console.log('The video has ended');
+		});
+	</script>
 </body>
 </html>
