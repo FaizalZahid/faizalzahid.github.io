@@ -4,6 +4,12 @@
   src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
 }
 
+@font-face {
+  font-family: 'Ramadan';
+  font-display: block;
+  src: url("https://faizalzahid.pages.dev/fonts/Ramadan.otf");
+}
+
 :root, :host {
   --fa-style-family-classic: 'Font Awesome 6 Free';
 }
@@ -36,7 +42,8 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(30, 30, 45, 0.8);
-    background-image: url('img/abbasid-animation.webp');
+/*    background-image: url('img/abbasid-animation.webp');*/
+background-image: url('img/abbasid-ramadan-animation.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -47,6 +54,37 @@ body {
     mask-image: url('img/inky.webp');
     mask-size: cover;
     mask-position: center;
+}
+
+#ramadan-lantern {
+    position: absolute;
+    z-index: 0;
+    top: 100px;
+}
+
+#ramadan {
+    transform: translate(0, 0) rotate(-30deg);
+    font-family: 'Ramadan', serif;
+    color: black;
+    background-color: rgba(118, 255, 122, 0.5);
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+#lantern, #light {
+    position: absolute;
+}
+
+#lantern {
+    left: 0px;
+    height: 100px;
+}
+
+#light {
+    left: -22px;
+    width: 150px;
+    z-index: -1;
+    filter: invert(80%) sepia(38%) saturate(853%) hue-rotate(337deg) brightness(101%) contrast(98%) blur(18px);
 }
 
 #ad-banner-container-0 {
@@ -1466,6 +1504,15 @@ footer p {
 
     .header-content h3 {
         font-size: 1.3em;
+    }
+
+    #lantern {
+        height: 70px;
+    }
+
+    #light {
+        left: -11px;
+        width: 100px;
     }
 
     #transcript {
