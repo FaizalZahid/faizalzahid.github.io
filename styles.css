@@ -65,6 +65,7 @@ background-image: url('img/abbasid-ramadan-animation.webp');
 #ramadan {
     transform: translate(0, 0) rotate(-30deg);
     font-family: 'Ramadan', serif;
+    font-size: 2.5em;
     color: black;
     background-color: rgba(118, 255, 122, 0.5);
     border-radius: 20px;
@@ -1504,6 +1505,10 @@ footer p {
 
     .header-content h3 {
         font-size: 1.3em;
+    }
+
+    #ramadan {
+        font-size: 2em;
     }
 
     #lantern {
