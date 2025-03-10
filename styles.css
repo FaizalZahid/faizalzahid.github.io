@@ -657,7 +657,7 @@ iframe {
     aspect-ratio: 16 / 9;
 }
 
-#mandalas-pdf, #puzzles-pdf, #faizalingo-app {
+#mandalas-pdf, #puzzles-pdf, #faizalingo-app, #concept-webpage {
     display: flex;
     flex-direction: column;
     gap: 10px;
