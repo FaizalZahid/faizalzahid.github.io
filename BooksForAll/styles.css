@@ -136,7 +136,7 @@ body {
     color: #FCBF47;
 }
 
-#ad-banner-container {
+.ad-banner-container {
     position: relative;
     display: inline-block;
 }
@@ -147,13 +147,13 @@ body {
     margin: 0 auto;
 }
 
-#grab-quran {
+.grab-quran {
     width: 100%;
     max-width: 1000px;
     transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
 }
 
-#grab-quran:hover {
+.grab-quran:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #FFD700;
     opacity: 80%;
