@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #E0E0E0;
     background-color: black;
+    text-align: center;
 }
 
 .parallax {
@@ -133,6 +134,29 @@ body {
     margin-left: 10px;
     font-family: 'Poppins', serif;
     color: #FCBF47;
+}
+
+#ad-banner-container {
+    position: relative;
+    display: inline-block;
+}
+
+.ad-banner-link {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+#grab-quran {
+    width: 100%;
+    max-width: 1000px;
+    transition: opacity 0.5s, transform 0.5s, width 0.5s, box-shadow 0.5s;
+}
+
+#grab-quran:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FFD700;
+    opacity: 80%;
 }
 
 #manipulation-book-cover {
