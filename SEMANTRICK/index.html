@@ -1,12 +1,160 @@
-<input type="text" id="wordInput" placeholder="Guess a word">
-<button onclick="guessWord()">Submit</button>
-<p id="result"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMANTRICK</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+        }
+        #container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid gold;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px gold;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 2px solid gold;
+            border-radius: 5px;
+            background: black;
+            color: gold;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: 2px solid gold;
+            background-color: black;
+            color: gold;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: gold;
+            color: black;
+        }
+        #loading {
+            display: none;
+            font-size: 14px;
+            color: gray;
+        }
+        #guesses {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .guess {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            transition: 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+        .guess .rank {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            min-width: 40px;
+            text-align: center;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
 
-<script>
-async function guessWord() {
-    let word = document.getElementById("wordInput").value.trim().toLowerCase();
-    let response = await fetch(`https://semantrick.vercel.app/api/semantrick.js?word=${word}`);
-    let data = await response.json();
-    document.getElementById("result").innerText = `Rank: ${data.rank}`;
-}
-</script>
+    <h1>SEMANTRICK</h1>
+    <div id="container">
+        <input type="text" id="wordInput" placeholder="Guess a word">
+        <button onclick="guessWord()">Submit</button>
+        <p id="loading">Checking...</p>
+    </div>
+
+    <div id="guesses"></div>
+
+    <script>
+    let guesses = [];
+
+    function getBackground(rank) {
+        if (rank === 1) return "gold"; // Actual word is fully gold
+        if (rank <= 100) return "green";
+        if (rank <= 300) return "orange";
+        if (rank <= 500) return "darkpink";
+        return "gray";
+    }
+
+    function getFillPercentage(rank) {
+        if (rank === 1) return 100;
+        return Math.max(10, 100 - (rank / 5)); // Closer rank = more filled
+    }
+
+    function updateGuesses() {
+        guesses.sort((a, b) => a.rank - b.rank); // Sort closest first
+        let guessesEl = document.getElementById("guesses");
+        guessesEl.innerHTML = "";
+
+        guesses.forEach(({ word, rank }) => {
+            let bgColor = getBackground(rank);
+            let fillPercent = getFillPercentage(rank);
+            let guessDiv = document.createElement("div");
+            guessDiv.classList.add("guess");
+            guessDiv.innerHTML = `
+                <span class="rank">${rank}</span>
+                <span>${word}</span>
+            `;
+            guessDiv.style.background = `linear-gradient(to right, ${bgColor} ${fillPercent}%, black ${fillPercent}%)`;
+            guessesEl.appendChild(guessDiv);
+        });
+    }
+
+    async function guessWord() {
+        let word = document.getElementById("wordInput").value.trim();
+        let loadingEl = document.getElementById("loading");
+
+        if (!word) return;
+        loadingEl.style.display = "block";
+
+        try {
+            let response = await fetch(`https://semantrick.vercel.app/api/semantrick.js?word=${word}`);
+            let data = await response.json();
+
+            if (response.ok) {
+                guesses.push({ word, rank: data.rank });
+                updateGuesses();
+            }
+        } catch (error) {
+            alert("Something went wrong. Try again.");
+        } finally {
+            loadingEl.style.display = "none";
+        }
+    }
+    </script>
+
+</body>
+</html>
