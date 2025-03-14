@@ -5,7 +5,7 @@
 <script>
 async function guessWord() {
     let word = document.getElementById("wordInput").value.trim().toLowerCase();  // Normalize input
-    let response = await fetch(`https://semantrick.vercel.app/api/contexto.js?word=${word}`);  // No .js needed
+    let response = await fetch(`https://semantrick.vercel.app/api/semantrick.js?word=${word}`);  // No .js needed
     let data = await response.json();
     document.getElementById("result").innerText = `Rank: ${data.rank}`;
 }
