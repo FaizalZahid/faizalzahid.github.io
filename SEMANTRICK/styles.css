@@ -85,6 +85,18 @@ input {
     color: white;
 }
 
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FCBF47;
+    background-color: #1E1E2D;
+    border-radius: 10px;
+    padding: 5px 20px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
 @keyframes glow {
     0% { box-shadow: 0 0 10px 5px #14f339; }
     20% { box-shadow: 0 0 10px 5px #007aff, 0 0 20px #14f339; }
