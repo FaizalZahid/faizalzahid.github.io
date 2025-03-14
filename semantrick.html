@@ -1,0 +1,12 @@
+<input type="text" id="wordInput" placeholder="Guess a word">
+<button onclick="guessWord()">Submit</button>
+<p id="result"></p>
+
+<script>
+async function guessWord() {
+    let word = document.getElementById("wordInput").value.trim().toLowerCase();  // Normalize input
+    let response = await fetch(`https://semantrick.vercel.app/api/contexto.js?word=${word}`);  // No .js needed
+    let data = await response.json();
+    document.getElementById("result").innerText = `Rank: ${data.rank}`;
+}
+</script>
