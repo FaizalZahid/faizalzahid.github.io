@@ -1,0 +1,86 @@
+body {
+    background-color: black;
+    color: #fcbf47;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/semantrick.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #fcbf47;
+    border-radius: 5px;
+    background: black;
+    color: #fcbf47;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#loading {
+    display: none;
+    font-size: 14px;
+    color: gray;
+    margin-top: 10px;
+}
+
+#guesses {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guess {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.guess .rank {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+#quote {
+    color: white;
+}
