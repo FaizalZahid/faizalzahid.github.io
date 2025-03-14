@@ -89,8 +89,8 @@ button {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    color: #FCBF47;
-    background-color: #1E1E2D;
+    color: #1E1E2D;
+    background-color: #FCBF47;
     border-radius: 10px;
     padding: 5px 20px;
     transition: background-color 0.3s;
