@@ -633,6 +633,56 @@ footer p {
     transform: scale(1.1);
 }
 
+#floating-sword-container, #floating-semantrick-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#floating-semantrick-container {
+    bottom: 10px;
+}
+
+#semantrick-button, #sword-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 0;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+#sword-button {
+    background: #1E1E2D;
+}
+
+#semantrick-button:hover, #sword-button:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+#semantrick-button img, #sword-button img {
+    width: 50px;
+    height: 50px;
+    border: 4px solid black;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+}
+
+#sword-button img {
+    border: 3px solid white;
+}
+
 @media (max-width: 768px) {
     .header-content h1 {
         font-size: 2em;
